@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import SharesSection, DocumentSection, HowToSection, ContactSection, \
-						SocialSection
+						SocialSection, EmailSection
 
 class SharesSectionAdmin(admin.ModelAdmin):
 	class Meta:
@@ -31,3 +31,9 @@ class SocialSectionAdmin(admin.ModelAdmin):
 		model = SocialSection
 
 admin.site.register(SocialSection, SocialSectionAdmin)
+
+class EmailSectionAdmin(admin.ModelAdmin):
+	class Meta:
+		model = EmailSection
+
+admin.site.register(EmailSection, EmailSectionAdmin)

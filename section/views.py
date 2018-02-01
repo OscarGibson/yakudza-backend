@@ -2,10 +2,10 @@ from django.shortcuts import render
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from .models import SharesSection, DocumentSection, HowToSection, \
-					ContactSection, SocialSection
+					ContactSection, SocialSection, EmailSection
 from .serializers import SharesSectionSerializer, DocumentSectionSerializer,\
 						HowToSectionSerializer, ContactSectionSerializer, \
-						SocialSectionSerializer
+						SocialSectionSerializer, EmailSectionSerializer
 
 
 class SharesViewSet(ViewSet):
@@ -43,6 +43,15 @@ class ContactViewSet(ViewSet):
 		contact_out = ContactSectionSerializer(contact, many= True).data
 
 		return Response({'contact_section':contact_out})
+
+class EmailViewSet(ViewSet):
+
+	def get(self, request):
+
+		email = EmailSection.objects.all()
+		email_out = EmailSectionSerializer(email, many= True).data
+
+		return Response({'email_section':email_out})
 
 class SocialViewSet(ViewSet):
 
