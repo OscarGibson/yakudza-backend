@@ -68,11 +68,11 @@ class SectionViewSet(ViewSet):
 		""" NOT FINISHED """
 		return Response({
 			'menu' : [
-				{'title':'Shares', 'id':0},
-				{'title':'Feedbacks', 'id':1},
-				{'title':'Documents', 'id':2},
-				{'title':'How to', 'id':3},
-				{'title':'Constacts', 'id':4}
+				{'title':'Акції', 'id':0},
+				{'title':'Відгуки', 'id':1},
+				{'title':'Документи', 'id':2},
+				{'title':'Як замовити', 'id':3},
+				{'title':'Контакти', 'id':4}
 			]
 			})
 			
