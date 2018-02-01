@@ -2,10 +2,10 @@ from django.shortcuts import render
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from .models import SharesSection, DocumentSection, HowToSection, \
-					ContactSection, SocialSection
+					ContactSection, SocialSection, OrderSection
 from .serializers import SharesSectionSerializer, DocumentSectionSerializer,\
 						HowToSectionSerializer, ContactSectionSerializer, \
-						SocialSectionSerializer
+						SocialSectionSerializer, OrderSectionSerializer
 
 
 class SharesViewSet(ViewSet):
@@ -53,6 +53,15 @@ class SocialViewSet(ViewSet):
 
 		return Response({'social_section':social_out})
 
+class OrderViewSet(ViewSet):
+
+	def get(self, request):
+
+		order = OrderSection.objects.all()
+		order_out = OrderSectionSerializer(order, many= True).data
+
+		return Response({'order_section':order_out})
+
 class SectionViewSet(ViewSet):
 	""" Get list of pages (menu) """
 	def list(self, request):
@@ -63,7 +72,8 @@ class SectionViewSet(ViewSet):
 				{'title':'Feedbacks', 'id':1},
 				{'title':'Documents', 'id':2},
 				{'title':'How to', 'id':3},
-				{'title':'Constacts', 'id':4}
+				{'title':'Constacts', 'id':4},
+				# {'title':'Order', 'id':5}
 			]
 			})
 			

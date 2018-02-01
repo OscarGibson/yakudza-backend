@@ -65,3 +65,11 @@ class SocialSection(models.Model):
 	def __str__(self):
 		print(self.icon)
 		return self.icon
+
+class OrderSection(models.Model):
+	""" Content for order page """
+	title = models.CharField(max_length= 64)
+	related_categories = models.ManyToManyField("category.Category")
+
+	def __str__(self):
+		return self.title
