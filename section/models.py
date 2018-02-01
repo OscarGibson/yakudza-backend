@@ -48,6 +48,13 @@ class ContactSection(models.Model):
 	def __str__(self):
 		return str(self.phone)
 
+class EmailSection(models.Model):
+	""" Contacts numbers """
+	email = models.EmailField()
+
+	def __str__(self):
+		return str(self.email)
+
 class SocialSection(models.Model):
 	""" Social icons and links """
 

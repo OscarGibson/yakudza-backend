@@ -5,7 +5,8 @@ from .models import SharesSection, DocumentSection, HowToSection, \
 					ContactSection, SocialSection, OrderSection
 from .serializers import SharesSectionSerializer, DocumentSectionSerializer,\
 						HowToSectionSerializer, ContactSectionSerializer, \
-						SocialSectionSerializer, OrderSectionSerializer
+						SocialSectionSerializer, OrderSectionSerializer, \
+						EmailSectionSerializer
 
 
 class SharesViewSet(ViewSet):
@@ -44,6 +45,15 @@ class ContactViewSet(ViewSet):
 
 		return Response({'contact_section':contact_out})
 
+class EmailViewSet(ViewSet):
+
+	def get(self, request):
+
+		email = EmailSection.objects.all()
+		email_out = EmailSectionSerializer(email, many= True).data
+
+		return Response({'email_section':email_out})
+
 class SocialViewSet(ViewSet):
 
 	def get(self, request):
@@ -68,12 +78,11 @@ class SectionViewSet(ViewSet):
 		""" NOT FINISHED """
 		return Response({
 			'menu' : [
-				{'title':'Shares', 'id':0},
-				{'title':'Feedbacks', 'id':1},
-				{'title':'Documents', 'id':2},
-				{'title':'How to', 'id':3},
-				{'title':'Constacts', 'id':4},
-				# {'title':'Order', 'id':5}
+				{'title':'Акції', 'id':0},
+				{'title':'Відгуки', 'id':1},
+				{'title':'Документи', 'id':2},
+				{'title':'Як замовити', 'id':3},
+				{'title':'Контакти', 'id':4}
 			]
 			})
 			

@@ -27,6 +27,7 @@ urlpatterns = [
     path('%stag' % api_path, include('tag.urls')),
     path('%ssection/' % api_path, include('section.urls')),
     path('%sfeedback' % api_path, include('feedback.urls')),
+    path('%scallback' % api_path, include('callback.urls')),
     path('%sorder' % api_path, include('order.urls')),
 ]
 if settings.DEBUG:

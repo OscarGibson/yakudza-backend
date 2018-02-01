@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'order',
     'feedback',
     'section',
+    'callback',
+    'subscribers',
 ]
 
 MIDDLEWARE = [

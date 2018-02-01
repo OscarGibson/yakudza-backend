@@ -1,6 +1,7 @@
 from rest_framework.serializers import ModelSerializer
 from .models import SharesSection, DocumentSection, HowToSection, ContactSection, \
-						SocialSection, OrderSection
+						SocialSection, OrderSection, EmailSection
+
 
 class SharesSectionSerializer(ModelSerializer):
 	""" Shares serializer """
@@ -24,6 +25,12 @@ class ContactSectionSerializer(ModelSerializer):
 	""" Contact serializer """
 	class Meta:
 		model = ContactSection
+		fields = '__all__'
+
+class EmailSectionSerializer(ModelSerializer):
+	""" Email serializer """
+	class Meta:
+		model = EmailSection
 		fields = '__all__'
 
 class SocialSectionSerializer(ModelSerializer):
