@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from .models import SharesSection, DocumentSection, HowToSection, \
-					ContactSection, SocialSection, OrderSection
+					ContactSection, SocialSection, OrderSection, EmailSection
 from .serializers import SharesSectionSerializer, DocumentSectionSerializer,\
 						HowToSectionSerializer, ContactSectionSerializer, \
 						SocialSectionSerializer, OrderSectionSerializer, \
