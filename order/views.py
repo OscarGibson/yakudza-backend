@@ -18,7 +18,7 @@ facebook = OpenFacebook(access_token)
 
 class OrderViewSet(ViewSet):
 
-	renderer_classes = (TemplateHTMLRenderer,)
+	# renderer_classes = (TemplateHTMLRenderer,)
 
 	def post(self, request):
 		data = request.data
@@ -62,7 +62,7 @@ class OrderViewSet(ViewSet):
 
 	def test(self, request):
 
-		print('FACEBOOK_ACCESS_TOKEN ', access_token)
+		# print('FACEBOOK_ACCESS_TOKEN ', access_token)
 
 		# Getting info about me
 
@@ -70,11 +70,11 @@ class OrderViewSet(ViewSet):
 		# is_set = facebook.set('me/comments', message= 'uhiuhi')
 
 		# is_set = facebook.set('me/feed', message= [])
-		info_me = facebook.get('me/feed', message= 'testing open facebook')
+		info_me = facebook.set('me/feed', message= 'lalka')
 
 		# print('ME INFO ', info_me)
 
-		print('-'*12)
+		# print('-'*12)
 		# print(dir(facebook))
 
 		return Response({
