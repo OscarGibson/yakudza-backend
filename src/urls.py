@@ -29,6 +29,8 @@ urlpatterns = [
     path('%sfeedback' % api_path, include('feedback.urls')),
     path('%scallback' % api_path, include('callback.urls')),
     path('%sorder' % api_path, include('order.urls')),
+
+    path('facebook/', include('django_facebook.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
