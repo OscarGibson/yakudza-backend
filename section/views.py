@@ -2,7 +2,8 @@ from django.shortcuts import render
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from .models import SharesSection, DocumentSection, HowToSection, \
-					ContactSection, SocialSection, OrderSection, EmailSection
+					ContactSection, SocialSection, OrderSection, EmailSection,\
+					FooterSectionText, Votes
 from .serializers import SharesSectionSerializer, DocumentSectionSerializer,\
 						HowToSectionSerializer, ContactSectionSerializer, \
 						SocialSectionSerializer, OrderSectionSerializer, \
@@ -85,4 +86,32 @@ class SectionViewSet(ViewSet):
 				{'title':'Контакти', 'id':4}
 			]
 			})
-			
+
+class FooterViewSet(ViewSet):
+	""" Get footer text and votes, post votes """
+
+	def get(self, request):
+		votes = {'mark' : 4.5, 'count' : 17}
+		footer_text = []
+		try:
+			footer_text = FooterSectionText.objects.all()[0].text
+		except Exception as e:
+			pass
+		try:
+			vote = Votes.objects.all()[0]
+			votes['mark'] = vote.middle_mark
+			votes['count'] = vote.count
+		except Exception as e:
+			pass
+
+		return Response({'text':footer_text, 'votes':votes})
+
+	def post(self, request):
+
+		try:
+			vote = Votes.objects.all()[0]
+			vote.count += 1
+			vote.save()
+		except Exception as e:
+			return Response({'message':'Server error', 'error': e.message}, status= 500)
+		return Response({'message':'success'})

@@ -10,18 +10,26 @@ class OrderViewSet(ViewSet):
 	def post(self, request):
 		data = request.data
 
+		print(data)
+
+		if 'products' not in data:
+			return Response({'message':'Invalid data'}, status= 400)
+
 		products = data['products']
-		adds = data['adds']
+		adds = []#data['adds'] No need any more
 		total = 0
-		order = Order.objects.create(
-			address= data['address'],
-			phone= data['phone'],
-			comment= data['comment'],
-			total= total,
-			is_payed= False,
-			type_of_payment= 0
-			)
-		order.save()
+		try:
+			order = Order.objects.create(
+				address= data['address'],
+				phone= data['phone'],
+				comment= data['comment'] if 'comment' in data else None,
+				total= total,
+				is_payed= False,
+				type_of_payment= 0
+				)
+		except Exception as e:
+			return Response({'message':'Invalid data'}, status= 400)
+		# order.save()
 		
 		for product_data in products:
 			product = get_object_or_404(Product, pk= product_data['pk'])
@@ -44,7 +52,7 @@ class OrderViewSet(ViewSet):
 
 		order.total = total
 		order.save()
-		return Response({'message':'success'})
+		return Response({'message':'success'}, status= 201)
 
 """
 {

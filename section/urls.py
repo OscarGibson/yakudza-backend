@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import SharesViewSet, DocumentViewSet, HowToViewSet, \
 					ContactViewSet, SocialViewSet, SectionViewSet, \
-					OrderViewSet, EmailViewSet
+					OrderViewSet, EmailViewSet, FooterViewSet
 
 urlpatterns = [
     path('shares', SharesViewSet.as_view({'get':'get'}), name= 'Shares'),
@@ -12,4 +12,5 @@ urlpatterns = [
     path('social', SocialViewSet.as_view({'get':'get'}), name= 'Social'),
     path('order', OrderViewSet.as_view({'get':'get'}), name= 'Order'),
     path('menu', SectionViewSet.as_view({'get':'list'}), name= 'Menu'),
+    path('footer', FooterViewSet.as_view({'get':'get','post':'post'}), name= "Footer")
 ]

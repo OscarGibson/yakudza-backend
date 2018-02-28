@@ -80,3 +80,21 @@ class OrderSection(models.Model):
 
 	def __str__(self):
 		return self.title
+
+
+class FooterSectionText(models.Model):
+	""" Content for footer text """
+
+	text = models.TextField()
+
+	def __str__(self):
+		return ("%s..." % self.text[:32]) if len(self.text) > 32 else self.text
+
+class Votes(models.Model):
+	""" Vote object """
+
+	middle_mark = models.FloatField(default= 4.5)
+	count = models.IntegerField(default= 17)
+
+	def __str__(self):
+		return "Оцінка %s, кількість голосів - %s" % (self.middle_mark, self.count)

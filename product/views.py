@@ -21,3 +21,4 @@ class ProductViewSet(ViewSet):
 		product_output = ProductSerializer(products, many= True).data
 
 		return Response({'products':product_output})
+
