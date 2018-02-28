@@ -25,7 +25,7 @@ SECRET_KEY = '^w_dxe*)60j&uqkyn-b9!w**s@@dzcg286aa4041ol8(d41@n*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # Third party apps
     'rest_framework',
     'corsheaders',
+    'django_facebook',
     # Custom apps
     'category',
     'tag',
@@ -65,21 +66,28 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'src.urls'
 
+# For "django_facebook" app
+# this app user TEMPLATE_CONTEXT_PROCESSORS, 
+# which is deprecated since django 1.8
+TEMPLATE_CONTEXT_PROCESSORS = [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                'django_facebook.context_processors.facebook',
+            ]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
+            'context_processors': TEMPLATE_CONTEXT_PROCESSORS,
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'src.wsgi.application'
 
@@ -114,6 +122,14 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# Authentication backends
+
+AUTHENTICATION_BACKENDS = (
+    'django_facebook.auth_backends.FacebookBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
@@ -143,3 +159,14 @@ CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
     'localhost:4200',
 )
+
+# FACEBOOK fields
+
+FACEBOOK_APP_ID = '1534958043469587'
+FACEBOOK_APP_SECRET = 'bac9b64e9c09025535c6c411df3f5cab'
+FACEBOOK_ACCESS_TOKEN = 'EAACV48Uk99oBAGHF7tHqWH4ZBfA7hBUbQcOUgfdu598Ae3QOIoGP7hNnVwbXDdiaMKJogfPSXqaFHdvrh5oSJ1ZAFy6JSHByW5uoXtPZBGmABFsUHafqhW5jmgrBKQR9lH3Wk9KYMGqOkwcOS0ZBq34USVKZBKVZANOTz0LJvZCEgZDZD'
+
+AUTH_PROFILE_MODULE = 'django_facebook.FacebookProfile'
+AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
+
+
