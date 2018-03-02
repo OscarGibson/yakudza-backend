@@ -10,7 +10,7 @@ class Product(models.Model):
 	image = models.ImageField()
 	price = models.FloatField(default= 0)
 	weight = models.IntegerField(default= 0)
-	kkal = models.IntegerField(default= 0)
+	pieces = models.IntegerField(default= 0)
 	created_at = models.DateTimeField(auto_now_add= True)
 	updated_at = models.DateTimeField(auto_now= True)
 
