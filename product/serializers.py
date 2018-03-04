@@ -11,4 +11,4 @@ class ProductSerializerMini(ModelSerializer):
 	""" Product serializer """
 	class Meta:
 		model = Product
-		fields = ('id', 'title', 'description', 'image', 'price', 'weight', 'kkal')
+		fields = ('id', 'title', 'description', 'image', 'price', 'weight', 'pieces')
