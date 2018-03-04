@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     # Third party apps
     'rest_framework',
     'corsheaders',
-    'django_facebook',
+    # 'django_facebook',
     # Custom apps
     'category',
     'tag',
@@ -74,7 +74,7 @@ TEMPLATE_CONTEXT_PROCESSORS = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django_facebook.context_processors.facebook',
+                # 'django_facebook.context_processors.facebook',
             ]
 
 TEMPLATES = [
@@ -125,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Authentication backends
 
 AUTHENTICATION_BACKENDS = (
-    'django_facebook.auth_backends.FacebookBackend',
+    # 'django_facebook.auth_backends.FacebookBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -162,11 +162,11 @@ CORS_ORIGIN_WHITELIST = (
 
 # FACEBOOK fields
 
-FACEBOOK_APP_ID = '1534958043469587'
-FACEBOOK_APP_SECRET = 'bac9b64e9c09025535c6c411df3f5cab'
-FACEBOOK_ACCESS_TOKEN = 'EAACV48Uk99oBAGHF7tHqWH4ZBfA7hBUbQcOUgfdu598Ae3QOIoGP7hNnVwbXDdiaMKJogfPSXqaFHdvrh5oSJ1ZAFy6JSHByW5uoXtPZBGmABFsUHafqhW5jmgrBKQR9lH3Wk9KYMGqOkwcOS0ZBq34USVKZBKVZANOTz0LJvZCEgZDZD'
+# FACEBOOK_APP_ID = '1534958043469587'
+# FACEBOOK_APP_SECRET = 'bac9b64e9c09025535c6c411df3f5cab'
+# FACEBOOK_ACCESS_TOKEN = 'EAACV48Uk99oBAGHF7tHqWH4ZBfA7hBUbQcOUgfdu598Ae3QOIoGP7hNnVwbXDdiaMKJogfPSXqaFHdvrh5oSJ1ZAFy6JSHByW5uoXtPZBGmABFsUHafqhW5jmgrBKQR9lH3Wk9KYMGqOkwcOS0ZBq34USVKZBKVZANOTz0LJvZCEgZDZD'
 
-AUTH_PROFILE_MODULE = 'django_facebook.FacebookProfile'
-AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
+# AUTH_PROFILE_MODULE = 'django_facebook.FacebookProfile'
+# AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
 
 

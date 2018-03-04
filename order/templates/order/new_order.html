@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>Нове замовлення</title>
 </head>
 <body>
-	<h1>Number {{}}</h1>
+
+	<style type="text/css">
+		 @font-face {
+	        font-family: 'RobotoBoldwebfont';
+	        src: url("/static/admin/fonts/Roboto-Bold-webfont.woff");
+	      }
+	      h1 {
+	      	font-family: 'RobotoBoldwebfont';
+	      	font-size: 32px;
+	      }
+	</style>
+	<h1>Номер замовлення {{ order.pk }}</h1>
 	<hr>
-	<h3>Address:</h3>
-	<h3>Name:</h3>
-	<h3>Comment:</h3>
-	<h4>Items</h4>
+	<h3>адреса: {{ order.address }}</h3>
+	<h3>Ім'я: {{ order.phone }}</h3>
+	<h3>Коментарій: {{ order.comment }}</h3>
+	<h4>список товарiв</h4>
 	<hr>
-	{% for item in items %}
-	<p>product name - count</p>
+	{% for product in products %}
+	<p>{{ product.product }} - {{ product.count }}</p>
 	{% endfor %}
 
+	<h1>Total: {{ order.total }}</h1>
+	<h3>payment: {{ type_of_payment }}</h3>
+	
 </body>
 </html>

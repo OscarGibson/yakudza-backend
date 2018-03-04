@@ -5,20 +5,23 @@ from .models import Order
 from product.models import Product, ProductManager, Add, AddManager
 from rest_framework.response import Response
 
-from rest_framework.renderers import TemplateHTMLRenderer
+# from rest_framework.renderers import TemplateHTMLRenderer
+
+from django.http import HttpResponse
+from django.views.generic import View
+from .render_pdf import render_to_pdf
+from django.template.loader import get_template
 
 
-from open_facebook.api import OpenFacebook
+# from open_facebook.api import OpenFacebook
 
 from django.conf import settings
 
-access_token = getattr(settings, 'FACEBOOK_ACCESS_TOKEN')
+# access_token = getattr(settings, 'FACEBOOK_ACCESS_TOKEN')
 
-facebook = OpenFacebook(access_token)
+# facebook = OpenFacebook(access_token)
 
 class OrderViewSet(ViewSet):
-
-	# renderer_classes = (TemplateHTMLRenderer,)
 
 	def post(self, request):
 		data = request.data
@@ -78,7 +81,7 @@ class OrderViewSet(ViewSet):
 		# is_set = facebook.set('me/comments', message= 'uhiuhi')
 
 		# is_set = facebook.set('me/feed', message= [])
-		info_me = facebook.set('me/feed', message= 'lalka')
+		# info_me = facebook.set('me/feed', message= 'lalka')
 
 		# print('ME INFO ', info_me)
 
@@ -88,16 +91,46 @@ class OrderViewSet(ViewSet):
 		return Response({
 			'message':'success', 
 			'content' : {
-				'me_info' : info_me,
+				# 'me_info' : info_me,
 				# 'access_token' : access_token,
 				# 'facebook dir' : dir(facebook)
 				}
 			})
+
+
+class OrderTemplateViewSet(View):
+
 	def get(self, request, order_id):
 
 		order = get_object_or_404(Order, pk= order_id)
 
-		return Response({'order' : order}, template_name= 'order/new_order.html')
+		products = order.product.all()
+
+		template = get_template('order/new_order.html')
+
+		type_of_payment = 'Картка' if order.type_of_payment == 1 else 'Готівка'
+
+		context = {
+			'order' : order, 
+			'products':products,
+			'type_of_payment':type_of_payment
+			}
+
+		# html = template.render(context)
+		# pdf = render_to_pdf('order/new_order.html', context)
+		# if pdf:
+		# 	response = HttpResponse(pdf, content_type='application/pdf')
+		# 	filename = "Invoice_%s.pdf" %("12341231")
+		# 	content = "inline; filename='%s'" %(filename)
+		# 	download = request.GET.get("download")
+		# 	if download:
+		# 		content = "attachment; filename='%s'" %(filename)
+		# 	response['Content-Disposition'] = content
+		# 	return response
+		# return HttpResponse("Not found")
+
+		pdf = render_to_pdf('order/new_order.html', context)
+		return HttpResponse(pdf, content_type='application/pdf')
 
 """
 {
