@@ -9,7 +9,7 @@ from rest_framework.response import Response
 
 from django.http import HttpResponse
 from django.views.generic import View
-from .render_pdf import render_to_pdf
+# from .render_pdf import render_to_pdf
 from django.template.loader import get_template
 
 
@@ -39,6 +39,7 @@ class OrderViewSet(ViewSet):
 				address= data['address'],
 				phone= data['phone'],
 				name= data['name'],
+				count= data['count'],
 				comment= data['comment'] if 'comment' in data else None,
 				total= total,
 				is_payed= False,
@@ -99,39 +100,39 @@ class OrderViewSet(ViewSet):
 			})
 
 
-class OrderTemplateViewSet(View):
+# class OrderTemplateViewSet(View):
 
-	def get(self, request, order_id):
+# 	def get(self, request, order_id):
 
-		order = get_object_or_404(Order, pk= order_id)
+# 		order = get_object_or_404(Order, pk= order_id)
 
-		products = order.product.all()
+# 		products = order.product.all()
 
-		template = get_template('order/new_order.html')
+# 		template = get_template('order/new_order.html')
 
-		type_of_payment = 'Картка' if order.type_of_payment == 1 else 'Готівка'
+# 		type_of_payment = 'Картка' if order.type_of_payment == 1 else 'Готівка'
 
-		context = {
-			'order' : order, 
-			'products':products,
-			'type_of_payment':type_of_payment
-			}
+# 		context = {
+# 			'order' : order, 
+# 			'products':products,
+# 			'type_of_payment':type_of_payment
+# 			}
 
-		# html = template.render(context)
-		# pdf = render_to_pdf('order/new_order.html', context)
-		# if pdf:
-		# 	response = HttpResponse(pdf, content_type='application/pdf')
-		# 	filename = "Invoice_%s.pdf" %("12341231")
-		# 	content = "inline; filename='%s'" %(filename)
-		# 	download = request.GET.get("download")
-		# 	if download:
-		# 		content = "attachment; filename='%s'" %(filename)
-		# 	response['Content-Disposition'] = content
-		# 	return response
-		# return HttpResponse("Not found")
+# 		# html = template.render(context)
+# 		# pdf = render_to_pdf('order/new_order.html', context)
+# 		# if pdf:
+# 		# 	response = HttpResponse(pdf, content_type='application/pdf')
+# 		# 	filename = "Invoice_%s.pdf" %("12341231")
+# 		# 	content = "inline; filename='%s'" %(filename)
+# 		# 	download = request.GET.get("download")
+# 		# 	if download:
+# 		# 		content = "attachment; filename='%s'" %(filename)
+# 		# 	response['Content-Disposition'] = content
+# 		# 	return response
+# 		# return HttpResponse("Not found")
 
-		pdf = render_to_pdf('order/new_order.html', context)
-		return HttpResponse(pdf, content_type='application/pdf')
+# 		pdf = render_to_pdf('order/new_order.html', context)
+# 		return HttpResponse(pdf, content_type='application/pdf')
 
 """
 {
