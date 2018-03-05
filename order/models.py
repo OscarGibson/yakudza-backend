@@ -11,6 +11,7 @@ class Order(models.Model):
 		)
 
 	product = models.ManyToManyField('product.ProductManager', blank= True)
+	name = models.CharField(max_length= 256)
 	address = models.CharField(max_length= 256)
 	phone = models.IntegerField()
 	comment = models.TextField(blank= True)

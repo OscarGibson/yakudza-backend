@@ -38,6 +38,7 @@ class OrderViewSet(ViewSet):
 			order = Order.objects.create(
 				address= data['address'],
 				phone= data['phone'],
+				name= data['name'],
 				comment= data['comment'] if 'comment' in data else None,
 				total= total,
 				is_payed= False,
