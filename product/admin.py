@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Add, ProductManager, AddManager
+from .models import Product, Add, ProductManager, AddManager, Labels
 
 class ProductAdmin(admin.ModelAdmin):
 	class Meta:
@@ -24,3 +24,9 @@ class AddManagerAdmin(admin.ModelAdmin):
 		model = AddManager
 
 admin.site.register(AddManager, AddManagerAdmin)
+
+class LabelAdmin(admin.ModelAdmin):
+	class Meta:
+		model = Labels
+
+admin.site.register(Labels, LabelAdmin)

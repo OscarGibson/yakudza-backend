@@ -11,6 +11,7 @@ class Product(models.Model):
 	price = models.FloatField(default= 0)
 	weight = models.IntegerField(default= 0)
 	pieces = models.IntegerField(default= 0)
+	label = models.ManyToManyField('Labels', blank= True)
 	created_at = models.DateTimeField(auto_now_add= True)
 	updated_at = models.DateTimeField(auto_now= True)
 
@@ -33,3 +34,12 @@ class AddManager(models.Model):
 	""" Model for adding many adds """
 	add = models.ForeignKey('Add', on_delete= models.PROTECT)
 	count = models.IntegerField()
+
+
+class Labels(models.Model):
+	""" Labels for products """
+	name = models.CharField(max_length= 64)
+	icon = models.ImageField()
+
+	def __str__(self):
+		return self.name

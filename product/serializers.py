@@ -1,13 +1,25 @@
-from rest_framework.serializers import ModelSerializer
-from .models import Product
+from rest_framework import serializers
+from .models import Product, Labels
 
-class ProductSerializer(ModelSerializer):
-	""" Product serializer """
+class LabelSerializer(serializers.ModelSerializer):
+	""" Serializer for product label """
 	class Meta:
-		model = Product
+		model = Labels
 		fields = '__all__'
 
-class ProductSerializerMini(ModelSerializer):
+class ProductSerializer(serializers.ModelSerializer):
+	""" Product serializer """
+	label_serializer = serializers.SerializerMethodField('_get_labels', read_only= True)
+
+	def _get_labels(self, obj):
+		return LabelSerializer(obj.label, many= True).data
+
+	class Meta:
+		model = Product
+		extra_fields = ('label_serializer',)
+		exclude = ('label',)
+
+class ProductSerializerMini(serializers.ModelSerializer):
 	""" Product serializer """
 	class Meta:
 		model = Product
