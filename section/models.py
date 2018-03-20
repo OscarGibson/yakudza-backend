@@ -43,6 +43,12 @@ class HowToSection(models.Model):
 
 class ContactSection(models.Model):
 	""" Contacts numbers """
+	ICONS_NAMES = (
+		('kyivstar', 'kyivstar'),
+		('vodafone', 'vodafone'),
+		('lifecell', 'lifecell'),
+		)
+	icon = models.CharField(max_length= 32, choices= ICONS_NAMES)
 	phone = models.IntegerField(default= 0)
 
 	def __str__(self):
