@@ -1,0 +1,30 @@
+<h1>Нове замовлення</h1>
+
+<div>
+	<h3>Імя: {{ order.name }}</h3>
+	<h3>Номер телефону: {{ order.phone }}</h3>
+	<h3>Адреса доставки: {{ order.address }}</h3>
+	<h3>Кількість осіб: {{ order.count }}</h3>
+	<h3>Коментарій: {{ order.comment }}</h3>
+	<h2>Замовлення</h2>
+	<hr>
+
+	<table style="width:100%">
+	  <tr>
+	    <th>Назва</th>
+	    <th>Ціна</th> 
+	    <th>Кількість</th>
+	  </tr>
+	  {% for item in order.product.all %}
+	  <tr>
+	    <td>{{ item.product.title }}</td>
+	    <td>{{ item.product.price }}</td> 
+	    <td>{{ item.product.count }}</td>
+	  </tr>
+	  {% endfor %}
+
+	</table>
+
+	<h2>Всього: {{ order.total }}</h2>
+
+</div>

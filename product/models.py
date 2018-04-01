@@ -3,7 +3,7 @@ from django.db import models
 class Product(models.Model):
 	""" Model for product """
 	title = models.CharField(max_length= 256)
-	slug = models.CharField(max_length= 256)
+	# slug = models.CharField(max_length= 256)
 	description = models.TextField(blank= True)
 	categories = models.ManyToManyField('category.Category')
 	tags = models.ManyToManyField('tag.Tag', blank= True)
@@ -14,6 +14,10 @@ class Product(models.Model):
 	label = models.ManyToManyField('Labels', blank= True)
 	created_at = models.DateTimeField(auto_now_add= True)
 	updated_at = models.DateTimeField(auto_now= True)
+
+	class Meta:
+		verbose_name = "Продукт"
+		verbose_name_plural = "Продукти"
 
 	def __str__(self):
 		return "%s: %sUAH" % (self.title, self.price)

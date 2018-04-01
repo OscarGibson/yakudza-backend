@@ -17,6 +17,10 @@ from django.template.loader import get_template
 
 from django.conf import settings
 
+from django.core.mail import send_mail
+
+from django.template.loader import render_to_string
+
 # access_token = getattr(settings, 'FACEBOOK_ACCESS_TOKEN')
 
 # facebook = OpenFacebook(access_token)
@@ -26,9 +30,8 @@ class OrderViewSet(ViewSet):
 	def post(self, request):
 		data = request.data
 
-		print(data)
-
 		if 'products' not in data:
+			print('here')
 			return Response({'message':'Invalid data'}, status= 400)
 
 		products = data['products']
@@ -46,6 +49,8 @@ class OrderViewSet(ViewSet):
 				type_of_payment= 0
 				)
 		except Exception as e:
+			print(e)
+			print('++++')
 			return Response({'message':'Invalid data'}, status= 400)
 		# order.save()
 		
@@ -70,6 +75,12 @@ class OrderViewSet(ViewSet):
 
 		order.total = total
 		order.save()
+
+		msg_html = render_to_string('order/email.html', {'order': order, 'products' : products})
+		msg_plain = render_to_string('order/email.txt', {'order': order, 'products' : products})
+
+		is_sended = send_mail('Нове замовлення', msg_html, 'admin@yakuzalviv.com', ['yakuzalviv@gmail.com'], html_message=msg_html,)
+
 		return Response({'message':'success'}, status= 201)
 
 

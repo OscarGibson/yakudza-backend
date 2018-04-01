@@ -1,0 +1,18 @@
+Нове замовлення
+
+
+	Імя: {{ order.name }}
+	Номер телефону: {{ order.phone }}
+	Адреса доставки: {{ order.address }}
+	Кількість осіб: {{ order.count }}
+	Коментарій: {{ order.comment }}
+	
+	Замовлення
+
+	  {% for item in products %}
+	    Назва: {{ item.title }}
+	    Ціна: {{ item.price }}
+	    Кількість: {{ item.count }}
+	  {% endfor %}
+
+	Всього: {{ order.total }}

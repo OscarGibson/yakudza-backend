@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'corsheaders',
     # 'django_facebook',
     # Custom apps
+    'base',
     'category',
     'tag',
     'product',
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
     'section',
     'callback',
     'subscribers',
+    'page',
 ]
 
 MIDDLEWARE = [
@@ -170,3 +172,8 @@ CORS_ORIGIN_WHITELIST = (
 # AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
 
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'oneostap@gmail.com'
+EMAIL_HOST_PASSWORD = 'greedisgood (88888)'
+EMAIL_USE_TLS = True
