@@ -76,7 +76,7 @@ class OrderViewSet(ViewSet):
 			    'order_id': order.id,
 			    'version': '3',
 			    'sandbox' : 1,
-			    'server_url': 'https://4f7ef262.ngrok.io/api/v1/order/order-callback/',
+			    'server_url': 'http://www.yakuzalviv.com/api/v1/order/order-callback/',
 			}
 
 		signature = liqpay.cnb_signature(params)
