@@ -21,9 +21,11 @@ from django.core.mail import send_mail
 
 from django.template.loader import render_to_string
 
-# access_token = getattr(settings, 'FACEBOOK_ACCESS_TOKEN')
+from liqpay.liqpay import LiqPay
+from django.conf import settings
 
-# facebook = OpenFacebook(access_token)
+LIQPAY_PUBLIC_KEY = getattr(settings, 'LIQPAY_PUBLIC_KEY')
+LIQPAY_PRIVATE_KEY = getattr(settings, 'LIQPAY_PRIVATE_KEY')
 
 class OrderViewSet(ViewSet):
 
@@ -31,11 +33,9 @@ class OrderViewSet(ViewSet):
 		data = request.data
 
 		if 'products' not in data:
-			print('here')
 			return Response({'message':'Invalid data'}, status= 400)
 
 		products = data['products']
-		adds = []#data['adds'] No need any more
 		total = 0
 		try:
 			order = Order.objects.create(
@@ -50,9 +50,7 @@ class OrderViewSet(ViewSet):
 				)
 		except Exception as e:
 			print(e)
-			print('++++')
 			return Response({'message':'Invalid data'}, status= 400)
-		# order.save()
 		
 		for product_data in products:
 			product = get_object_or_404(Product, pk= product_data['pk'])
@@ -64,17 +62,31 @@ class OrderViewSet(ViewSet):
 			order.product.add(product_manager)
 			total += product.price*product_data['count']
 
-		for add_data in adds:
-			add = get_object_or_404(Add, pk= add_data['pk'])
-			add_manager = AddManager(
-				product= add,
-				count= add_data['count']
-				)
-			product_manager.save()
-			order.adds.add(add_manager)
-
 		order.total = total
 		order.save()
+
+		if 'type' in data and data['type'] == 1:
+			print('PAyment by card')
+			liqpay = LiqPay(LIQPAY_PUBLIC_KEY, LIQPAY_PRIVATE_KEY)
+			params = {
+			    'action': 'pay',
+			    'amount': total,
+			    'currency': 'UAH',
+			    'description': 'Yakuza food delivery',
+			    'order_id': order.id,
+			    'version': '3',
+			    'sandbox' : 1,
+			    'server_url': 'https://7e301535.ngrok.io/order/order-callback/',
+			}
+
+		signature = liqpay.cnb_signature(params)
+		data = liqpay.cnb_data(params)
+
+		return Response({
+			'message' : 'redirect', 
+			'data' : data, 
+			'signature' : signature
+		}, status= 200)
 
 		msg_html = render_to_string('order/email.html', {'order': order, 'products' : products})
 		msg_plain = render_to_string('order/email.txt', {'order': order, 'products' : products})
@@ -84,7 +96,7 @@ class OrderViewSet(ViewSet):
 		return Response({'message':'success'}, status= 201)
 
 
-	def test(self, request):
+	def callback(self, request):
 
 		# print('FACEBOOK_ACCESS_TOKEN ', access_token)
 
