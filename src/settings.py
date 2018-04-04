@@ -25,7 +25,7 @@ SECRET_KEY = '^w_dxe*)60j&uqkyn-b9!w**s@@dzcg286aa4041ol8(d41@n*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['www.yakuzalviv.com']
 
 
 # Application definition
@@ -175,8 +175,8 @@ CORS_ORIGIN_WHITELIST = (
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'oneostap@gmail.com'
-EMAIL_HOST_PASSWORD = 'greedisgood (88888)'
+EMAIL_HOST_USER = 'grushka69@gmail.com'
+EMAIL_HOST_PASSWORD = 'grushka1993'
 EMAIL_USE_TLS = True
 
 
@@ -186,6 +186,10 @@ LIQPAY_PRIVATE_KEY = 'YZjbA8iSYTg6FtSPyT8PpZ35tr1ONYL2vCvjkgNR'
 LIQPAY_DEFAULT_CURRENCY = 'UAH'
 LIQPAY_DEFAULT_LANGUAGE = 'uk'
 LIQPAY_DEFAULT_ACTION = 'pay'
+
+CSRF_TRUSTED_ORIGINS = [
+    'www.yakuzalviv.com'
+]
 
 
 
