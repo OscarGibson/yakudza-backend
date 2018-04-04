@@ -21,7 +21,7 @@ from django.core.mail import send_mail
 
 from django.template.loader import render_to_string
 
-from liqpay.liqpay import LiqPay
+from liqpay.liqpay3 import LiqPay
 from django.conf import settings
 
 LIQPAY_PUBLIC_KEY = getattr(settings, 'LIQPAY_PUBLIC_KEY')
@@ -66,7 +66,7 @@ class OrderViewSet(ViewSet):
 		order.save()
 
 		if 'type' in data and data['type'] == 1:
-			print('PAyment by card')
+			print('Payment by card', order.id)
 			liqpay = LiqPay(LIQPAY_PUBLIC_KEY, LIQPAY_PRIVATE_KEY)
 			params = {
 			    'action': 'pay',
@@ -76,16 +76,17 @@ class OrderViewSet(ViewSet):
 			    'order_id': order.id,
 			    'version': '3',
 			    'sandbox' : 1,
-			    'server_url': 'https://7e301535.ngrok.io/order/order-callback/',
+			    'server_url': 'https://4f7ef262.ngrok.io/api/v1/order/order-callback/',
 			}
 
 		signature = liqpay.cnb_signature(params)
-		data = liqpay.cnb_data(params)
+		hash_data = liqpay.cnb_data(params)
 
 		return Response({
 			'message' : 'redirect', 
-			'data' : data, 
-			'signature' : signature
+			'order_id' : order.id, 
+			'signature' : signature,
+			'hash_data' : hash_data,
 		}, status= 200)
 
 		msg_html = render_to_string('order/email.html', {'order': order, 'products' : products})
@@ -98,30 +99,49 @@ class OrderViewSet(ViewSet):
 
 	def callback(self, request):
 
-		# print('FACEBOOK_ACCESS_TOKEN ', access_token)
+		print('CALL_BACK ', request.data)
 
-		# Getting info about me
+		liqpay = LiqPay(LIQPAY_PUBLIC_KEY, LIQPAY_PRIVATE_KEY)
+		signature = request.data['signature']
+		data = request.data['data']
+		sign = liqpay.str_to_sign(LIQPAY_PRIVATE_KEY + data + LIQPAY_PRIVATE_KEY)
+		if sign != signature:
+			return Response({
+				'message':'error', 
+				'content' : {}
+				}, status= 403)
 
-		# Writing your first comment
-		# is_set = facebook.set('me/comments', message= 'uhiuhi')
+		response = liqpay.decode_data_from_str(data)
+		# print('callback data', response)
 
-		# is_set = facebook.set('me/feed', message= [])
-		# info_me = facebook.set('me/feed', message= 'lalka')
+		try:
+			order = Order.objects.get(id= response['order_id'])
+			order.is_payed = True
+			order.save()
 
-		# print('ME INFO ', info_me)
+			msg_html = render_to_string('order/email.html', {'order': order, 'products' : products})
+			msg_plain = render_to_string('order/email.txt', {'order': order, 'products' : products})
 
-		# print('-'*12)
-		# print(dir(facebook))
+			is_sended = send_mail('Нове замовлення', msg_html, 'admin@yakuzalviv.com', ['yakuzalviv@gmail.com'], html_message=msg_html,)
+			# send email
+			return Response({
+				'message':'success', 
+				'content' : {}
+				})
+		except Exception as e:
+			return Response({
+					'message':'order not found', 
+					'content' : {}
+					}, status= 404)
+
+
+	def get(self, request):
+		d = {'signature': ['5mGjy2dCYxPIkmp66u1EsAhCUFY='], 'data': ['eyJhY3Rpb24iOiJwYXkiLCJwYXltZW50X2lkIjo2NjY2MTM3OTcsInN0YXR1cyI6InNhbmRib3giLCJ2ZXJzaW9uIjozLCJ0eXBlIjoiYnV5IiwicGF5dHlwZSI6ImNhcmQiLCJwdWJsaWNfa2V5IjoiaTUyMDMxNDY0MjIwIiwiYWNxX2lkIjo0MTQ5NjMsIm9yZGVyX2lkIjoiMjkiLCJsaXFwYXlfb3JkZXJfaWQiOiJIWTdCRFVRMDE1MjI4Njg2ODEzMTI0NTkiLCJkZXNjcmlwdGlvbiI6Illha3V6YSBmb29kIGRlbGl2ZXJ5Iiwic2VuZGVyX2NhcmRfbWFzazIiOiI0MTQ5NDkqOTciLCJzZW5kZXJfY2FyZF9iYW5rIjoicGIiLCJzZW5kZXJfY2FyZF90eXBlIjoidmlzYSIsInNlbmRlcl9jYXJkX2NvdW50cnkiOjgwNCwiaXAiOiI5MS4yMjUuMjAxLjY5IiwiYW1vdW50IjoxLjAsImN1cnJlbmN5IjoiVUFIIiwic2VuZGVyX2NvbW1pc3Npb24iOjAuMCwicmVjZWl2ZXJfY29tbWlzc2lvbiI6MC4wMywiYWdlbnRfY29tbWlzc2lvbiI6MC4wLCJhbW91bnRfZGViaXQiOjEuMCwiYW1vdW50X2NyZWRpdCI6MS4wLCJjb21taXNzaW9uX2RlYml0IjowLjAsImNvbW1pc3Npb25fY3JlZGl0IjowLjAzLCJjdXJyZW5jeV9kZWJpdCI6IlVBSCIsImN1cnJlbmN5X2NyZWRpdCI6IlVBSCIsInNlbmRlcl9ib251cyI6MC4wLCJhbW91bnRfYm9udXMiOjAuMCwibXBpX2VjaSI6IjciLCJpc18zZHMiOmZhbHNlLCJjcmVhdGVfZGF0ZSI6MTUyMjg2ODY4MTM1MCwiZW5kX2RhdGUiOjE1MjI4Njg2ODEzNTAsInRyYW5zYWN0aW9uX2lkIjo2NjY2MTM3OTd9']}
 
 		return Response({
 			'message':'success', 
-			'content' : {
-				# 'me_info' : info_me,
-				# 'access_token' : access_token,
-				# 'facebook dir' : dir(facebook)
-				}
+			'content' : d
 			})
-
 
 # class OrderTemplateViewSet(View):
 
