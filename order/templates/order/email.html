@@ -26,8 +26,16 @@
 	</table>
 
 	<h2>Всього: {{ order.total }}</h2>
-	<h3>Тип оплати: {{ order.type_of_payment }}</h3>
+	{% if order.type_of_payment == '1' %}
+	<h3>Тип оплати: Картка</h3>
+	{% else %}
+	<h3>Тип Оплати: Готівка</h3>
+	{% endif %}
 	<hr>
-	<h5>Оплачено: {{ order.is_payed }}</h5>
+	{% if order.is_payed %}
+	<h5>Оплачено: ТАК</h5>
+	{% else %}
+	<h5>Оплачено: НІ</h5>
+	{% endif %}
 
 </div>
