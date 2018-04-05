@@ -6,8 +6,8 @@ class Order(models.Model):
 	""" Model for order """
 
 	PAYMENT_CHOICE = (
-		(0, 'cache'),
-		(1, 'card')
+		(0, 'Готівка'),
+		(1, 'Картка')
 		)
 
 	product = models.ManyToManyField('product.ProductManager', blank= True)
