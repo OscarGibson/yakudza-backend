@@ -80,7 +80,7 @@ class OrderViewSet(ViewSet):
 			    'order_id': order.id,
 			    'version': '3',
 			    'sandbox' : 1,
-			    'server_url': 'http://www.yakuzalviv.com/api/v1/order/order-callback/',
+			    'server_url': 'http://www.yakuzalviv.com/backend/api/v1/order/order-callback/',
 			}
 
 		signature = liqpay.cnb_signature(params)
