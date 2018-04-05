@@ -175,7 +175,7 @@ CORS_ORIGIN_WHITELIST = (
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'grushka69@gmail.com'
+EMAIL_HOST_USER = 'gruwka69@gmail.com'
 EMAIL_HOST_PASSWORD = 'grushka1993'
 EMAIL_USE_TLS = True
 
