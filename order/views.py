@@ -128,11 +128,18 @@ class OrderViewSet(ViewSet):
 
 			is_sended = send_mail('Нове замовлення', msg_html, 'admin@yakuzalviv.com', ['yakuzalviv@gmail.com'], html_message=msg_html,)
 			# send email
+			print('-'*12)
+			print(is_sended)
+			print('-'*12)
+
 			return Response({
 				'message':'success', 
 				'content' : {}
 				})
 		except Exception as e:
+			print('-'*12)
+			print('ERROR')
+			print('-'*12)
 			return Response({
 					'message':'order not found', 
 					'content' : {}
