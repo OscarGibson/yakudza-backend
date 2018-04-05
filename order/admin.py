@@ -3,7 +3,7 @@ from .models import Order
 
 class OrderAdmin(admin.ModelAdmin):
 
-	fields = ('address', 'total', 'is_payed', 'type_of_payment')
+	fieldsets = ('address', 'total', 'is_payed', 'type_of_payment')
 
 	class Meta:
 		model = Order
