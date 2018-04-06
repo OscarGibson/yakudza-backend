@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-api_path = 'api/v1/'
+api_path = 'backend/api/v1/'
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -25,7 +25,7 @@ SECRET_KEY = '^w_dxe*)60j&uqkyn-b9!w**s@@dzcg286aa4041ol8(d41@n*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.yakuzalviv.com']
+ALLOWED_HOSTS = ['www.yakuzalviv.com', 'localhost']
 
 
 # Application definition
@@ -161,6 +161,7 @@ CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:4200',
+    'www.yakuzalviv.com'
 )
 
 # FACEBOOK fields

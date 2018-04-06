@@ -6,22 +6,22 @@ class Order(models.Model):
 	""" Model for order """
 
 	PAYMENT_CHOICE = (
-		(0, 'cache'),
-		(1, 'card')
+		('0', 'Готівка'),
+		('1', 'Картка')
 		)
 
 	product = models.ManyToManyField('product.ProductManager', blank= True)
-	name = models.CharField(max_length= 256)
-	count = models.IntegerField()
-	address = models.CharField(max_length= 256)
-	phone = models.IntegerField()
-	comment = models.TextField(blank= True)
+	name = models.CharField(("Ім'я"), max_length= 256)
+	count = models.IntegerField(("Кількість"),)
+	address = models.CharField(("Адреса"), max_length= 256)
+	phone = models.IntegerField(("Номер телефону"),)
+	comment = models.TextField(("Коментарій"), blank= True)
 	adds = models.ManyToManyField('product.AddManager', blank= True)
-	type_of_payment = models.CharField(max_length= 32, 
+	type_of_payment = models.CharField(("Тип платежу"), max_length= 32, 
 										choices= PAYMENT_CHOICE,
 										default= 0)
-	is_payed = models.BooleanField(default= False)
-	total = models.FloatField(blank= True)
+	is_payed = models.BooleanField(("Оплачено"), default= False)
+	total = models.FloatField(("Всього"), blank= True)
 	created_at = models.DateTimeField(auto_now_add= True)
 	updated_at = models.DateTimeField(auto_now= True)
 
