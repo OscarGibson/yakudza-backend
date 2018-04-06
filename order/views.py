@@ -83,15 +83,15 @@ class OrderViewSet(ViewSet):
 			    'server_url': 'http://www.yakuzalviv.com/backend/api/v1/order/order-callback/',
 			}
 
-		signature = liqpay.cnb_signature(params)
-		hash_data = liqpay.cnb_data(params)
+			signature = liqpay.cnb_signature(params)
+			hash_data = liqpay.cnb_data(params)
 
-		return Response({
-			'message' : 'redirect', 
-			'order_id' : order.id, 
-			'signature' : signature,
-			'hash_data' : hash_data,
-		}, status= 200)
+			return Response({
+				'message' : 'redirect', 
+				'order_id' : order.id, 
+				'signature' : signature,
+				'hash_data' : hash_data,
+			}, status= 200)
 
 		msg_html = render_to_string('order/email.html', {'order': order, 'products' : products})
 		msg_plain = render_to_string('order/email.txt', {'order': order, 'products' : products})
