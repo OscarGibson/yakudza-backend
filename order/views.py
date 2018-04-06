@@ -136,10 +136,11 @@ class OrderViewSet(ViewSet):
 				'content' : {}
 				})
 		except Exception as e:
-			return Response({
-					'message':'order not found', 
-					'content' : {}
-					}, status= 204)
+			raise e
+			# return Response({
+			# 		'message':'order not found', 
+			# 		'content' : {}
+			# 		}, status= 204)
 
 
 	def get(self, request):
