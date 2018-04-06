@@ -126,7 +126,7 @@ class OrderViewSet(ViewSet):
 			msg_html = render_to_string('order/email.html', {'order': order, 'products' : products})
 			msg_plain = render_to_string('order/email.txt', {'order': order, 'products' : products})
 
-			is_sended = send_mail('Нове замовлення', msg_html, 'admin@yakuzalviv.com', ['yakuzalviv@gmail.com'], html_message=msg_html,)
+			is_sended = send_mail('Нове замовлення', msg_html, 'admin@yakuzalviv.com', ['yakuzalviv@gmail.com', 'oneostap@gmail.com'], html_message=msg_html,)
 			# send email
 			return Response({
 				'message':'success', 
