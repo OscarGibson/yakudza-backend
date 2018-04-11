@@ -24,6 +24,8 @@ from django.template.loader import render_to_string
 from liqpay.liqpay3 import LiqPay
 from django.conf import settings
 
+from subscribers.models import Subscriber
+
 LIQPAY_PUBLIC_KEY = getattr(settings, 'LIQPAY_PUBLIC_KEY')
 LIQPAY_PRIVATE_KEY = getattr(settings, 'LIQPAY_PRIVATE_KEY')
 
@@ -41,6 +43,7 @@ class OrderViewSet(ViewSet):
 
 		products = data['products']
 		total = 0
+		total_discount = 0
 		try:
 			order = Order.objects.create(
 				address= data['address'],
@@ -49,6 +52,7 @@ class OrderViewSet(ViewSet):
 				count= data['count'],
 				comment= data['comment'] if 'comment' in data else None,
 				total= total,
+				total_discount= total_discount,
 				is_payed= False,
 				type_of_payment= data['type']
 				)
@@ -67,6 +71,16 @@ class OrderViewSet(ViewSet):
 			total += product.price*product_data['count']
 
 		order.total = total
+		order.total_discount = total
+
+		if 'email' in data and data['email']:
+			subscribers = Subscriber.objects.filter(email= data['email'])
+			if len(subscribers) > 0 and subscribers[0].used_promotion == False:
+				total_discount = total * 0.9
+				order.total_discount = total_discount
+				subscribers[0].used_promotion = True
+				subscribers[0].save()
+
 		order.save()
 
 		if 'type' in data and data['type'] == 1:

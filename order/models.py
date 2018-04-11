@@ -24,6 +24,7 @@ class Order(models.Model):
 										default= 0)
 	is_payed = models.BooleanField(("Оплачено"), default= False)
 	total = models.FloatField(("Всього"), blank= True)
+	total_discount = models.FloatField(("Всього зі знижкою"), blank= True)
 	created_at = models.DateTimeField(auto_now_add= True)
 	updated_at = models.DateTimeField(auto_now= True)
 
