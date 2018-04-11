@@ -59,7 +59,7 @@ class OrderViewSet(ViewSet):
 		except Exception as e:
 			print(e)
 			return Response({'message':'Invalid data'}, status= 400)
-		
+
 		for product_data in products:
 			product = get_object_or_404(Product, pk= product_data['pk'])
 			product_manager = ProductManager(
@@ -93,7 +93,7 @@ class OrderViewSet(ViewSet):
 			    'description': 'Yakuza food delivery',
 			    'order_id': str(order.id),
 			    'version': '3',
-			    'sandbox' : 1,
+			    'sandbox' : 0,
 			    'server_url': 'http://www.yakuzalviv.com/backend/api/v1/order/order-callback/',
 			}
 
@@ -101,8 +101,8 @@ class OrderViewSet(ViewSet):
 			hash_data = liqpay.cnb_data(params)
 
 			return Response({
-				'message' : 'redirect', 
-				'order_id' : str(order.id), 
+				'message' : 'redirect',
+				'order_id' : str(order.id),
 				'signature' : signature,
 				'hash_data' : hash_data,
 			}, status= 200)
@@ -125,7 +125,7 @@ class OrderViewSet(ViewSet):
 		sign = liqpay.str_to_sign(LIQPAY_PRIVATE_KEY + data + LIQPAY_PRIVATE_KEY)
 		if sign != signature:
 			return Response({
-				'message':'error', 
+				'message':'error',
 				'content' : {}
 				}, status= 403)
 
@@ -146,13 +146,13 @@ class OrderViewSet(ViewSet):
 			# send email
 
 			return Response({
-				'message':'success', 
+				'message':'success',
 				'content' : {}
 				})
 		except Exception as e:
 			raise e
 			# return Response({
-			# 		'message':'order not found', 
+			# 		'message':'order not found',
 			# 		'content' : {}
 			# 		}, status= 204)
 
@@ -166,7 +166,7 @@ class OrderViewSet(ViewSet):
 		d = {'signature': ['5mGjy2dCYxPIkmp66u1EsAhCUFY='], 'data': ['eyJhY3Rpb24iOiJwYXkiLCJwYXltZW50X2lkIjo2NjY2MTM3OTcsInN0YXR1cyI6InNhbmRib3giLCJ2ZXJzaW9uIjozLCJ0eXBlIjoiYnV5IiwicGF5dHlwZSI6ImNhcmQiLCJwdWJsaWNfa2V5IjoiaTUyMDMxNDY0MjIwIiwiYWNxX2lkIjo0MTQ5NjMsIm9yZGVyX2lkIjoiMjkiLCJsaXFwYXlfb3JkZXJfaWQiOiJIWTdCRFVRMDE1MjI4Njg2ODEzMTI0NTkiLCJkZXNjcmlwdGlvbiI6Illha3V6YSBmb29kIGRlbGl2ZXJ5Iiwic2VuZGVyX2NhcmRfbWFzazIiOiI0MTQ5NDkqOTciLCJzZW5kZXJfY2FyZF9iYW5rIjoicGIiLCJzZW5kZXJfY2FyZF90eXBlIjoidmlzYSIsInNlbmRlcl9jYXJkX2NvdW50cnkiOjgwNCwiaXAiOiI5MS4yMjUuMjAxLjY5IiwiYW1vdW50IjoxLjAsImN1cnJlbmN5IjoiVUFIIiwic2VuZGVyX2NvbW1pc3Npb24iOjAuMCwicmVjZWl2ZXJfY29tbWlzc2lvbiI6MC4wMywiYWdlbnRfY29tbWlzc2lvbiI6MC4wLCJhbW91bnRfZGViaXQiOjEuMCwiYW1vdW50X2NyZWRpdCI6MS4wLCJjb21taXNzaW9uX2RlYml0IjowLjAsImNvbW1pc3Npb25fY3JlZGl0IjowLjAzLCJjdXJyZW5jeV9kZWJpdCI6IlVBSCIsImN1cnJlbmN5X2NyZWRpdCI6IlVBSCIsInNlbmRlcl9ib251cyI6MC4wLCJhbW91bnRfYm9udXMiOjAuMCwibXBpX2VjaSI6IjciLCJpc18zZHMiOmZhbHNlLCJjcmVhdGVfZGF0ZSI6MTUyMjg2ODY4MTM1MCwiZW5kX2RhdGUiOjE1MjI4Njg2ODEzNTAsInRyYW5zYWN0aW9uX2lkIjo2NjY2MTM3OTd9']}
 
 		return Response({
-			'message':'success', 
+			'message':'success',
 			'content' : d
 			})
 
@@ -183,7 +183,7 @@ class OrderViewSet(ViewSet):
 # 		type_of_payment = 'Картка' if order.type_of_payment == 1 else 'Готівка'
 
 # 		context = {
-# 			'order' : order, 
+# 			'order' : order,
 # 			'products':products,
 # 			'type_of_payment':type_of_payment
 # 			}
@@ -229,7 +229,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
     "text": "hello, world!"
   }
 }' "https://graph.facebook.com/v2.12/2125950597692070/messages?access_token=EAACEdEose0cBAGZBnlAN2ZBZCNEEDxASIg6bS5wZAh0VNYtictlvZAePcHzej3QZCzBraAqsFOzridx7yVlVpPM7WgaaCZARMjtOu0DYLalXmpHhfZB7P2ON5b09maGQVZACZCl0weyMsBZBEozP1hcfmZCoqcCq6VYqwV0P2saCnslTFRaGNyxltLo7J61CCGtDiKIa41Tu2lGqpQZDZD"
-    
+
 EAACEdEose0cBAGZBnlAN2ZBZCNEEDxASIg6bS5wZAh0VNYtictlvZAePcHzej3QZCzBraAqsFOzridx7yVlVpPM7WgaaCZARMjtOu0DYLalXmpHhfZB7P2ON5b09maGQVZACZCl0weyMsBZBEozP1hcfmZCoqcCq6VYqwV0P2saCnslTFRaGNyxltLo7J61CCGtDiKIa41Tu2lGqpQZDZD
 """
 

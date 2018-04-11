@@ -11,7 +11,7 @@ class Order(models.Model):
 		('1', 'Картка')
 		)
 
-	id = models.UUIDField(primary_key= True, default= uuid.uuid4, editable= False)
+	id = models.CharField(primary_key= True, default= uuid.uuid4, editable= False, max_length= 64)
 	product = models.ManyToManyField('product.ProductManager', blank= True)
 	name = models.CharField(("Ім'я"), max_length= 256)
 	count = models.IntegerField(("Кількість"),)
@@ -19,7 +19,7 @@ class Order(models.Model):
 	phone = models.IntegerField(("Номер телефону"),)
 	comment = models.TextField(("Коментарій"), blank= True)
 	adds = models.ManyToManyField('product.AddManager', blank= True)
-	type_of_payment = models.CharField(("Тип платежу"), max_length= 32, 
+	type_of_payment = models.CharField(("Тип платежу"), max_length= 32,
 										choices= PAYMENT_CHOICE,
 										default= 0)
 	is_payed = models.BooleanField(("Оплачено"), default= False)
