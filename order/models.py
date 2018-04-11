@@ -1,6 +1,7 @@
 from django.db import models
 from django.dispatch import receiver
 from django.db.models.signals import post_save
+import uuid
 
 class Order(models.Model):
 	""" Model for order """
@@ -10,6 +11,7 @@ class Order(models.Model):
 		('1', 'Картка')
 		)
 
+	id = models.UUIDField(primary_key= True, default= uuid.uuid4, editable= False)
 	product = models.ManyToManyField('product.ProductManager', blank= True)
 	name = models.CharField(("Ім'я"), max_length= 256)
 	count = models.IntegerField(("Кількість"),)

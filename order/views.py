@@ -77,7 +77,7 @@ class OrderViewSet(ViewSet):
 			    'amount': total,
 			    'currency': 'UAH',
 			    'description': 'Yakuza food delivery',
-			    'order_id': order.id,
+			    'order_id': str(order.id),
 			    'version': '3',
 			    'sandbox' : 1,
 			    'server_url': 'http://www.yakuzalviv.com/backend/api/v1/order/order-callback/',
@@ -88,7 +88,7 @@ class OrderViewSet(ViewSet):
 
 			return Response({
 				'message' : 'redirect', 
-				'order_id' : order.id, 
+				'order_id' : str(order.id), 
 				'signature' : signature,
 				'hash_data' : hash_data,
 			}, status= 200)
