@@ -81,7 +81,7 @@ class SectionViewSet(ViewSet):
 			'menu' : [
 				{'title':'Акції', 'id':0},
 				{'title':'Відгуки', 'id':1},
-				{'title':'Документи', 'id':2},
+				# {'title':'Документи', 'id':2},
 				{'title':'Як замовити', 'id':3},
 				{'title':'Контакти', 'id':4}
 			]
