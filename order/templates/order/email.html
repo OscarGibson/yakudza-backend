@@ -1,55 +1,61 @@
-<style type="text/css">
-	table.tableizer-table {
-		font-size: 12px;
-		border: 1px solid #CCC; 
-		font-family: Arial, Helvetica, sans-serif;
-	} 
-	.tableizer-table td {
-		padding: 4px;
-		margin: 3px;
-		border: 1px solid #CCC;
-	}
-	.tableizer-table th {
-		background-color: #104E8B; 
-		color: #FFF;
-		font-weight: bold;
-	}
-</style>
-<table class="tableizer-table">
-<thead><tr class="tableizer-firstrow"><th>НОВЕ ЗАМОВЛЕННЯ</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr></thead><tbody>
- <tr><td>ЗАМОВЛЕННЯ №{{ order.id }}</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>--------------------------------</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>ДАТА</td><td>&nbsp;</td><td>&nbsp;</td><td>{{ order.created_at|date:"d/M/Y" }}</td><td>{{ order.created_at|date:"H:i" }}</td><td>&nbsp;</td></tr>
- <tr><td>ІМ'Я</td><td>&nbsp;</td><td>&nbsp;</td><td>{{ order.name }}</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>НОМЕР ТЕЛЕФОНУ</td><td>&nbsp;</td><td>&nbsp;</td><td>{{ order.phone }}</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>АДРЕСА ДОСТАВКИ</td><td>&nbsp;</td><td>&nbsp;</td><td>{{ order.address }}</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>КІЛЬКІСТЬ ОСІБ</td><td>&nbsp;</td><td>&nbsp;</td><td>{{ order.count }}</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>КОМЕНТАР</td><td>&nbsp;</td><td>&nbsp;</td><td>{{ order.comment }}</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>ТИП ОПЛАТИ </td><td>&nbsp;</td><td>&nbsp;</td>{% if order.type_of_payment == '1' %}<td>банківська карта</td>{% else %}<td>готівка</td>{% endif %}<td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr>
- ЗАМОВЛЕННЯ
- </tr>
- <tr>
-  <td>&nbsp;</td>
-  <td>НАЗВА</td>
-  <td>ЦІНА</td>
-  <td>КІЛЬКІСТЬ</td>
-  <td>&nbsp;</td>
-  <td>СУМА</td>
- </tr>
- {% for item in order.product.all %}
- <tr>
-  <td>{{ item.product.id }}</td>
-  <td>{{ item.product.title }}</td>
-  <td>{{ item.product.price }}</td>
-  <td>{{ item.count }}</td>
-  <td>&nbsp;</td>
-  <td>{{ item.total }}</td>
- </tr>
- {% endfor %}
- <tr><td>&nbsp;</td><td>Загальна сума:</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>{{ order.total }}</td></tr>
-</tbody></table>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>НОВЕ ЗАМОВЛЕННЯ</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+	<div style="width: 70%;margin: auto;">
+		<h1 style="text-align: center;">НОВЕ ЗАМОВЛЕННЯ</h1>
+	    <h2 style="text-align: center;">ЗАМОВЛЕННЯ №{{ order.id }}</h2>
+	    <hr>
+	    <div>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: left;margin: 0;">ДАТА</h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: right;margin: 0;">{{ order.created_at|date:"d/m/Y H:i" }}</h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: left;margin: 0;">ІМ'Я</h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: right;margin: 0;">{{ order.name }}</h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: left;margin: 0;">НОМЕР ТЕЛЕФОНУ</h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: right;margin: 0;">{{ order.phone }}</h3> 
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: left;margin: 0;">АДРЕСА ДОСТАВКИ</h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: right;margin: 0;">{{ order.address }}</h3> 
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: left;margin: 0;">КІЛЬКІСТЬ ОСІБ</h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: right;margin: 0;">{{ order.count }}</h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: left;margin: 0;">КОМЕНТАР</h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: right;margin: 0;min-height: 17px;">{{ order.comment }}</h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: left;margin: 0;">ТИП ОПЛАТИ</h3>
+	        {% if order.type_of_payment == '1' %}
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: right;margin: 0;">банківська карта</h3>
+	        {% else %}
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: right;margin: 0;">готівка</h3>
+	        {% endif %}
+	    </div>
+
+	    <div>
+	        <h2 style="text-align: center;width: 100%;float: left;">ЗАМОВЛЕННЯ</h2>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 5%;float: left;margin: 0;height: 17px;"> </h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 25%;float: left;margin: 0;">НАЗВА</h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 25%;float: left;margin: 0;">ЦІНА</h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 20%;float: left;margin: 0;">КІЛЬКІСТЬ</h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 25%;float: left;margin: 0;">СУМА</h3>
+	        {% for item in order.product.all %}
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 5%;float: left;margin: 0;">{{ forloop.counter }}</h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 25%;float: left;margin: 0;">{{ item.product.title }}</h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 25%;float: left;margin: 0;">{{ item.product.price }}</h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 20%;float: left;margin: 0;">{{ item.count }}</h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 25%;float: left;margin: 0;">{{ item.total }}</h3>
+	        {% endfor %}
+
+
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 75%;float: left;margin: 0;text-align: right;">Загальна сума:</h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 25%;float: left;margin: 0;">{{ order.total }}</h3>
+
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 75%;float: left;margin: 0;text-align: right;">До оплати:</h3>
+	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 25%;float: left;margin: 0;">{{ order.total_discount }}</h3>
+	    </div> 
+	</div>
+    
+                               
+
+</body>
+</html>
