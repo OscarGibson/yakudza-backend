@@ -4,6 +4,8 @@ class SharesSection(models.Model):
 	""" Data for shares page """
 	content = models.TextField()
 	image = models.ImageField()
+	show_at_main = models.BooleanField("Показувати на головній", default= True)
+	show_at_shares = models.BooleanField("Показувати в акціях", default= True)
 	created_at = models.DateTimeField(auto_now_add= True)
 	updated_at = models.DateTimeField(auto_now= True)
 

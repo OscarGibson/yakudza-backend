@@ -10,7 +10,7 @@
 		<div class="container">
 			<div class="w3ls_logo_products_left">
 				<!-- <h1><a href="index.html"><span>Grocery</span> Store</a></h1> -->
-				<img src="{% static 'base/images/yakuza_logo.svg' %}">
+				<a href="pages/"><img src="{% static 'base/images/yakuza_logo.svg' %}"></a>
 			</div>
 			<!-- <div class="w3ls_logo_products_left1">
 				<ul class="special_items">
@@ -22,9 +22,9 @@
 			</div> -->
 			<div class="w3ls_logo_products_left1">
 				<ul class="phone_email">
-					<li><i class="fa fa-phone" aria-hidden="true"></i>(+0123) 234 567</li>
-					<li><i class="fa fa-phone" aria-hidden="true"></i>(+0123) 234 567</li>
-					<li><i class="fa fa-phone" aria-hidden="true"></i>(+0123) 234 567</li>
+					<li><i class="fa fa-phone" aria-hidden="true"></i>+38 (073) 80 05 009</li>
+					<li><i class="fa fa-phone" aria-hidden="true"></i>+38 (098) 26 37 505</li>
+					<li><i class="fa fa-phone" aria-hidden="true"></i>+38 (050) 53 42 556</li>
 					<!-- <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@grocery.com">store@grocery.com</a></li> -->
 				</ul>
 			</div>
@@ -34,7 +34,7 @@
 				<span>з 11:00 до 23:00</span><br>
 				<span class="green">Безкоштовна доставка</span>
 				<br><br>
-				<span>Мінімальне замовення 150грн</span>
+				<span>Мінімальне замовення 199грн</span>
 				</p>
 			</div>
 
@@ -55,10 +55,9 @@
 					<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 						<ul class="nav navbar-nav nav_1 nav_top">
 							<li class="active"><a href="/shares">Акції</a></li>
-							<li><a href="/feedback">Відгуки</a></li>
-							<li><a href="/documents">Документи</a></li>
-							<li><a href="/how-to">Як замовити</a></li>
-							<li><a href="/contacts">Контакти</a></li>
+							<li><a href="pages/feedback">Відгуки</a></li>
+							<li><a href="pages/how-to">Як замовити</a></li>
+							<li><a href="pages/contacts">Контакти</a></li>
 						</ul>
 					 </div><!-- /.navbar-collapse -->
 				</nav>
@@ -69,7 +68,7 @@
 	</div>
 <!-- //header -->
 <!-- products-breadcrumb -->
-	<div class="products-breadcrumb">
+	<div class="products-breadcrumb top-menu">
 		<div class="container">
 			<ul>
 				{% for category in output %}
@@ -78,6 +77,19 @@
 			</ul>
 		</div>
 	</div>
+	<div class="agileits_header">
+		<div class="product_list_header">  
+			<form action="#" method="post" class="last">
+                <fieldset>
+                	{% csrf_token %}
+                    <input type="hidden" name="cmd" value="_cart" />
+                    <input type="hidden" name="display" value="1" />
+                    <input type="submit" name="submit" value="Корзина" class="button" />
+                </fieldset>
+            </form>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
 <!-- //products-breadcrumb -->
 <!-- banner -->
 	<div class="banner">
@@ -85,6 +97,7 @@
 		<div class="w3l_banner_nav_right">
 			<div class="w3l_banner_nav_right_banner3_btm">
 				{% for share in shares %}
+				{% if share.show_at_main %}
 				<div class="col-md-4 w3l_banner_nav_right_banner3_btml">
 					
 					<div class="view view-tenth">
@@ -92,6 +105,7 @@
 					</div>
 					
 				</div>
+				{% endif %}
 				{% endfor %}
 				<!-- <div class="col-md-4 w3l_banner_nav_right_banner3_btml">
 					<div class="view view-tenth">
@@ -105,13 +119,13 @@
 				</div> -->
 				<div class="clearfix"> </div>
 			</div>
-			<div class="row">
+			<div class="row main-row">
 				<div class="w3ls_w3l_banner_nav_right_grid col-md-9 col-md-offset-3">
 					{% for category in output %}
 					<div class="w3ls_w3l_banner_nav_right_grid1" id="{{ category.slug }}">
 						<h6>{{ category.name }}</h6>
 						{% for product in category.products %}
-						<div class="col-md-3 w3ls_w3l_banner_left">
+						<div class="col-md-4 сol-sm-6 col-xs-12 w3ls_w3l_banner_left">
 							<div class="hover14 column">
 							<div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
 								<div class="agile_top_brand_left_grid1">
@@ -217,6 +231,10 @@
 						<a href="#">http://fd.uf/56hfg#</a>quo nulla.</span></li>
 				</ul>
 			</div> -->
+			<div class="col-xs-12 footer-description">
+				<h3>Доставка суші і піцци Львів</h3>
+				<p>Всім привіт! Ми молода креативна команда поварів, які люблять свою справу, і саме цим підкоримо Вас. Ми створили доставку суші «Yakuza» за допомогою якої здивуємо найсмачнішими суші і піцою у Львові. Довгий час ми набиралися досвіду і сил, щоб передати все найкраще саме вам. Для нікого не секрет, яка історія виникнення суші , протягом століть вони вдосконалювалися і змінювалися, але їх основа заполонила серця більшості любителів цієї страви. Ми передаємо в кожен рол і піцу свою любов до їх виготовлення. Піца ,яка є однією з найбільш улюбленіших страв, як дітей так і дорослих. Тому саме доставка суші і піци «Yakuza» виготовляє піцу по спеціальній рецептурі, з найніжнішого тіста, та найкращої начинки, яка не залишить байдужого навіть найбільш вибагливого кулінарного критика. Ні для кожного не секрет , що у нашому місті є безліч різних доставок , але саме ми запропонуємо для вас унікальні десерти, які будуть чудовим доповненням до вашої трапези . Для любителів шоколаду –«Шоколате», для діток «Дитячий солодкий» рол та безліч інших прийдуться до смаку кожному. Все найкраще для Вас!</p>
+			</div>
 			<div class="clearfix"> </div>
 			<div class="agile_footer_grids">
 				

@@ -30,7 +30,7 @@ urlpatterns = [
     path('%ssubs' % api_path, include('subscribers.urls')),
     path('%scallback' % api_path, include('callback.urls')),
     path('%sorder/' % api_path, include('order.urls')),
-    path('', include('page.urls'))
+    path('pages/', include('page.urls'))
 
     # path('facebook/', include('django_facebook.urls')),
 ]
