@@ -72,110 +72,24 @@
 		<div class="container">
 			<ul>
 				{% for category in output %}
-				{% if category.is_show %}
-				<li><a href="#{{ category.slug }}">{{ category.name }}</a></li>
-				{% endif %}
+				<li><a href="/pages/#{{ category.slug }}">{{ category.name }}</a></li>
 				{% endfor %}
 			</ul>
 		</div>
 	</div>
-	<div class="agileits_header">
-		<div class="product_list_header">  
-			<form action="#" method="post" class="last">
-                <fieldset>
-                	{% csrf_token %}
-                    <input type="hidden" name="cmd" value="_cart" />
-                    <input type="hidden" name="display" value="1" />
-                    <input type="submit" name="submit" value="Корзина" class="button" />
-                </fieldset>
-            </form>
-		</div>
-		<div class="clearfix"> </div>
-	</div>
 <!-- //products-breadcrumb -->
 <!-- banner -->
-	<div class="banner">
-		
-		<div class="w3l_banner_nav_right">
-			<div class="w3l_banner_nav_right_banner3_btm">
-				{% for share in shares %}
-				{% if share.show_at_main %}
-				<div class="col-md-4 w3l_banner_nav_right_banner3_btml">
-					
-					<div class="view view-tenth">
-						<img src="{{ share.image.url }}" alt=" " class="img-responsive" />
-					</div>
-					
-				</div>
-				{% endif %}
-				{% endfor %}
-				<!-- <div class="col-md-4 w3l_banner_nav_right_banner3_btml">
-					<div class="view view-tenth">
-						<img src="images/14.jpg" alt=" " class="img-responsive" />
-					</div>
-				</div>
-				<div class="col-md-4 w3l_banner_nav_right_banner3_btml">
-					<div class="view view-tenth">
-						<img src="images/15.jpg" alt=" " class="img-responsive" />
-					</div>
-				</div> -->
-				<div class="clearfix"> </div>
-			</div>
-			<div class="row main-row">
-				<div class="w3ls_w3l_banner_nav_right_grid col-md-9 col-md-offset-3">
-					{% for category in output %}
-					{% if category.is_show %}
-					<div class="w3ls_w3l_banner_nav_right_grid1" id="{{ category.slug }}">
-						<h6>{{ category.name }}</h6>
-						{% for product in category.products %}
-						<div class="col-md-4 сol-sm-6 col-xs-12 w3ls_w3l_banner_left">
-							<div class="hover14 column">
-							<div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-								<div class="agile_top_brand_left_grid1">
-									<figure>
-										<div class="snipcart-item block">
-											<div class="snipcart-thumb">
-												<a href="single.html"><img src="{{ product.image.url }}" alt=" " class="img-responsive" /></a>
-												<h5>{{ product.title }}</h5>
-												<p>{{ product.description }}</p>
-												<h4>{{ product.price }}грн</h4>
-											</div>
-											<div class="snipcart-details">
-												<form action="#" method="post">
-													<fieldset>
-														{% csrf_token %}
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_id" value="{{ product.id }}" />
-														<!-- <input type="hidden" name="item_id" value="{{ product.image.url }}" /> -->
-														<input type="hidden" name="item_name" value="{{ product.title }}" />
-														<input type="hidden" name="amount" value="{{ product.price }}" />
-														<input type="hidden" name="item_image" value="{{ product.image.url }}" />
-														<input type="hidden" name="currency_code" value="UAH" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Додати в корзину" class="button" />
-													</fieldset>
-												</form>
-											</div>
-										</div>
-									</figure>
-								</div>
-							</div>
-							</div>
-						</div>
-						{% endfor %}
-						<div class="clearfix"> </div>
-					</div>
-					{% endif %}
-					{% endfor %}
-				</div>
-			</div>
-			
+<div class="banner">
+	
+	<div class="w3l_banner_nav_right">
+		<div class="row checkout-row">
+			<h1 style="text-align: center;">Дякуємо за ваше замовлення</h1>
+			<a href="/pages"><h4 style="text-align: center;">На головну</h4></a>
 		</div>
-		<div class="clearfix"></div>
+		
 	</div>
+	<div class="clearfix"></div>
+</div>
 <!-- //banner -->
 <!-- newsletter -->
 	<div class="newsletter">
@@ -222,14 +136,6 @@
 				</div>
 				<div class="w3_footer_grid agile_footer_grids_w3_footer" style="float: right">
 					<div class="w3_footer_grid_bottom">
-						<!-- <h5>Ми в соціальних мережах</h5>
-						<ul class="agileits_social_icons">
-							<li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							<li><a href="#" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-							<li><a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-							<li><a href="#" class="dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-						</ul> -->
 					</div>
 				</div>
 			</div>
@@ -237,3 +143,12 @@
 	</div>
 <!-- //footer -->
 {% endblock %}
+
+
+<!-- <div class="col-md-8 col-sm-9 col-xs-12 product-order">
+	<div class="product-image"></div>
+	<div class="product-name">Rols</div>
+	<div class="product-count">1шт.</div>
+	<button type="button" class="product-closer">×</button>
+	<div class="product-subtotal">123hrn</div>
+</div> -->
