@@ -13,7 +13,7 @@
 		<div class="container">
 			<ul>
 				{% for category in output %}
-				<li><a href="/pages/#{{ category.slug }}">{{ category.name }}</a></li>
+				<li><a href="/#{{ category.slug }}">{{ category.name }}</a></li>
 				{% endfor %}
 			</ul>
 		</div>
@@ -209,7 +209,7 @@
         	} , function(response) {
         		console.log(response);
         		if (response.message == 'Success')
-        			window.location = '/pages/success';
+        			window.location = '/success';
         		else if (response.message == 'redirect') {
         			window.LiqPayCheckoutCallback(response.hash_data, response.signature);
         		}
@@ -242,7 +242,7 @@
 	        }).on("liqpay.close", function(data){
 	            console.log("close");
 	            if (payment_ready)
-	            	window.location = '/pages/success';
+	            	window.location = '/success';
 	        });
     };
 </script>
