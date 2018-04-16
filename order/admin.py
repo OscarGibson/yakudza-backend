@@ -6,6 +6,7 @@ class OrderAdmin(admin.ModelAdmin):
 
 	list_display = ('address', 'total', 'is_payed', 'type_of_payment_str')
 	fields = ('address', 'count', 'total', 'is_payed', 'type_of_payment', 'phone', 'comment')
+	readonly_fields = ('created_at',)
 
 	class Meta:
 		model = Order

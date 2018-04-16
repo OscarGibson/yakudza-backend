@@ -37,7 +37,7 @@ def main_page(request):
 	for category in categoires:
 		products = Product.objects.filter(categories= category)
 		output.append({
-					'name' : category.name, 
+					'name' : category.name,
 					'slug' : category.slug,
 					'is_show' : category.is_show,
 					'products' : products
@@ -68,7 +68,7 @@ def success(request):
 	for category in categoires:
 		products = Product.objects.filter(categories= category)
 		output.append({
-					'name' : category.name, 
+					'name' : category.name,
 					'slug' : category.slug,
 					'is_show' : category.is_show,
 					}
@@ -98,7 +98,7 @@ def success_callback(request):
 	for category in categoires:
 		products = Product.objects.filter(categories= category)
 		output.append({
-					'name' : category.name, 
+					'name' : category.name,
 					'slug' : category.slug,
 					'is_show' : category.is_show,
 					}
@@ -130,7 +130,7 @@ def shares(request):
 	for category in categoires:
 		products = Product.objects.filter(categories= category)
 		output.append({
-					'name' : category.name, 
+					'name' : category.name,
 					'slug' : category.slug,
 					'is_show' : category.is_show,
 					}
@@ -166,8 +166,6 @@ def feedback(request):
 
 		feedbacks = Feedback.objects.all()
 
-		print(feedbacks[6].created_at)
-
 		socials = SocialSection.objects.all()
 
 		output = []
@@ -178,7 +176,7 @@ def feedback(request):
 		for category in categoires:
 			products = Product.objects.filter(categories= category)
 			output.append({
-						'name' : category.name, 
+						'name' : category.name,
 						'slug' : category.slug,
 						'is_show' : category.is_show,
 						}
@@ -209,7 +207,7 @@ def how_to(request):
 	for category in categoires:
 		products = Product.objects.filter(categories= category)
 		output.append({
-					'name' : category.name, 
+					'name' : category.name,
 					'slug' : category.slug,
 					'products' : products
 					}
@@ -238,7 +236,7 @@ def contacts(request):
 	for category in categoires:
 		products = Product.objects.filter(categories= category)
 		output.append({
-					'name' : category.name, 
+					'name' : category.name,
 					'slug' : category.slug,
 					'is_show' : category.is_show,
 					}
@@ -354,7 +352,7 @@ def checkout(request, post_data= None):
 		for category in categoires:
 			products = Product.objects.filter(categories= category)
 			output.append({
-						'name' : category.name, 
+						'name' : category.name,
 						'slug' : category.slug,
 						'products' : products
 						}
@@ -389,10 +387,10 @@ def callback(request):
 		msg_html = render_to_string('callback/email.html', {'name': name, 'phone' : phone})
 
 		is_sended = send_mail(
-			'Вас просять передзвонити', 
-			msg_html, 
-			'admin@yakuzalviv.com', 
-			['yakuzalviv@gmail.com', 'oneostap@gmail.com'], 
+			'Вас просять передзвонити',
+			msg_html,
+			'admin@yakuzalviv.com',
+			['yakuzalviv@gmail.com', 'oneostap@gmail.com'],
 			html_message= msg_html,
 			)
 

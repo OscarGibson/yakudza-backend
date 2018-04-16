@@ -26,15 +26,17 @@
 		<div class="row shares-row">
 			<h1>Акції</h1>
 			{% for share in shares %}
+			{% if share.show_at_shares %}
 			<div class="col-md-12">
 				<p>{{ share.content }}</p>
 				<img src="{{ share.image.url }}">
 			</div>
+			{% endif %}
 			{% endfor %}
 		</div>
-		
+
 	</div>
-	<div class="clearfix"></div>	
+	<div class="clearfix"></div>
 
 </div>
 <!-- //banner -->
@@ -45,7 +47,7 @@
 				<h3>Підпишись на e-mail розсилку і отримай знижку -10%</h3>
 			</div>
 			<div class="w3agile_newsletter_right">
-				
+
 				<form action="#" method="post">
 					{% csrf_token %}
 					<input type="email" name="Email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
@@ -65,7 +67,7 @@
 			</div>
 			<div class="clearfix"> </div>
 			<div class="agile_footer_grids">
-				
+
 				<div class="clearfix"> </div>
 			</div>
 			<div class="wthree_footer_copy">
