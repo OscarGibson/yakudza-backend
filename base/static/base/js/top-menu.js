@@ -23,9 +23,15 @@ function stickIt() {
     widthOrgElement = orgElement.css('width');
     $('.cloned').css('left',leftOrgElement+'px').css('top',0).css('width',widthOrgElement).show();
     $('.original').css('visibility','hidden');
+    $(".agileits_header").css({ 
+      'position' : 'fixed', 
+      'top' : $('.cloned').css('height'),
+    });
+    // console.log($('.cloned').css('height'));
   } else {
     // not scrolled past the menu; only show the original menu.
     $('.cloned').hide();
     $('.original').css('visibility','visible');
+    $(".agileits_header").css({ 'position' : 'relative', 'top' : 0 });
   }
 }
