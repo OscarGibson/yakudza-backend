@@ -134,6 +134,7 @@ class OrderViewSet(ViewSet):
 		try:
 			order = Order.objects.get(id= response['order_id'])
 			order.is_payed = True
+			order.type_of_payment = '1'
 			order.save()
 
 			products = [product.product for product in order.product.all()]
