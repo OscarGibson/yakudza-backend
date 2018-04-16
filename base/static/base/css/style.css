@@ -1162,40 +1162,39 @@ button.liqpay {
 	display:inline-block;
 }
 .agileits_social_icons li a{
-	border: 2px solid #fff;
-    border-radius: 20px;
+	/*border: 2px solid #fff;*/
+    /*border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -o-border-radius: 20px;
     -ms-border-radius: 20px;
-    color: #fff;
+    /*color: #fff;
     width: 40px;
     height: 40px;
     display: block;
-    text-align: center;
+    text-align: center;*/
 }
 .agileits_social_icons li a i {
-    padding: 0.8em 0 0;
+    /*padding: 0.8em 0 0;*/
+    font-size: 2.5em;
+    padding: 0 10px;
 }
-.agileits_social_icons li a.facebook:hover{
-	background:#3b5998;
-	border-color:#3b5998;
+.agileits_social_icons li a.facebook{
+	/*background:#3b5998;
+	border-color:#3b5998;*/
+    color: #3b5998;
 }
-.agileits_social_icons li a.twitter:hover{
-	background:#55acee;
-	border-color:#55acee;
+.agileits_social_icons li a.twitter{
+    color: #55acee;
 }
-.agileits_social_icons li a.google:hover{
-	background:#dd4b39;
-	border-color:#dd4b39;
+.agileits_social_icons li a.google{
+    color: #dd4b39;
 }
-.agileits_social_icons li a.instagram:hover{
-	background:#833ab4;
-	border-color:#833ab4;
+.agileits_social_icons li a.instagram{
+    color: #833ab4;
 }
-.agileits_social_icons li a.dribbble:hover{
-	background:#ea4c89;
-	border-color:#ea4c89;
+.agileits_social_icons li a.dribbble{
+    color: #ea4c89;
 }
 .w3_footer_grid ul.w3_footer_grid_list1 li i {
     color: #84C639;
@@ -5039,3 +5038,52 @@ body {
     cursor: pointer;
     font-weight: bold;
 }
+
+
+.contacts-row {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.contacts-row ul{
+    text-align: center;
+}
+.contacts-row ul li {
+    list-style: none;
+    font-size: 1.3em;
+    line-height: 2.5em;
+    color: #fff;
+}
+.contacts-row a {
+    list-style: none;
+    font-size: 1.5em;
+    line-height: 2.5em;
+    color: #ff1818;
+}
+
+.w3ls_logo_products_left1 ul.phone_email li.get-callback {
+    text-align: right;
+    color: #ff1818;
+    cursor: pointer;
+}
+.callback-form {
+    background-color: #000;
+    border: 1px solid #666;
+    border-radius: 5px;
+    padding: 20px 15px;
+    position: fixed;
+    z-index: 999;
+    top: 20%;
+    left: 0;
+}
+.callback-form form{
+    position: relative;
+}
+.callback-form form input{
+    margin-bottom: 20px;
+}
+.callback-form form label{
+    margin-bottom: 20px;
+}
+
+
+

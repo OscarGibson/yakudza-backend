@@ -9,4 +9,6 @@ urlpatterns = [
     path('contacts', views.contacts, name= 'Contacts'),
     path('checkout', views.checkout, name= 'Checkout'),
     path('success', views.success, name= 'Success'),
+    path('success-callback', views.success_callback, name= 'Success callback'),
+    path('callback', views.callback, name= 'Callback'),
 ]

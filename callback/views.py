@@ -17,7 +17,7 @@ class CallBackViewSet(ViewSet):
 		name = request.data['name'] if 'name' in request.data else None
 		phone = request.data['cell'] if 'cell' in request.data else None
 
-		if not (name and phone):
+		if not phone:
 			return Response({'message':'Invalid data'}, status= 400)
 
 		msg_html = render_to_string('callback/email.html', {'name': name, 'phone' : phone})
@@ -29,6 +29,6 @@ class CallBackViewSet(ViewSet):
 			['yakuzalviv@gmail.com', 'oneostap@gmail.com'], 
 			html_message= msg_html,
 			)
-		
+
 		CallBack(name= name, phone= phone).save()
 		return Response({'message':'success'})

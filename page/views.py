@@ -19,6 +19,8 @@ from liqpay.liqpay3 import LiqPay
 from subscribers.models import Subscriber
 # from rest_framework.response import Response
 from django.http import HttpResponse, JsonResponse
+from section.models import SocialSection
+from callback.models import CallBack
 
 LIQPAY_PUBLIC_KEY = getattr(settings, 'LIQPAY_PUBLIC_KEY')
 LIQPAY_PRIVATE_KEY = getattr(settings, 'LIQPAY_PRIVATE_KEY')
@@ -27,6 +29,8 @@ def main_page(request):
 
 	categoires = Category.objects.all()
 
+	socials = SocialSection.objects.all()
+
 	output = []
 
 	for category in categoires:
@@ -44,18 +48,21 @@ def main_page(request):
 	content = {
 		'output' : output,
 		'shares' : shares,
+		'socials' : socials
 	}
 
 	template = 'page/main.html'
 
 	return render(request, template, content)
 
-
 def success(request):
+
+	socials = SocialSection.objects.all()
+
+	output = []
 
 	categoires = Category.objects.all()
 
-	output = []
 
 	for category in categoires:
 		products = Product.objects.filter(categories= category)
@@ -71,24 +78,28 @@ def success(request):
 	content = {
 		'output' : output,
 		'shares' : shares,
+		'socials' : socials,
 	}
 
 	template = 'page/success.html'
 
 	return render(request, template, content)
 
-def shares(request):
+def success_callback(request):
+
+	socials = SocialSection.objects.all()
+
+	output = []
 
 	categoires = Category.objects.all()
 
-	output = []
 
 	for category in categoires:
 		products = Product.objects.filter(categories= category)
 		output.append({
 					'name' : category.name, 
 					'slug' : category.slug,
-					'products' : products
+					'is_show' : category.is_show,
 					}
 		)
 
@@ -97,6 +108,37 @@ def shares(request):
 	content = {
 		'output' : output,
 		'shares' : shares,
+		'socials' : socials,
+	}
+
+	template = 'page/success_callback.html'
+
+	return render(request, template, content)
+
+def shares(request):
+
+	socials = SocialSection.objects.all()
+
+	shares = SharesSection.objects.all()
+
+	output = []
+
+	categoires = Category.objects.all()
+
+
+	for category in categoires:
+		products = Product.objects.filter(categories= category)
+		output.append({
+					'name' : category.name, 
+					'slug' : category.slug,
+					'is_show' : category.is_show,
+					}
+		)
+
+	content = {
+		'shares' : shares,
+		'socials' : socials,
+		'output' : output
 	}
 	template = 'page/shares.html'
 
@@ -104,11 +146,60 @@ def shares(request):
 
 def feedback(request): pass
 
-def documents(reqeust): pass
+def documents(request): pass
 
-def how_to(reqeust): pass
+def how_to(request):
+	categoires = Category.objects.all()
 
-def contacts(reqeust): pass
+	socials = SocialSection.objects.all()
+
+	output = []
+
+	for category in categoires:
+		products = Product.objects.filter(categories= category)
+		output.append({
+					'name' : category.name, 
+					'slug' : category.slug,
+					'products' : products
+					}
+		)
+
+	shares = SharesSection.objects.all()
+
+	content = {
+		'output' : output,
+		'shares' : shares,
+		'socials' : socials
+	}
+	template = 'page/howto.html'
+
+	return render(request, template, content)
+
+def contacts(request):
+
+	socials = SocialSection.objects.all()
+
+	output = []
+
+	categoires = Category.objects.all()
+
+
+	for category in categoires:
+		products = Product.objects.filter(categories= category)
+		output.append({
+					'name' : category.name, 
+					'slug' : category.slug,
+					'is_show' : category.is_show,
+					}
+		)
+
+	content = {
+		'socials' : socials,
+		'output' : output
+	}
+	template = 'page/contacts.html'
+
+	return render(request, template, content)
 
 def checkout(request, post_data= None):
 
@@ -194,7 +285,7 @@ def checkout(request, post_data= None):
 		msg_html = render_to_string('order/email.html', {'order': order, 'products' : product_managers})
 		msg_plain = render_to_string('order/email.txt', {'order': order, 'products' : products})
 
-		is_sended = send_mail('Нове замовлення', msg_html, 'admin@yakuzalviv.com', ['oneostap@gmail.com'], html_message=msg_html,)
+		is_sended = send_mail('Нове замовлення', msg_html, 'admin@yakuzalviv.com', ['yakuzalviv@gmail.com', 'oneostap@gmail.com'], html_message=msg_html,)
 
 
 		template = 'page/success.html'
@@ -202,6 +293,8 @@ def checkout(request, post_data= None):
 		return JsonResponse({'message':'Success'}, status= 200)
 
 	elif request.method == "GET":
+
+		socials = SocialSection.objects.all()
 
 		categoires = Category.objects.all()
 
@@ -221,9 +314,44 @@ def checkout(request, post_data= None):
 		content = {
 			'output' : output,
 			'shares' : shares,
+			'socials' : socials
 		}
 
 		template = 'page/checkout.html'
 
 		return render(request, template, content)
+
+def callback(request):
+
+	if request.method == "POST":
+
+		data = parse_qs(request.POST.get('request'))
+
+		print(data)
+
+		name = data['name'] if 'name' in data else " "
+		phone = data['number'] if 'number' in data else None
+
+		if not phone:
+			return JsonResponse({'message':'Invalid data'}, status= 400)
+
+		msg_html = render_to_string('callback/email.html', {'name': name, 'phone' : phone})
+
+		is_sended = send_mail(
+			'Вас просять передзвонити', 
+			msg_html, 
+			'admin@yakuzalviv.com', 
+			['yakuzalviv@gmail.com', 'oneostap@gmail.com'], 
+			html_message= msg_html,
+			)
+
+		CallBack(name= name, phone= phone).save()
+		return JsonResponse({'message':'Success'})
+
+	return JsonResponse({}, status= 403)
+
+
+
+
+
 

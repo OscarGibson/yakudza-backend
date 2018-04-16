@@ -12,22 +12,30 @@
 				<!-- <h1><a href="index.html"><span>Grocery</span> Store</a></h1> -->
 				<a href="/pages/"><img src="{% static 'base/images/yakuza_logo.svg' %}"></a>
 			</div>
-			<!-- <div class="w3ls_logo_products_left1">
-				<ul class="special_items">
-					<li><a href="events.html">Events</a><i>/</i></li>
-					<li><a href="about.html">About Us</a><i>/</i></li>
-					<li><a href="products.html">Best Deals</a><i>/</i></li>
-					<li><a href="services.html">Services</a></li>
-				</ul>
-			</div> -->
 			<div class="w3ls_logo_products_left1">
 				<ul class="phone_email">
 					<li><i class="fa fa-phone" aria-hidden="true"></i>+38 (073) 80 05 009</li>
 					<li><i class="fa fa-phone" aria-hidden="true"></i>+38 (098) 26 37 505</li>
 					<li><i class="fa fa-phone" aria-hidden="true"></i>+38 (050) 53 42 556</li>
 					<li id="get-callback" class="get-callback"><u>Замовити дзвінок</u></li>
-					<!-- <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@grocery.com">store@grocery.com</a></li> -->
 				</ul>
+
+				<div style="display: none;" class="callback-form col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+					<form method="post" class="creditly-card-form agileinfo_form" id="callback-form">
+						{% csrf_token %}
+						<button class="product-closer" id="callback-close" type="button">×</button>
+						<label class="control-label">Номер телефону</label>
+						<input class="number credit-card-number form-control" type="number" name="number"
+									  inputmode="numeric" autocomplete="cc-number" autocompletetype="cc-number" x-autocompletetype="cc-number"
+									  placeholder="+380 (0XX) XXX XX XX"
+									  required>
+						<label class="control-label">Ім'я</label>
+						<input class="billing-address-name form-control" type="text" name="name" placeholder="Ваше ім'я">
+
+						<button type="submit" class="submit"><span>Замовити дзвінок</span></button>
+
+					</form>
+				</div>
 			</div>
 
 			<div class="w3ls_logo_products_left2">
@@ -83,40 +91,24 @@
 <div class="banner">
 	
 	<div class="w3l_banner_nav_right">
-		<div class="row checkout-row">
-			<h1>Оформити замовлення</h1>
-			<div id="order-place"></div>
-			
-			<div class="col-md-7 col-sm-10 col-xs-12">
-				<form action="" method="post" class="creditly-card-form agileinfo_form" id="order-form">
-					{% csrf_token %}
-					<label class="control-label">Ім'я</label>
-					<input class="billing-address-name form-control" type="text" name="name" placeholder="Ваше ім'я">
+		<div class="row contacts-row">
+			<h1 style="text-align: center; color: #fff;">Контакти</h1>
+			<hr>
+			<div class="col-xs-12">
+				<ul class="agileits_social_icons">
+					{% for social in socials %}
+					<li><a href="{{ social.link }}" class="{{ social.icon }}"><i class="fa fa-{{ social.icon }}" aria-hidden="true"></i></a></li>
+					{% endfor %}
+				</ul>
 
-					<label class="control-label">Адреса</label>
-					<input class="expiration-month-and-year form-control" type="text" name="address" placeholder="">
+				<ul class="phone_email">
+					<li><i class="fa fa-phone" aria-hidden="true"></i>+38 (073) 80 05 009</li>
+					<li><i class="fa fa-phone" aria-hidden="true"></i>+38 (098) 26 37 505</li>
+					<li><i class="fa fa-phone" aria-hidden="true"></i>+38 (050) 53 42 556</li>
+					<!-- <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@grocery.com">store@grocery.com</a></li> -->
+				</ul>
 
-					<label class="control-label">Номер телефону</label>
-					<input class="number credit-card-number form-control" type="number" name="number"
-								  inputmode="numeric" autocomplete="cc-number" autocompletetype="cc-number" x-autocompletetype="cc-number"
-								  placeholder="+380 (0XX) XXX XX XX">
-
-					<label class="control-label">Кількість осіб</label>
-					<input class="security-code form-control"Â·
-								  inputmode="numeric"
-								  type="number" name="count"
-								  placeholder="2">
-
-					<label class="control-label">Електронна пошта</label>
-					<input class="expiration-month-and-year form-control" type="email" name="email" placeholder="email@email.com">
-
-					<label class="control-label">Коментар</label>
-					<textarea class="expiration-month-and-year form-control" type="email" name="comment" placeholder=""></textarea>
-
-					<button type="submit" class="submit" name="cash"><span>Замовити</span></button>
-					<button type="submit" class="liqpay" name="liqpay"><span>Оплатити карткою</span></button>
-
-				</form>
+				<h6><a href="http://www.yakuzalviv.com">www.yakuzalviv.com</a></h6>
 			</div>
 			
 		</div>
@@ -181,133 +173,5 @@
 			</div>
 		</div>
 	</div>
-
-
-<script type="text/javascript">
-	var data = window.localStorage.getItem("PPMiniCart"), today, expires;
-
-        if (data) {
-            data = JSON.parse(decodeURIComponent(data));
-        }
-
-        console.log(data);
-
-        var items = data.value.items;
-
-        for (var i = 0; i < items.length; i++) {
-
-        	var image_container = $('<div>');
-        	image_container.addClass('product-image');
-
-        	var image = $('<img>');
-        	image.attr({ src : items[i].item_image });
-
-        	image_container.append(image);
-
-        	var item_name = $('<div>');
-        	// console.log('name', item_name);
-        	item_name.append(items[i].item_name);
-        	item_name.addClass('product-name');
-
-        	var count = $('<div>');
-        	count.append(items[i].quantity + "шт");
-        	count.addClass('product-count');
-
-        	var close = $('<button>');
-        	close.append('×');
-        	close.addClass('product-closer');
-        	close.attr({ type : "button"});
-
-        	var subtotal = $('<div>');
-        	subtotal.append(items[i].amount + 'грн');
-        	subtotal.addClass('product-subtotal');
-
-        	var container = $('<div>');
-        	container.addClass('col-md-8 col-sm-9 col-xs-12 product-order');
-        	container.append(image_container);
-        	container.append(item_name);
-        	container.append(count);
-        	container.append(close);
-        	container.append(subtotal);
-
-        	$('#order-place').append(container);
-        }
-
-        // if (data && data.expires) {
-        //     today = new Date();
-        //     expires = new Date(data.expires);
-
-        //     if (today > expires) {
-        //         // this.destroy();
-        //     }
-        // }
-
-        $('#order-form').on('submit', function(e) {
-        	e.preventDefault();
-        	var name = $("button[type=submit][clicked=true]").attr('name');
-        	// console.log(name);
-        	// console.log($('#order-form').serialize());
-        	var items = [];
-        	for (var i = 0; i < data.value.items.length; i++) {
-        		items.push(data.value.items[i]);
-        	}
-
-        	var type;
-
-        	if (name == 'liqpay')
-        		type = 1;
-        	else
-        		type = 0;
-
-        	var request = JSON.stringify({
-        		'form' : $('#order-form').serialize(),
-        		'items' : data.value.items,
-        		'type' : type
-        	});
-        	$.post( "", { 
-        		'data' : request
-        	} , function(response) {
-        		console.log(response);
-        		if (response.message == 'Success')
-        			window.location = '/pages/success';
-        		else if (response.message == 'redirect') {
-        			window.LiqPayCheckoutCallback(response.hash_data, response.signature);
-        		}
-        	});
-        });
-
-        $("form button[type=submit]").click(function() {
-	        $("button[type=submit]", $(this).parents("form")).removeAttr("clicked");
-	        $(this).attr("clicked", "true");
-	    });
-</script>
-
-<script>
-	var payment_ready = false;
-    window.LiqPayCheckoutCallback = function(data, signature) {
-    	if (data && signature)
-	        LiqPayCheckout.init({
-	            data: data,
-	            signature: signature,
-	            embedTo: "#liqpay_checkout",
-	            mode: "popup" // embed || popup,
-	        }).on("liqpay.callback", function(data){
-	            console.log(data.status);
-	            console.log(data);
-	            if (!data.code) {
-	            	payment_ready = true;
-	            }
-	        }).on("liqpay.ready", function(data){
-	            console.log("ready");
-	        }).on("liqpay.close", function(data){
-	            console.log("close");
-	            if (payment_ready)
-	            	window.location = '/pages/success';
-	        });
-    };
-</script>
-
-
-<script src="//static.liqpay.ua/libjs/checkout.js" async></script>
 <!-- //footer -->
 {% endblock %}

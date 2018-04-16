@@ -25,6 +25,7 @@
 					<li><i class="fa fa-phone" aria-hidden="true"></i>+38 (073) 80 05 009</li>
 					<li><i class="fa fa-phone" aria-hidden="true"></i>+38 (098) 26 37 505</li>
 					<li><i class="fa fa-phone" aria-hidden="true"></i>+38 (050) 53 42 556</li>
+					<li id="get-callback" class="get-callback"><u>Замовити дзвінок</u></li>
 					<!-- <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@grocery.com">store@grocery.com</a></li> -->
 				</ul>
 			</div>
@@ -54,10 +55,10 @@
 				   <!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 						<ul class="nav navbar-nav nav_1 nav_top">
-							<li class="active"><a href="/shares">Акції</a></li>
-							<li><a href="pages/feedback">Відгуки</a></li>
-							<li><a href="pages/how-to">Як замовити</a></li>
-							<li><a href="pages/contacts">Контакти</a></li>
+							<li class="active"><a href="/pages/shares">Акції</a></li>
+							<li><a href="/pages/feedback">Відгуки</a></li>
+							<li><a href="/pages/how-to">Як замовити</a></li>
+							<li><a href="/pages/contacts">Контакти</a></li>
 						</ul>
 					 </div><!-- /.navbar-collapse -->
 				</nav>
@@ -222,14 +223,12 @@
 				</div>
 				<div class="w3_footer_grid agile_footer_grids_w3_footer" style="float: right">
 					<div class="w3_footer_grid_bottom">
-						<!-- <h5>Ми в соціальних мережах</h5>
+						<h5>Ми в соціальних мережах</h5>
 						<ul class="agileits_social_icons">
-							<li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							<li><a href="#" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-							<li><a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-							<li><a href="#" class="dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-						</ul> -->
+							{% for social in socials %}
+							<li><a href="{{ social.link }}" class="{{ social.icon }}"><i class="fa fa-{{ social.icon }}" aria-hidden="true"></i></a></li>
+							{% endfor %}
+						</ul>
 					</div>
 				</div>
 			</div>
