@@ -308,7 +308,7 @@
         		'data' : request
         	} , function(response) {
         		console.log(response);
-        		if (response.message == 'success')
+        		if (response.message == 'Success')
         			window.location = '/pages/success';
         		else if (response.message == 'redirect') {
         			window.LiqPayCheckoutCallback(response.hash_data, response.signature);

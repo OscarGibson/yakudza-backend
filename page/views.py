@@ -141,12 +141,15 @@ def checkout(request, post_data= None):
 			# raise e
 			return JsonResponse({'message':'Invalid data'}, status= 400)
 
+		product_managers = []
+
 		for product_data in products:
 			product = get_object_or_404(Product, pk= product_data['item_id'])
 			product_manager = ProductManager(
 				product= product,
 				count= product_data['quantity']
 				)
+			product_managers.append(product_manager)
 			product_manager.save()
 			order.product.add(product_manager)
 			total += product.price*product_data['quantity']
@@ -188,10 +191,10 @@ def checkout(request, post_data= None):
 				'hash_data' : hash_data,
 			}, status= 200)
 
-		msg_html = render_to_string('order/email.html', {'order': order, 'products' : products})
+		msg_html = render_to_string('order/email.html', {'order': order, 'products' : product_managers})
 		msg_plain = render_to_string('order/email.txt', {'order': order, 'products' : products})
 
-		is_sended = send_mail('Нове замовлення', msg_html, 'admin@yakuzalviv.com', ['yakuzalviv@gmail.com', 'oneostap@gmail.com'], html_message=msg_html,)
+		is_sended = send_mail('Нове замовлення', msg_html, 'admin@yakuzalviv.com', ['oneostap@gmail.com'], html_message=msg_html,)
 
 
 		template = 'page/success.html'
