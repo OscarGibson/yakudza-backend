@@ -6,67 +6,7 @@
 {% endblock %}
 
 {% block content %}
-	<div class="logo_products">
-		<div class="container">
-			<div class="w3ls_logo_products_left">
-				<!-- <h1><a href="index.html"><span>Grocery</span> Store</a></h1> -->
-				<a href="/pages/"><img src="{% static 'base/images/yakuza_logo.svg' %}"></a>
-			</div>
-			<!-- <div class="w3ls_logo_products_left1">
-				<ul class="special_items">
-					<li><a href="events.html">Events</a><i>/</i></li>
-					<li><a href="about.html">About Us</a><i>/</i></li>
-					<li><a href="products.html">Best Deals</a><i>/</i></li>
-					<li><a href="services.html">Services</a></li>
-				</ul>
-			</div> -->
-			<div class="w3ls_logo_products_left1">
-				<ul class="phone_email">
-					<li><i class="fa fa-phone" aria-hidden="true"></i>+38 (073) 80 05 009</li>
-					<li><i class="fa fa-phone" aria-hidden="true"></i>+38 (098) 26 37 505</li>
-					<li><i class="fa fa-phone" aria-hidden="true"></i>+38 (050) 53 42 556</li>
-					<li id="get-callback" class="get-callback"><u>Замовити дзвінок</u></li>
-					<!-- <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@grocery.com">store@grocery.com</a></li> -->
-				</ul>
-			</div>
-
-			<div class="w3ls_logo_products_left2">
-				<p><span>Працюємо для вас щодня</span> 
-				<span>з 11:00 до 23:00</span><br>
-				<span class="green">Безкоштовна доставка</span>
-				<br><br>
-				<span>Мінімальне замовення 199грн</span>
-				</p>
-			</div>
-
-			<!-- <div class="clearfix"> </div> -->
-
-			<div class="w3l_banner_nav_left">
-				<nav class="navbar nav_bottom">
-				 <!-- Brand and toggle get grouped for better mobile display -->
-				  <div class="navbar-header nav_2">
-					  <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					  </button>
-				   </div> 
-				   <!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-						<ul class="nav navbar-nav nav_1 nav_top">
-							<li class="active"><a href="/pages/shares">Акції</a></li>
-							<li><a href="/pages/feedback">Відгуки</a></li>
-							<li><a href="/pages/how-to">Як замовити</a></li>
-							<li><a href="/pages/contacts">Контакти</a></li>
-						</ul>
-					 </div><!-- /.navbar-collapse -->
-				</nav>
-
-			</div>
-
-		</div>
-	</div>
+	{% include 'base/header.html' %}
 <!-- //header -->
 <!-- products-breadcrumb -->
 	<div class="products-breadcrumb top-menu">

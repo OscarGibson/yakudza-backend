@@ -5084,6 +5084,16 @@ body {
 .callback-form form label{
     margin-bottom: 20px;
 }
-
+.feedback-row {
+    /*text-align: center;*/
+}
+.feedback {
+    border: 1px solid #777;
+    border-radius: 5px;
+    padding: 20px 10px;
+}
+.feedback div{
+    margin-bottom: 10px;
+}
 
 

@@ -23,9 +23,40 @@
 <div class="banner">
 	
 	<div class="w3l_banner_nav_right">
-		<div class="row checkout-row">
-			<h1 style="text-align: center;">Дякуємо за ваше замовлення</h1>
-			<a href="/pages"><h4 style="text-align: center;">На головну</h4></a>
+		<div class="row checkout-row feedback-row">
+			<h1 style="text-align: center;">Написати відгук</h1>			
+			<div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-2 col-xs-12 col-offset-0">
+				<form action="" method="post" class="creditly-card-form agileinfo_form" id="feedback-form">
+					{% csrf_token %}
+					<label class="control-label">Ім'я</label>
+					<input class="billing-address-name form-control" type="text" name="name" placeholder="Ваше ім'я" required>
+
+					<label class="control-label">Номер телефону</label>
+					<input class="number credit-card-number form-control" type="number" name="cell"
+								  inputmode="numeric" autocomplete="cc-number" autocompletetype="cc-number" x-autocompletetype="cc-number"
+								  placeholder="+380 (0XX) XXX XX XX"
+								  required>
+
+					<label class="control-label">Відгук</label>
+					<textarea class="expiration-month-and-year form-control" type="email" name="comment" placeholder="" required></textarea>
+
+					<button type="submit" class="submit" name="cash"><span>Відправити</span></button>
+
+				</form>
+			</div>
+
+			<div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-2 col-xs-12 col-offset-0">
+				<div class="feedbacks">
+					{% for feedback in feedbacks %}
+					<div class="feedback">
+						<div class="feedback-author">{{ feedback.author }} <br> {{ feedback.created_at | date:"d/m/Y H:i" }}</div>
+						<hr>
+						<div class="feedback-content">{{ feedback.content }}</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+			
 		</div>
 		
 	</div>
@@ -88,5 +119,22 @@
 			</div>
 		</div>
 	</div>
+
+
+<script type="text/javascript">
+
+    $('#feedback-form').on('submit', function(e) {
+    	e.preventDefault();
+
+    	$.post( "", { 
+    		'request' : $('#feedback-form').serialize()
+    	} , function(response) {
+    		console.log(response);
+    		if (response.message == 'Success')
+    			location.reload();
+    	});
+    });
+
+</script>
 <!-- //footer -->
 {% endblock %}

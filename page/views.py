@@ -21,6 +21,7 @@ from subscribers.models import Subscriber
 from django.http import HttpResponse, JsonResponse
 from section.models import SocialSection
 from callback.models import CallBack
+from feedback.models import Feedback
 
 LIQPAY_PUBLIC_KEY = getattr(settings, 'LIQPAY_PUBLIC_KEY')
 LIQPAY_PRIVATE_KEY = getattr(settings, 'LIQPAY_PRIVATE_KEY')
@@ -144,7 +145,57 @@ def shares(request):
 
 	return render(request, template, content)
 
-def feedback(request): pass
+def feedback(request):
+	if request.method == 'POST':
+
+		data = parse_qs(request.POST.get('request'))
+
+		print('data', data['name'], data['comment'])
+
+		author = data['name'][0] if 'name' in data else None
+		phone = data['cell'][0] if 'cell' in data else None
+		content = data['comment'][0] if 'comment' in data else None
+
+		if not (author and content):
+			return JsonResponse({'message':'Invalid data'}, status= 400)
+
+		Feedback(author= author, phone= phone, content= content).save()
+
+		return JsonResponse({'message':'Success'})
+	elif request.method == 'GET':
+
+		feedbacks = Feedback.objects.all()
+
+		print(feedbacks[6].created_at)
+
+		socials = SocialSection.objects.all()
+
+		output = []
+
+		categoires = Category.objects.all()
+
+
+		for category in categoires:
+			products = Product.objects.filter(categories= category)
+			output.append({
+						'name' : category.name, 
+						'slug' : category.slug,
+						'is_show' : category.is_show,
+						}
+			)
+
+		shares = SharesSection.objects.all()
+
+		content = {
+			'output' : output,
+			'shares' : shares,
+			'socials' : socials,
+			'feedbacks' : feedbacks
+		}
+
+		tempalte = 'page/feedback.html'
+
+		return render(request, tempalte, content)
 
 def documents(request): pass
 
