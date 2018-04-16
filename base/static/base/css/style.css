@@ -38,6 +38,13 @@ body a:hover{
 span.glyphicon.glyphicon-shopping-cart.my-cart-icon.my-cart-icon-affix {
 	position: relative !important;
 }
+
+.w3ls_logo_products_left1 ul.phone_email li.get-callback {
+    text-align: right;
+    color: #ff1818;
+    cursor: pointer;
+}
+
 .btn-danger {
     color: #fff;
     background-color: #ff5200;
@@ -3263,6 +3270,9 @@ input.checkbox:checked:after {
 	.snipcart-details {
 		width: 90%;
 	}
+    .w3ls_logo_products_left1 ul.phone_email li.get-callback {
+        text-align: center;
+    }
 }
 @media (max-width: 991px){
 	.w3l_search {
@@ -5060,11 +5070,6 @@ body {
     color: #ff1818;
 }
 
-.w3ls_logo_products_left1 ul.phone_email li.get-callback {
-    text-align: right;
-    color: #ff1818;
-    cursor: pointer;
-}
 .callback-form {
     background-color: #000;
     border: 1px solid #666;

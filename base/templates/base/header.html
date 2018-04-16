@@ -21,6 +21,24 @@
 					<li id="get-callback" class="get-callback"><u>Замовити дзвінок</u></li>
 					<!-- <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@grocery.com">store@grocery.com</a></li> -->
 				</ul>
+
+				<div style="display: none;" class="callback-form col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+					<form method="post" class="creditly-card-form agileinfo_form" id="callback-form">
+						{% csrf_token %}
+						<button class="product-closer" id="callback-close" type="button">×</button>
+						<label class="control-label">Номер телефону</label>
+						<input class="number credit-card-number form-control" type="number" name="number"
+									  inputmode="numeric" autocomplete="cc-number" autocompletetype="cc-number" x-autocompletetype="cc-number"
+									  placeholder="+380 (0XX) XXX XX XX"
+									  required>
+						<label class="control-label">Ім'я</label>
+						<input class="billing-address-name form-control" type="text" name="name" placeholder="Ваше ім'я">
+
+						<button type="submit" class="submit"><span>Замовити дзвінок</span></button>
+
+					</form>
+				</div>
+				
 			</div>
 
 			<div class="w3ls_logo_products_left2">

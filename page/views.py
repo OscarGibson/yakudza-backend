@@ -374,7 +374,7 @@ def callback(request):
 
 	if request.method == "POST":
 
-		data = parse_qs(request.POST.get('request'))
+		data = parse_qs(request.POST.get('data'))
 
 		print(data)
 
