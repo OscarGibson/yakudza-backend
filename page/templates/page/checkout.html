@@ -112,8 +112,8 @@
 					<label class="control-label">Коментар</label>
 					<textarea class="expiration-month-and-year form-control" type="email" name="comment" placeholder=""></textarea>
 
-					<button class="submit"><span>Замовити</span></button>
-					<!-- <button class="liqpay"><span>Оплатити карткою</span></button> -->
+					<button type="submit" class="submit" name="cash"><span>Замовити</span></button>
+					<button type="submit" class="liqpay" name="liqpay"><span>Оплатити карткою</span></button>
 
 
 
@@ -284,32 +284,70 @@
 
         $('#order-form').on('submit', function(e) {
         	e.preventDefault();
-        	console.log($('#order-form').serialize());
-        	// var items = [];
-        	// for (var i = 0; i < data.value.items.length; i++) {
-        	// 	items.push(data.value.items[i]);
-        	// }
+        	var name = $("button[type=submit][clicked=true]").attr('name');
+        	// console.log(name);
+        	// console.log($('#order-form').serialize());
+        	var items = [];
+        	for (var i = 0; i < data.value.items.length; i++) {
+        		items.push(data.value.items[i]);
+        	}
+
+        	var type;
+
+        	if (name == 'liqpay')
+        		type = 1;
+        	else
+        		type = 0;
 
         	var request = JSON.stringify({
         		'form' : $('#order-form').serialize(),
         		'items' : data.value.items,
-        		'type' : 0
+        		'type' : type
         	});
         	$.post( "", { 
         		'data' : request
         	} , function(response) {
-        		window.location = '/pages/success';
+        		console.log(response);
+        		if (response.message == 'success')
+        			window.location = '/pages/success';
+        		else if (response.message == 'redirect') {
+        			window.LiqPayCheckoutCallback(response.hash_data, response.signature);
+        		}
         	});
         });
+
+        $("form button[type=submit]").click(function() {
+	        $("button[type=submit]", $(this).parents("form")).removeAttr("clicked");
+	        $(this).attr("clicked", "true");
+	    });
 </script>
+
+<script>
+	var payment_ready = false;
+    window.LiqPayCheckoutCallback = function(data, signature) {
+    	if (data && signature)
+	        LiqPayCheckout.init({
+	            data: data,
+	            signature: signature,
+	            embedTo: "#liqpay_checkout",
+	            mode: "popup" // embed || popup,
+	        }).on("liqpay.callback", function(data){
+	            console.log(data.status);
+	            console.log(data);
+	            if (!data.code) {
+	            	payment_ready = true;
+	            }
+	        }).on("liqpay.ready", function(data){
+	            console.log("ready");
+	        }).on("liqpay.close", function(data){
+	            console.log("close");
+	            if (payment_ready)
+	            	window.location = '/pages/success';
+	        });
+    };
+</script>
+
+
+<script src="//static.liqpay.ua/libjs/checkout.js" async></script>
 <!-- //footer -->
 {% endblock %}
-
-
-<!-- <div class="col-md-8 col-sm-9 col-xs-12 product-order">
-	<div class="product-image"></div>
-	<div class="product-name">Rols</div>
-	<div class="product-count">1шт.</div>
-	<button type="button" class="product-closer">×</button>
-	<div class="product-subtotal">123hrn</div>
-</div> -->

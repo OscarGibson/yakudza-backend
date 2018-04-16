@@ -17,7 +17,8 @@ from django.template.loader import render_to_string
 from liqpay.liqpay3 import LiqPay
 
 from subscribers.models import Subscriber
-from rest_framework.response import Response
+# from rest_framework.response import Response
+from django.http import HttpResponse, JsonResponse
 
 LIQPAY_PUBLIC_KEY = getattr(settings, 'LIQPAY_PUBLIC_KEY')
 LIQPAY_PRIVATE_KEY = getattr(settings, 'LIQPAY_PRIVATE_KEY')
@@ -118,7 +119,7 @@ def checkout(request, post_data= None):
 
 		products = data['items']
 		form = parse_qs(data['form'])
-		type_of_payment = data['type']
+		# type_of_payment = data['type']
 
 		total = 0
 		total_discount = 0
@@ -133,12 +134,12 @@ def checkout(request, post_data= None):
 				total= total,
 				total_discount= total_discount,
 				is_payed= False,
-				type_of_payment= type_of_payment
+				type_of_payment= 0
 				)
 		except Exception as e:
 			print(e)
-			raise e
-			# return Response({'message':'Invalid data'}, status= 400)
+			# raise e
+			return JsonResponse({'message':'Invalid data'}, status= 400)
 
 		for product_data in products:
 			product = get_object_or_404(Product, pk= product_data['item_id'])
@@ -173,14 +174,14 @@ def checkout(request, post_data= None):
 			    'description': 'Yakuza food delivery',
 			    'order_id': str(order.id),
 			    'version': '3',
-			    'sandbox' : 0,
+			    'sandbox' : 1,
 			    'server_url': 'http://www.yakuzalviv.com/backend/api/v1/order/order-callback/',
 			}
 
 			signature = liqpay.cnb_signature(params)
 			hash_data = liqpay.cnb_data(params)
 
-			return Response({
+			return JsonResponse({
 				'message' : 'redirect',
 				'order_id' : str(order.id),
 				'signature' : signature,
@@ -195,7 +196,7 @@ def checkout(request, post_data= None):
 
 		template = 'page/success.html'
 
-		return Response({'message':'Success'}, status= 200)
+		return JsonResponse({'message':'Success'}, status= 200)
 
 	elif request.method == "GET":
 
