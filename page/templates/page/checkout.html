@@ -134,6 +134,8 @@
 
         var items = data.value.items;
 
+        var total = 0;
+
         for (var i = 0; i < items.length; i++) {
 
         	var image_container = $('<div>');
@@ -162,6 +164,8 @@
         	subtotal.append(items[i].amount + 'грн');
         	subtotal.addClass('product-subtotal');
 
+        	total += items[i].amount;
+
         	var container = $('<div>');
         	container.addClass('col-md-8 col-sm-9 col-xs-12 product-order');
         	container.append(image_container);
@@ -172,6 +176,11 @@
 
         	$('#order-place').append(container);
         }
+
+        var total_h = $('<h2>');
+        total_h.addClass('col-md-8 col-sm-9 col-xs-12 product-total');
+        total_h.append('Всього: ' + total + 'грн');
+        $('#order-place').append(total_h);
 
         // if (data && data.expires) {
         //     today = new Date();
@@ -208,8 +217,10 @@
         		'data' : request
         	} , function(response) {
         		console.log(response);
-        		if (response.message == 'Success')
+        		if (response.message == 'Success') {
+        			window.localStorage.removeItem("PPMiniCart");
         			window.location = '/success';
+        		}
         		else if (response.message == 'redirect') {
         			window.LiqPayCheckoutCallback(response.hash_data, response.signature);
         		}
@@ -242,6 +253,7 @@
 	        }).on("liqpay.close", function(data){
 	            console.log("close");
 	            if (payment_ready)
+	            	window.localStorage.removeItem("PPMiniCart");
 	            	window.location = '/success';
 	        });
     };
