@@ -191,6 +191,7 @@ ul.dropdown-menu.drp-mnu li a i {
 }
 .w3ls_logo_products_left img{
         width: 365px;
+        max-width: 100%;
     }
 .w3ls_logo_products_left h1 a span {
     font-size: .3em;
@@ -664,6 +665,7 @@ ul.dropdown-menu.drp-mnu li a i {
     border-radius: 4px;
     overflow-x: hidden;
     padding-left: 14px;
+    z-index: 1;
 }
 .minicart-showing #PPMiniCart form{
     overflow-x: hidden;
@@ -4497,7 +4499,7 @@ input.checkbox:checked:after {
 		width: 318px !important;
 	}
 	#PPMiniCart {
-		left: 55% !important;
+		/*left: 55% !important;*/
 	}
 }
 @media (max-width: 384px){
@@ -4558,7 +4560,7 @@ input.checkbox:checked:after {
 		padding-left: 3.5em;
 	}
 	#PPMiniCart form {
-		width: 300px !important;
+		/*width: 300px !important;*/
 		padding: 10px 10px 40px !important;
 	}
 	#PPMiniCart ul {
@@ -4571,7 +4573,7 @@ input.checkbox:checked:after {
 		margin: 3px 0 0 !important;
 	}
 	#PPMiniCart {
-		left: 64% !important;
+		/*left: 64% !important;*/
 	}
 	#PPMiniCart .minicart-item a {
 		font-size: 13px;
@@ -4889,13 +4891,14 @@ input.checkbox:checked:after {
 		padding-left:1.5em;
 	}
 	#PPMiniCart form {
-		width: 285px !important;
+		/*width: 285px !important;*/
+        width: 100% !important;
 	}
 	#PPMiniCart ul {
 		width: 263px !important;
 	}
 	#PPMiniCart {
-		left: 69% !important;
+		/*left: 69% !important;*/
 	}
 	#PPMiniCart .minicart-subtotal {
 		padding-left: 5px !important;
@@ -4920,7 +4923,7 @@ input.checkbox:checked:after {
 	}
 	.product_list_header input.button {
 		padding: .3em 2.5em .3em 0.8em;
-		background: url(../images/cart.png) no-repeat 77px 5px;
+		/*background: url(../images/cart.png) no-repeat 77px 5px;*/
 		font-size: 13px;
 	}
 }
