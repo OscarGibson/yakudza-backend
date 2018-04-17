@@ -61,6 +61,12 @@ span.glyphicon.glyphicon-shopping-cart.my-cart-icon.my-cart-icon-affix {
 .snipcart-thumb p {
     min-height: 84px;
 }
+.snipcart-thumb h4 {
+    color: #ff5200;
+}
+.snipcart-thumb h4 small {
+    float: right;
+}
 .my-cart-icon-affix i {
     background: #84C639 !important;
 }
@@ -573,8 +579,8 @@ ul.dropdown-menu.drp-mnu li a i {
 }
 .agile_top_brand_left_grid1 h4,.agileinfo_single_right_snipcart h4{
 	font-weight:600;
-	font-size:1em;
-	color:#fefefe;
+	font-size:1.1em;
+	color:#ff5200;
 }
 .agile_top_brand_left_grid1 h4 span,.agileinfo_single_right_snipcart h4 span{
 	font-weight:300;
