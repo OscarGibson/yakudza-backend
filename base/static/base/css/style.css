@@ -5128,5 +5128,8 @@ body {
 .feedback div{
     margin-bottom: 10px;
 }
-
+.product-labels img {
+    height: 20px;
+    width: 20px;
+}
 

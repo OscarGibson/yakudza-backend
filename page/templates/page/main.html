@@ -75,6 +75,11 @@
 								<div class="agile_top_brand_left_grid1">
 									<figure>
 										<div class="snipcart-item block">
+											<div class="product-labels">
+												{% for label in product.label.all %}
+												<img src="{{ label.icon.url }}">
+												{% endfor %}
+											</div>
 											<div class="snipcart-thumb">
 												<a><img src="{{ product.image.url }}" alt=" " class="img-responsive" /></a>
 												<h4>{{ product.title }}<small>{{ product.weight }}г</small></h4>
