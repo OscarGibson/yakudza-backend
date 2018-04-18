@@ -12,3 +12,6 @@ class Feedback(models.Model):
 		if len(self.content) > 32:
 			return "%s: %s..." % (self.author, self.content[:32])
 		return "%s: %s" % (self.author, self.content)
+
+	class Meta:
+		ordering = ('-created_at',)
