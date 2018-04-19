@@ -12,9 +12,8 @@ cartOnToplID = setInterval(cartOnTop, 10);
 function stickIt() {
 
   var orgElementPos = $('.original').offset();
-  orgElementTop = orgElementPos.top;              
 
-  if ($(window).scrollTop() >= (orgElementTop)) {
+  if (orgElementPos && $(window).scrollTop() >= (orgElementPos.top)) {
     // scrolled past the original position; now only show the cloned, sticky element.
 
     // Cloned element should always have same left position and width as original element.     
@@ -40,8 +39,10 @@ function stickIt() {
 function cartOnTop() {
   var cart = $('#PPMiniCart');
 
-  if (cart) {
-    var mainRowOffset = $('.main-row').offset();
+  var mainRowOffset = $('.main-row').offset();
+
+  if (cart && mainRowOffset) {
+
     if ($(window).scrollTop() < mainRowOffset.top - 100) {
       cart.css({
         'position' : 'absolute',
