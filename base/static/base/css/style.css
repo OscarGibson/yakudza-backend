@@ -5000,6 +5000,9 @@ body {
     color: #fefefe;
     text-align: center;
 }
+.shares-row img {
+    width: 100%;
+}
 .checkout-row {
     margin-left: 0;
     margin-right: 0;
