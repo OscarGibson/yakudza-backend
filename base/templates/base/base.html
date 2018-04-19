@@ -19,6 +19,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //for-mobile-apps -->
 <link href="{% static 'base/css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
 <link href="{% static 'base/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'base/css/preloader.css' %}" rel="stylesheet" type="text/css" media="all" />
 <!-- font-awesome icons -->
 <link href="{% static 'base/css/font-awesome.css' %}" rel="stylesheet" type="text/css" media="all" /> 
 <!-- //font-awesome icons -->
@@ -70,6 +71,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="{% static 'base/js/bootstrap.min.js' %}"></script>
 <script>
 $(document).ready(function(){
+
+	$('#preloader').css({ 'opacity' : '0'});
+	setTimeout(function() {
+		$('#preloader').css({ 'display' : 'none'});
+	}, 300);
+	
+
     $(".dropdown").hover(            
         function() {
             $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
