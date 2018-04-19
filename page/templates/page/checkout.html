@@ -157,18 +157,18 @@
         		'items' : data.value.items,
         		'type' : type
         	});
-        	// $.post( "", { 
-        	// 	'data' : request
-        	// } , function(response) {
-        	// 	console.log(response);
-        	// 	if (response.message == 'Success') {
-        	// 		window.localStorage.removeItem("PPMiniCart");
-        	// 		window.location = '/success';
-        	// 	}
-        	// 	else if (response.message == 'redirect') {
-        	// 		window.LiqPayCheckoutCallback(response.hash_data, response.signature);
-        	// 	}
-        	// });
+        	$.post( "", { 
+        		'data' : request
+        	} , function(response) {
+        		console.log(response);
+        		if (response.message == 'Success') {
+        			window.localStorage.removeItem("PPMiniCart");
+        			window.location = '/success';
+        		}
+        		else if (response.message == 'redirect') {
+        			window.LiqPayCheckoutCallback(response.hash_data, response.signature);
+        		}
+        	});
         });
 
         $("form button[type=submit]").click(function() {

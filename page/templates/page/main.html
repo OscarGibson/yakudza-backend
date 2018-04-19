@@ -126,4 +126,23 @@
 <!-- newsletter -->
 {% include 'base/footer.html' %}
 <!-- //footer -->
+<style type="text/css">
+	@media (min-width: 992px) {
+	    .show-minicart-lg #PPMiniCart {
+	        display: block;
+	        transform: translateZ(0);
+	        -webkit-transform: translateZ(0);
+	        -moz-transform: translateZ(0);
+	        animation: pop-in 0.25s;
+	        -webkit-animation: pop-in 0.25s;
+	        -moz-animation: pop-in 0.25s;
+	    }
+	    .show-minicart-lg #PPMiniCart .minicart-closer {
+	        display: none;
+	    }
+	    .show-minicart-lg .agileits_header {
+	        display: none;
+	    }
+	}
+</style>
 {% endblock %}

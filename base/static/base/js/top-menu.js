@@ -6,6 +6,7 @@ $('.top-menu').addClass('original').clone()
 .removeClass('original').hide();
 
 scrollIntervalID = setInterval(stickIt, 10);
+cartOnToplID = setInterval(cartOnTop, 10);
 
 
 function stickIt() {
@@ -35,3 +36,30 @@ function stickIt() {
     $(".agileits_header").css({ 'position' : 'relative', 'top' : 0 });
   }
 }
+
+function cartOnTop() {
+  var cart = $('#PPMiniCart');
+
+  if (cart) {
+    var mainRowOffset = $('.main-row').offset();
+    if ($(window).scrollTop() < mainRowOffset.top - 100) {
+      cart.css({
+        'position' : 'absolute',
+        'top' : mainRowOffset.top
+      });
+    } else {
+      cart.css({
+        'position' : 'fixed',
+        'top' : '100px'
+      });
+    }
+  }
+}
+
+
+
+
+
+
+
+
