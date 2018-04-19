@@ -37,9 +37,9 @@
 					<input class="expiration-month-and-year form-control" type="text" name="address" placeholder="">
 
 					<label class="control-label">Номер телефону</label>
-					<input class="number credit-card-number form-control" type="number" name="number"
+					<input class="number credit-card-number form-control" name="number"
 								  inputmode="numeric" autocomplete="cc-number" autocompletetype="cc-number" x-autocompletetype="cc-number"
-								  placeholder="+380 (0XX) XXX XX XX">
+								  placeholder="380 (0XX) XXX XX XX">
 
 					<label class="control-label">Кількість осіб</label>
 					<input class="security-code form-control"Â·
@@ -51,7 +51,7 @@
 					<input class="expiration-month-and-year form-control" type="email" name="email" placeholder="email@email.com">
 
 					<label class="control-label">Коментар</label>
-					<textarea class="expiration-month-and-year form-control" type="email" name="comment" placeholder=""></textarea>
+					<textarea class="expiration-month-and-year form-control" type="text" name="comment" placeholder=""></textarea>
 
 					<button type="submit" class="submit" name="cash"><span>Замовити</span></button>
 					<button type="submit" class="liqpay" name="liqpay"><span>Оплатити карткою</span></button>
@@ -66,7 +66,6 @@
 </div>
 <!-- //banner -->
 {% include 'base/footer.html' %}
-
 
 <script type="text/javascript">
 	var data = window.localStorage.getItem("PPMiniCart"), today, expires;
@@ -158,18 +157,18 @@
         		'items' : data.value.items,
         		'type' : type
         	});
-        	$.post( "", { 
-        		'data' : request
-        	} , function(response) {
-        		console.log(response);
-        		if (response.message == 'Success') {
-        			window.localStorage.removeItem("PPMiniCart");
-        			window.location = '/success';
-        		}
-        		else if (response.message == 'redirect') {
-        			window.LiqPayCheckoutCallback(response.hash_data, response.signature);
-        		}
-        	});
+        	// $.post( "", { 
+        	// 	'data' : request
+        	// } , function(response) {
+        	// 	console.log(response);
+        	// 	if (response.message == 'Success') {
+        	// 		window.localStorage.removeItem("PPMiniCart");
+        	// 		window.location = '/success';
+        	// 	}
+        	// 	else if (response.message == 'redirect') {
+        	// 		window.LiqPayCheckoutCallback(response.hash_data, response.signature);
+        	// 	}
+        	// });
         });
 
         $("form button[type=submit]").click(function() {
@@ -203,6 +202,9 @@
 	        });
     };
 </script>
+
+<!-- checkout from validator-->
+<script src="{% static 'base/js/checkout-form-validator.js' %}"></script>
 
 
 <script src="//static.liqpay.ua/libjs/checkout.js" async></script>

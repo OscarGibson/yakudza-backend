@@ -5138,4 +5138,14 @@ body {
     height: 23px;
     width: 23px;
 }
+#order-form label.error {
+    display: block;
+    color: red;
+    font-size: 12px;
+    margin-top: -24px;
+    margin-bottom: 32px;
+}
+#order-form input.error {
+    box-shadow: -1px -1px 3px rgba(255, 50, 50, 0.8);
+}
 
