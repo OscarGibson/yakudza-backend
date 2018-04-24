@@ -3881,7 +3881,7 @@ input.checkbox:checked:after {
 		width: 80%;
 	}
 	#PPMiniCart {
-		top: 140px !important;
+		top: 15px !important;
 	}
 	#PPMiniCart form {
 		max-height: 185px !important;
@@ -5293,3 +5293,6 @@ body {
     color: #aaa;
 }
 
+.minicart-showing .agileits_header {
+    display: none;
+}

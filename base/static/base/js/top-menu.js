@@ -43,7 +43,7 @@ function cartOnTop() {
 
   if (cart && mainRowOffset) {
 
-    if ($(window).scrollTop() < mainRowOffset.top - 100) {
+    if ($(window).scrollTop() < mainRowOffset.top - 100 && $(window).width() >= 1024) {
       cart.css({
         'position' : 'absolute',
         'top' : mainRowOffset.top

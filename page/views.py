@@ -384,12 +384,14 @@ def callback(request):
 
 	if request.method == "POST":
 
-		data = parse_qs(request.POST.get('data'))
+		json_data = request.POST.get('data')
 
-		print(data)
+		data = parse_qs(json.loads(json_data)['form'])
 
-		name = data['name'] if 'name' in data else " "
-		phone = data['number'] if 'number' in data else None
+		name = data['name'][0] if 'name' in data else " "
+		phone = data['number'][0] if 'number' in data else None
+
+		print(name, phone)
 
 		if not phone:
 			return JsonResponse({'message':'Invalid data'}, status= 400)

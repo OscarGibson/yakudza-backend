@@ -14,8 +14,8 @@ class CallBackViewSet(ViewSet):
 
 	def post(self, request):
 
-		name = request.data['name'] if 'name' in request.data else None
-		phone = request.data['cell'] if 'cell' in request.data else None
+		name = request.data['name'][0] if 'name' in request.data else None
+		phone = request.data['cell'][0] if 'cell' in request.data else None
 
 		if not phone:
 			return Response({'message':'Invalid data'}, status= 400)

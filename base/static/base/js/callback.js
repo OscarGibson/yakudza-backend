@@ -17,8 +17,5 @@ $('#callback-form').on('submit', function(e) {
 		console.log(response);
 		if (response.message == 'Success')
 			window.location = '/success-callback';
-		else if (response.message == 'redirect') {
-			window.LiqPayCheckoutCallback(response.hash_data, response.signature);
-		}
 	});
 });

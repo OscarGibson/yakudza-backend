@@ -66,7 +66,7 @@
 				<div class="w3ls_w3l_banner_nav_right_grid col-md-9 col-md-offset-3">
 					<form id="search_form" action="/" method="get">
 						<input type="text" name="search" placeholder="">
-						<button type="submit" class="submit">Шукати</button>
+						<button type="submit" class="submit">Пошук</button>
 					</form>
 					{% for category in output %}
 					{% if category.is_show %}
@@ -201,9 +201,10 @@
 
 	// console.log("PRODUCTS", products);
 
-	setTimeout(function() {
-		$($('.last')[0].submit).click();
-	}, 500);
+	if ($(window).width() >= 1024)
+	   setTimeout(function() {
+			$($('.last')[0].submit).click();
+		}, 500);
 
 	$('.snipcart-thumb').on('click', function() {
 
