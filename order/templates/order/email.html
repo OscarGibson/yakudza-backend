@@ -58,7 +58,8 @@
     <br> -->
 
     <h1 style="text-align: center;">НОВЕ ЗАМОВЛЕННЯ</h1>
-	<h2 style="text-align: center;">ЗАМОВЛЕННЯ №{{ order.id }}</h2>
+	<h2 style="text-align: center;">ЗАМОВЛЕННЯ №{{ order.simple_id }}</h2>
+	<h2 style="text-align: center;"><b>Yakuza</b> доставка суші та піци</h2>
 
     <table class="table" style="border: 1px solid #555; border-collapse: collapse; width: 100%;">
 	  <thead>
@@ -67,7 +68,7 @@
 	      <th scope="col" style="border-bottom: 1px solid #888;">номер телефону</th>
 	      <th scope="col" style="border-bottom: 1px solid #888;">Адреса доставки</th>
 	      <th scope="col" style="border-bottom: 1px solid #888;">Кількість осіб</th>
-	      <th scope="col" style="border-bottom: 1px solid #888;">Коментар</th>
+	      <!-- <th scope="col" style="border-bottom: 1px solid #888;">Коментар</th> -->
 	      <th scope="col" style="border-bottom: 1px solid #888;">Тип оплати</th>
 	    </tr>
 	  </thead>
@@ -78,7 +79,7 @@
 	      <td style="border-bottom: 1px solid #888; text-align: center;">{{ order.phone }}</td>
 	      <td style="border-bottom: 1px solid #888; text-align: center;">{{ order.address }}</td>
 	      <th style="border-bottom: 1px solid #888; text-align: center;">{{ order.count }}</th>
-	      <td style="border-bottom: 1px solid #888; text-align: center;">{{ order.comment }}</td>
+	      <!-- <td style="border-bottom: 1px solid #888; text-align: center;">{{ order.comment }}</td> -->
 	      {% if order.type_of_payment == '1' %}
 	      <td style="border-bottom: 1px solid #888; text-align: center;">Банківська карта</td>
 	      {% else %}
@@ -87,6 +88,9 @@
 	    </tr>
 	  </tbody>
 	</table>
+
+	<h3>Коментарій</h3>
+	<p>{{ order.comment }}</p>
 
 	<h5 style="text-align: center;">Замовлення</h5>
 
@@ -118,7 +122,7 @@
 	      <th scope="col" style="border-bottom: 1px solid #888;"> </th>
 	      <th scope="col" style="border-bottom: 1px solid #888;"> </th>
 	      <th scope="col" style="border-bottom: 1px solid #888;"> </th>
-	      <th scope="col" style="border-bottom: 1px solid #888;">Загальна сума:</th>
+	      <th scope="col" style="border-bottom: 1px solid #888; font-size: 22px;">Загальна сума:</th>
 	    </tr>
 	  </thead>
 
@@ -128,7 +132,7 @@
 	      <td> </td>
 	      <td> </td>
 	      <td> </td>
-	      <th scope="row">{{ order.total }}</th>
+	      <th style="font-size: 22px;" scope="row">{{ order.total }}</th>
 	    </tr>
 	  </tbody>
 	</table>

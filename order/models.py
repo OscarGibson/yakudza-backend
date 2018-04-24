@@ -12,6 +12,7 @@ class Order(models.Model):
 		)
 
 	id = models.CharField(primary_key= True, default= uuid.uuid4, editable= False, max_length= 64)
+	simple_id = models.IntegerField(default= 0)
 	product = models.ManyToManyField('product.ProductManager', blank= True)
 	name = models.CharField(("Ім'я"), max_length= 256)
 	count = models.IntegerField(("Кількість"),)

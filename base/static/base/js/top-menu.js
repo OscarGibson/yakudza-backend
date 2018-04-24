@@ -6,14 +6,14 @@ $('.top-menu').addClass('original').clone()
 .removeClass('original').hide();
 
 scrollIntervalID = setInterval(stickIt, 10);
+cartOnToplID = setInterval(cartOnTop, 10);
 
 
 function stickIt() {
 
   var orgElementPos = $('.original').offset();
-  orgElementTop = orgElementPos.top;              
 
-  if ($(window).scrollTop() >= (orgElementTop)) {
+  if (orgElementPos && $(window).scrollTop() >= (orgElementPos.top)) {
     // scrolled past the original position; now only show the cloned, sticky element.
 
     // Cloned element should always have same left position and width as original element.     
@@ -35,3 +35,32 @@ function stickIt() {
     $(".agileits_header").css({ 'position' : 'relative', 'top' : 0 });
   }
 }
+
+function cartOnTop() {
+  var cart = $('#PPMiniCart');
+
+  var mainRowOffset = $('.main-row').offset();
+
+  if (cart && mainRowOffset) {
+
+    if ($(window).scrollTop() < mainRowOffset.top - 100) {
+      cart.css({
+        'position' : 'absolute',
+        'top' : mainRowOffset.top
+      });
+    } else {
+      cart.css({
+        'position' : 'fixed',
+        'top' : '100px'
+      });
+    }
+  }
+}
+
+
+
+
+
+
+
+

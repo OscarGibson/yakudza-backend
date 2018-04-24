@@ -1,8 +1,8 @@
 {% extends 'base/base.html' %}
 {% load staticfiles %}
 
-{% block head %}
-<title>Yakuza | Головна</title>
+{% block title %}
+Головна
 {% endblock %}
 
 {% block content %}
@@ -64,6 +64,10 @@
 			</div>
 			<div class="row main-row">
 				<div class="w3ls_w3l_banner_nav_right_grid col-md-9 col-md-offset-3">
+					<form id="search_form" action="/" method="get">
+						<input type="text" name="search" placeholder="">
+						<button type="submit" class="submit">Шукати</button>
+					</form>
 					{% for category in output %}
 					{% if category.is_show %}
 					<div class="w3ls_w3l_banner_nav_right_grid1" id="{{ category.slug }}">
@@ -80,7 +84,7 @@
 												<img src="{{ label.icon.url }}">
 												{% endfor %}
 											</div>
-											<div class="snipcart-thumb">
+											<div class="snipcart-thumb" id="product-{{ product.id }}">
 												<a><img src="{{ product.image.url }}" alt=" " class="img-responsive" /></a>
 												<h4>{{ product.title }}<small>{{ product.weight }}г</small></h4>
 												<p>{{ product.description }}</p>
@@ -122,8 +126,111 @@
 		</div>
 		<div class="clearfix"></div>
 	</div>
+
+	<div style="display: none;" class="product-form col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2" id="prod-block">
+		<div class="product-form-image">
+			<button class="product-closer" id="prod-close" type="button">×</button>
+			<h4 id="prod-title">Title</h4>
+			<img id="prod-image" src="/media/6._%D1%82%D0%B5%D0%BA%D0%BA%D0%B0_%D0%BC%D0%B0%D0%BA%D0%B8_%D1%81%D0%BF%D0%B0%D0%B9%D1%81_A1eKLM8.jpg">
+			<h4 id="prod-weight"><small>200г</small></h4>
+			<p id="prod-description">Норі, Рис,Тунець,Спайс Соус</p>
+			<h2 id="prod-price">99грн</h2>
+
+			<div class="snipcart-details">
+			<form action="#" method="post">
+				<fieldset>
+					{% csrf_token %}
+					<input type="hidden" name="cmd" value="_cart" />
+					<input type="hidden" name="add" value="1" />
+					<input type="hidden" name="business" value=" " />
+					<input id="prod-form-id" type="hidden" name="item_id" value="-1" />
+					<!-- <input type="hidden" name="item_id" value="{{ product.image.url }}" /> -->
+					<input id="prod-form-title" type="hidden" name="item_name" value="" />
+					<input id="prod-form-price" type="hidden" name="amount" value="" />
+					<input id="prod-form-image" type="hidden" name="item_image" value="" />
+					<input type="hidden" name="currency_code" value="UAH" />
+					<input type="hidden" name="return" value=" " />
+					<input type="hidden" name="cancel_return" value=" " />
+					<input type="submit" name="submit" value="Додати в корзину" class="button" />
+				</fieldset>
+			</form>
+		</div>
+		</div>
+	</div>
+
 <!-- //banner -->
 <!-- newsletter -->
 {% include 'base/footer.html' %}
 <!-- //footer -->
+<style type="text/css">
+	@media (min-width: 992px) {
+	    .show-minicart-lg #PPMiniCart {
+	        display: block;
+	        transform: translateZ(0);
+	        -webkit-transform: translateZ(0);
+	        -moz-transform: translateZ(0);
+	        animation: pop-in 0.25s;
+	        -webkit-animation: pop-in 0.25s;
+	        -moz-animation: pop-in 0.25s;
+	    }
+	    .show-minicart-lg #PPMiniCart .minicart-closer {
+	        display: none;
+	    }
+	    .show-minicart-lg .agileits_header {
+	        display: none;
+	    }
+	}
+</style>
+
+<script type="text/javascript">
+	var products = [];
+	var products_names = {};
+	{% for category in output %}
+		{% for product in category.products %}
+			products_names["product-{{ product.id }}"] = products.length;
+			products.push({
+				'id'          : "{{ product.id }}",
+				'title'       : "{{ product.title }}",
+				'price'       : "{{ product.price }}",
+				'image'       : "{{ product.image.url }}",
+				'weight'      : "{{ product.weight }}",
+				'description' : "{{ product.description }}"
+			});
+		{% endfor %}
+	{% endfor %}
+
+	// console.log("PRODUCTS", products);
+
+	setTimeout(function() {
+		$($('.last')[0].submit).click();
+	}, 500);
+
+	$('.snipcart-thumb').on('click', function() {
+
+		var product_data = products[products_names[$(this).attr('id')]];
+
+		console.log(product_data);
+
+		$('#prod-form-id').val(product_data.id);
+		$('#prod-title').text(product_data.title);
+		$('#prod-form-title').val(product_data.title);
+		$('#prod-image').attr({"src" : product_data.image});
+		$('#prod-form-image').val(product_data.image);
+		$('#prod-weight').text(product_data.weight + "г");
+		$('#prod-form-weight').val(product_data.weight);
+		$('#prod-description').text(product_data.description);
+		$('#prod-form-description').val(product_data.description);
+		$('#prod-price').text(product_data.price + "грн");
+		$('#prod-form-price').val(product_data.price);
+
+		$('#prod-block').css({"display" : "block"});
+	});
+
+	$('#prod-close').on('click', function() {
+		$('#prod-block').css({"display" : "none"});
+	});
+
+</script>
+
+
 {% endblock %}
