@@ -21,12 +21,12 @@
 <!-- //products-breadcrumb -->
 <!-- banner -->
 <div class="banner">
-	
+
 	<div class="w3l_banner_nav_right">
 		<div class="row checkout-row">
 			<h1>Оформити замовлення</h1>
 			<div id="order-place"></div>
-			
+
 			<div class="col-md-7 col-sm-10 col-xs-12">
 				<form action="" method="post" class="creditly-card-form agileinfo_form" id="order-form">
 					{% csrf_token %}
@@ -58,9 +58,9 @@
 
 				</form>
 			</div>
-			
+
 		</div>
-		
+
 	</div>
 	<div class="clearfix"></div>
 </div>
@@ -157,18 +157,18 @@
         		'items' : data.value.items,
         		'type' : type
         	});
-        	// $.post( "", { 
-        	// 	'data' : request
-        	// } , function(response) {
-        	// 	console.log(response);
-        	// 	if (response.message == 'Success') {
-        	// 		window.localStorage.removeItem("PPMiniCart");
-        	// 		window.location = '/success';
-        	// 	}
-        	// 	else if (response.message == 'redirect') {
-        	// 		window.LiqPayCheckoutCallback(response.hash_data, response.signature);
-        	// 	}
-        	// });
+        	$.post( "", {
+        		'data' : request
+        	} , function(response) {
+        		console.log(response);
+        		if (response.message == 'Success') {
+        			window.localStorage.removeItem("PPMiniCart");
+        			window.location = '/success';
+        		}
+        		else if (response.message == 'redirect') {
+        			window.LiqPayCheckoutCallback(response.hash_data, response.signature);
+        		}
+        	});
         });
 
         $("form button[type=submit]").click(function() {

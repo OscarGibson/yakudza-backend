@@ -317,7 +317,7 @@ def checkout(request, post_data= None):
 			    'description': 'Yakuza food delivery',
 			    'order_id': str(order.id),
 			    'version': '3',
-			    'sandbox' : 1,
+			    'sandbox' : 0,
 			    'server_url': 'http://www.yakuzalviv.com/backend/api/v1/order/order-callback/',
 			}
 
