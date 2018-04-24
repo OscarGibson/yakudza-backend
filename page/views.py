@@ -23,6 +23,8 @@ from section.models import SocialSection
 from callback.models import CallBack
 from feedback.models import Feedback
 
+from django.db.models import Q
+
 LIQPAY_PUBLIC_KEY = getattr(settings, 'LIQPAY_PUBLIC_KEY')
 LIQPAY_PRIVATE_KEY = getattr(settings, 'LIQPAY_PRIVATE_KEY')
 
@@ -32,10 +34,17 @@ def main_page(request):
 
 	socials = SocialSection.objects.all()
 
+	search_key = request.GET.get('search', '')
+
 	output = []
 
+	args = (
+		Q(title__contains= search_key) |
+		Q(description__contains= search_key)
+	)
+
 	for category in categoires:
-		products = Product.objects.filter(categories= category)
+		products = Product.objects.filter(Q(categories= category) & args)
 		output.append({
 					'name' : category.name,
 					'slug' : category.slug,
@@ -266,6 +275,7 @@ def checkout(request, post_data= None):
 
 		try:
 			order = Order.objects.create(
+				simple_id= len(Order.objects.all()),
 				address= form['address'][0],
 				phone= form['number'][0],
 				name= form['name'][0],
@@ -317,7 +327,7 @@ def checkout(request, post_data= None):
 			    'description': 'Yakuza food delivery',
 			    'order_id': str(order.id),
 			    'version': '3',
-			    'sandbox' : 1,
+			    'sandbox' : 0,
 			    'server_url': 'http://www.yakuzalviv.com/backend/api/v1/order/order-callback/',
 			}
 

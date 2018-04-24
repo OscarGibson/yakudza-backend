@@ -1,8 +1,8 @@
 {% extends 'base/base.html' %}
 {% load staticfiles %}
 
-{% block head %}
-<title>Yakuza | Головна</title>
+{% block title %}
+Оформити замовлення
 {% endblock %}
 
 {% block content %}
@@ -42,7 +42,7 @@
 								  placeholder="380 (0XX) XXX XX XX">
 
 					<label class="control-label">Кількість осіб</label>
-					<input class="security-code form-control"Â·
+					<input class="security-code form-control"
 								  inputmode="numeric"
 								  type="number" name="count"
 								  placeholder="2">
@@ -66,118 +66,161 @@
 </div>
 <!-- //banner -->
 {% include 'base/footer.html' %}
-
 <script type="text/javascript">
 	var data = window.localStorage.getItem("PPMiniCart"), today, expires;
 
+    if (data) {
+        data = JSON.parse(decodeURIComponent(data));
+    }
+
+    var items = data.value.items;
+
+    var total = 0;
+
+    for (var i = 0; i < items.length; i++) {
+
+    	var image_container = $('<div>');
+    	image_container.addClass('product-image');
+
+    	var image = $('<img>');
+    	image.attr({ src : items[i].item_image });
+
+    	image_container.append(image);
+
+    	var item_name = $('<div>');
+    	// console.log('name', item_name);
+    	item_name.append(items[i].item_name);
+    	item_name.addClass('product-name');
+
+    	var count = $('<div>');
+    	count.append(items[i].quantity + "шт");
+    	count.addClass('product-count');
+
+    	var close = $('<button>');
+    	close.append('×');
+    	close.addClass('product-closer');
+    	close.attr({ type : "button", "id" : items[i].item_id });
+
+    	var subtotal_container = $('<div>');
+    	var subtotal = items[i].amount * items[i].quantity;
+    	subtotal_container.append(subtotal + 'грн');
+    	subtotal_container.addClass('product-subtotal');
+
+    	total += subtotal;
+
+    	var container = $('<div>');
+    	container.addClass('col-md-8 col-sm-9 col-xs-12 product-order');
+    	container.append(image_container);
+    	container.append(item_name);
+    	container.append(count);
+    	container.append(close);
+    	container.append(subtotal_container);
+
+    	$('#order-place').append(container);
+    }
+
+    var total_h = $('<h2>');
+    total_h.addClass('col-md-8 col-sm-9 col-xs-12 product-total');
+    total_h.append('Всього: ' + total + 'грн');
+    $('#order-place').append(total_h);
+
+    // if (data && data.expires) {
+    //     today = new Date();
+    //     expires = new Date(data.expires);
+
+    //     if (today > expires) {
+    //         // this.destroy();
+    //     }
+    // }
+
+    $('#order-form').on('submit', function(e) {
+    	e.preventDefault();
+    	var name = $("button[type=submit][clicked=true]").attr('name');
+    	// console.log(name);
+    	// console.log($('#order-form').serialize());
+    	var items = [];
+    	for (var i = 0; i < data.value.items.length; i++) {
+    		items.push(data.value.items[i]);
+    	}
+
+    	var type;
+
+    	if (name == 'liqpay')
+    		type = 1;
+    	else
+    		type = 0;
+
+    	var request = JSON.stringify({
+    		'form' : $('#order-form').serialize(),
+    		'items' : data.value.items,
+    		'type' : type
+    	});
+
+    	console.log(request);
+
+    	$.post( "", { 
+    		'data' : request
+    	} , function(response) {
+    		if (response.message == 'Success') {
+    			window.localStorage.removeItem("PPMiniCart");
+    			window.location = '/success';
+    		}
+    		else if (response.message == 'redirect') {
+    			window.LiqPayCheckoutCallback(response.hash_data, response.signature);
+    		}
+    	});
+    });
+
+    $("form button[type=submit]").click(function() {
+        $("button[type=submit]", $(this).parents("form")).removeAttr("clicked");
+        $(this).attr("clicked", "true");
+    });
+</script>
+
+<script type="text/javascript">
+	$('.product-closer').on('click', function() {
+
+		var data = window.localStorage.getItem("PPMiniCart"), today, expires;
+
+		var total = 0;
+		var spliced = -1;
+
         if (data) {
             data = JSON.parse(decodeURIComponent(data));
+
+            for (var i = 0; i < data.value.items.length; i++) {
+            	console.log($(this).attr("id"), data.value.items[i].item_id);
+            	if ($(this).attr("id") == data.value.items[i].item_id) {
+            		spliced = i;
+            	} else {
+            		total += items[i].amount * items[i].quantity;
+            	}
+            
+            }
+            data.value.items.splice(spliced,1);
+
+            var expires = new Date(), wrapped;
+
+	        expires.setTime(expires.getTime() + 30 * 24 * 60 * 60 * 1000);
+
+	        wrapped = {
+	            value: data.value,
+	            expires: expires.toGMTString()
+	        };
+
+	        window.localStorage.setItem("PPMiniCart", encodeURIComponent(JSON.stringify(wrapped)));
+
+	        $(this).parent().remove();
+
+	        if (total > 0) 
+	        	$('.product-total').text('Всього: ' + total + 'грн');
+	        else
+	        	window.location = '/';
+
         }
 
-        console.log(data);
 
-        var items = data.value.items;
-
-        var total = 0;
-
-        for (var i = 0; i < items.length; i++) {
-
-        	var image_container = $('<div>');
-        	image_container.addClass('product-image');
-
-        	var image = $('<img>');
-        	image.attr({ src : items[i].item_image });
-
-        	image_container.append(image);
-
-        	var item_name = $('<div>');
-        	// console.log('name', item_name);
-        	item_name.append(items[i].item_name);
-        	item_name.addClass('product-name');
-
-        	var count = $('<div>');
-        	count.append(items[i].quantity + "шт");
-        	count.addClass('product-count');
-
-        	var close = $('<button>');
-        	close.append('×');
-        	close.addClass('product-closer');
-        	close.attr({ type : "button"});
-
-        	var subtotal = $('<div>');
-        	subtotal.append(items[i].amount + 'грн');
-        	subtotal.addClass('product-subtotal');
-
-        	total += items[i].amount;
-
-        	var container = $('<div>');
-        	container.addClass('col-md-8 col-sm-9 col-xs-12 product-order');
-        	container.append(image_container);
-        	container.append(item_name);
-        	container.append(count);
-        	container.append(close);
-        	container.append(subtotal);
-
-        	$('#order-place').append(container);
-        }
-
-        var total_h = $('<h2>');
-        total_h.addClass('col-md-8 col-sm-9 col-xs-12 product-total');
-        total_h.append('Всього: ' + total + 'грн');
-        $('#order-place').append(total_h);
-
-        // if (data && data.expires) {
-        //     today = new Date();
-        //     expires = new Date(data.expires);
-
-        //     if (today > expires) {
-        //         // this.destroy();
-        //     }
-        // }
-
-        $('#order-form').on('submit', function(e) {
-        	e.preventDefault();
-        	var name = $("button[type=submit][clicked=true]").attr('name');
-        	// console.log(name);
-        	// console.log($('#order-form').serialize());
-        	var items = [];
-        	for (var i = 0; i < data.value.items.length; i++) {
-        		items.push(data.value.items[i]);
-        	}
-
-        	var type;
-
-        	if (name == 'liqpay')
-        		type = 1;
-        	else
-        		type = 0;
-
-        	var request = JSON.stringify({
-        		'form' : $('#order-form').serialize(),
-        		'items' : data.value.items,
-        		'type' : type
-        	});
-
-        	console.log(request);
-
-        	$.post( "", { 
-        		'data' : request
-        	} , function(response) {
-        		console.log(response);
-        		if (response.message == 'Success') {
-        			window.localStorage.removeItem("PPMiniCart");
-        			window.location = '/success';
-        		}
-        		else if (response.message == 'redirect') {
-        			window.LiqPayCheckoutCallback(response.hash_data, response.signature);
-        		}
-        	});
-        });
-
-        $("form button[type=submit]").click(function() {
-	        $("button[type=submit]", $(this).parents("form")).removeAttr("clicked");
-	        $(this).attr("clicked", "true");
-	    });
+	});
 </script>
 
 <script>

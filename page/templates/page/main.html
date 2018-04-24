@@ -1,8 +1,8 @@
 {% extends 'base/base.html' %}
 {% load staticfiles %}
 
-{% block head %}
-<title>Yakuza | Головна</title>
+{% block title %}
+Головна
 {% endblock %}
 
 {% block content %}
@@ -64,6 +64,10 @@
 			</div>
 			<div class="row main-row">
 				<div class="w3ls_w3l_banner_nav_right_grid col-md-9 col-md-offset-3">
+					<form id="search_form" action="/" method="get">
+						<input type="text" name="search" placeholder="">
+						<button type="submit" class="submit">Шукати</button>
+					</form>
 					{% for category in output %}
 					{% if category.is_show %}
 					<div class="w3ls_w3l_banner_nav_right_grid1" id="{{ category.slug }}">
@@ -145,4 +149,24 @@
 	    }
 	}
 </style>
+
+<script type="text/javascript">
+	var products = [];
+	{% for category in output %}
+		{% for product in category.products %}
+			products.push({
+				'title'       : "{{ product.title }}",
+				'price'       : "{{ product.price }}",
+				'image'       : "{{ product.image.url }}",
+				'weight'      : "{{ product.weight }}",
+				'description' : "{{ product.description }}"
+			});
+		{% endfor %}
+	{% endfor %}
+
+	console.log("PRODUCTS", products);
+
+</script>
+
+
 {% endblock %}
