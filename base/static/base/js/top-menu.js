@@ -39,7 +39,13 @@ function stickIt() {
 function cartOnTop() {
   var cart = $('#PPMiniCart');
 
+  var bottom_element = $('.newsletter');
+
   var mainRowOffset = $('.main-row').offset();
+
+  var top_manu_height = $('.top-menu').height();
+
+  // console.log($(window).scrollTop(), bottom_element.offset().top - cart.height() - 100);
 
   if (cart && mainRowOffset) {
 
@@ -47,6 +53,11 @@ function cartOnTop() {
       cart.css({
         'position' : 'absolute',
         'top' : mainRowOffset.top
+      });
+    } else if ($(window).scrollTop() > bottom_element.offset().top - cart.height() - 100){
+      cart.css({
+        'position' : 'absolute',
+        'top' : bottom_element.offset().top - cart.height()
       });
     } else {
       cart.css({
