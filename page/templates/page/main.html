@@ -317,7 +317,7 @@
 		for (var i = 0; i < products.length; i++) {
 
 			for (var j = 0; j < products[i].filter.length; j++) {
-				console.log(filters[products[i].filter[j]], filtering_criteria);
+				// console.log(filters[products[i].filter[j]], filtering_criteria);
 				if (filters[products[i].filter[j]] != filtering_criteria){
 					$('#product-block-'+products[i].id).css({'display':'none'})
 				} else {
