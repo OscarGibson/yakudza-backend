@@ -1463,7 +1463,7 @@ button.liqpay {
     100% { opacity: 1.0; }
 }
 .w3ls_w3l_banner_nav_right_grid1{
-	margin:7em 0 0 0em;
+	margin:11em 0 0 0em;
 }
 .w3ls_w3l_banner_nav_right_grid1 .w3ls_w3l_banner_left {
     padding-right: 0;
@@ -5283,6 +5283,8 @@ body {
 
 #search_form {
     text-align: right;
+    float: left;
+    margin-top: 12px;
 }
 #search_form input{
     height: 37px;
