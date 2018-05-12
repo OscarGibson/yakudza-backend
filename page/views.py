@@ -22,6 +22,7 @@ from django.http import HttpResponse, JsonResponse
 from section.models import SocialSection
 from callback.models import CallBack
 from feedback.models import Feedback
+from tag.models import Tag
 
 from django.db.models import Q
 
@@ -31,6 +32,7 @@ LIQPAY_PRIVATE_KEY = getattr(settings, 'LIQPAY_PRIVATE_KEY')
 def main_page(request):
 
 	categoires = Category.objects.all()
+	tags = Tag.objects.all()
 
 	socials = SocialSection.objects.all()
 
@@ -49,17 +51,20 @@ def main_page(request):
 					'name' : category.name,
 					'slug' : category.slug,
 					'is_show' : category.is_show,
-					'products' : products
+					'products' : products,
 					}
 		)
 
 	shares = SharesSection.objects.all()
 
 	content = {
-		'output' : output,
-		'shares' : shares,
-		'socials' : socials
+		'output'  : output,
+		'shares'  : shares,
+		'socials' : socials,
+		'filters' : tags, 
 	}
+
+	print(tags)
 
 	template = 'page/main.html'
 

@@ -64,6 +64,18 @@
 			</div>
 			<div class="row main-row">
 				<div class="w3ls_w3l_banner_nav_right_grid col-md-9 col-md-offset-3">
+
+					<div class="filters">
+						{% for filter in filters %}
+							<div class="filters-filter" id="{{ filter.slug }}">
+								<i class="fa fa-heart-o plus-filter" aria-hidden="true"></i>
+								<span>{{ filter.name }}</span>
+								<img class="minus-filter" src="{% static 'base/images/X.png' %}">
+							</div>
+							
+						{% endfor %}
+					</div>
+
 					<form id="search_form" action="/" method="get">
 						<input type="text" name="search" placeholder="">
 						<button type="submit" class="submit">Пошук</button>
@@ -73,7 +85,7 @@
 					<div class="w3ls_w3l_banner_nav_right_grid1" id="{{ category.slug }}">
 						<h6>{{ category.name }}</h6>
 						{% for product in category.products %}
-						<div class="col-md-4 сol-sm-6 col-xs-12 w3ls_w3l_banner_left">
+						<div class="col-md-4 сol-sm-6 col-xs-12 w3ls_w3l_banner_left" id="product-block-{{ product.id }}">
 							<div class="hover14 column">
 							<div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
 								<div class="agile_top_brand_left_grid1">
@@ -183,20 +195,42 @@
 </style>
 
 <script type="text/javascript">
+
+	var csrfToken = "{% csrf_token %}";
+
 	var products = [];
 	var products_names = {};
 	{% for category in output %}
 		{% for product in category.products %}
 			products_names["product-{{ product.id }}"] = products.length;
-			products.push({
+
+			var product = {
 				'id'          : "{{ product.id }}",
 				'title'       : "{{ product.title }}",
 				'price'       : "{{ product.price }}",
 				'image'       : "{{ product.image.url }}",
 				'weight'      : "{{ product.weight }}",
-				'description' : "{{ product.description }}"
-			});
+				'description' : "{{ product.description }}",
+				'category'    : "{{ category.name }}",
+				'labels'      : [],
+				'filter'      : []
+			};
+			
+			{% for filter in product.tags.all %}
+				product.filter.push('{{ filter.slug }}');
+			{% endfor %}
+
+			{% for label in product.label.all %}
+				product.labels.push('{{ label.icon.url }}');
+			{% endfor %}
+
+			products.push(product);
 		{% endfor %}
+	{% endfor %}
+
+	var filters = {};
+	{% for filter in filters %}
+		filters['{{ filter.slug }}'] = 0;
 	{% endfor %}
 
 	// console.log("PRODUCTS", products);
@@ -230,6 +264,71 @@
 	$('#prod-close').on('click', function() {
 		$('#prod-block').css({"display" : "none"});
 	});
+
+</script>
+
+<script type="text/javascript">
+	$('.plus-filter').on('click', function() {
+		// console.log($(this).parent().attr('id') == 1);
+		var filter_name = $(this).parent().attr('id');
+
+		if (filters[filter_name] == 1) {
+			filters[filter_name] = 0;
+			$('#'+filter_name).children('i').removeClass('active');
+		}
+		else {
+			filters[filter_name] = 1;
+			$('#'+filter_name).children('i').addClass('active');
+			$('#'+filter_name).children('img').attr({'src' : '/static/base/images/X.png'});
+		}
+
+		filterElements()
+
+	})
+
+	$('.minus-filter').on('click', function() {
+		// console.log($(this).parent().attr('id'));
+
+		var filter_name = $(this).parent().attr('id');
+
+		if (filters[filter_name] == -1) {
+			filters[filter_name] = 0;
+			$('#'+filter_name).children('img').attr({'src' : '/static/base/images/X.png'});
+		}
+		else {
+			filters[filter_name] = -1;
+			$('#'+filter_name).children('img').attr({'src' : '/static/base/images/X_red.png'});
+			$('#'+filter_name).children('i').removeClass('active');
+		}
+
+		filterElements()
+	})
+
+	function filterElements() {
+
+		var filtering_criteria = function() {
+			for (var key in filters) {
+				if (filters[key] == 1)
+					return 1
+			}
+			return 0
+		}();
+
+		for (var i = 0; i < products.length; i++) {
+
+			for (var j = 0; j < products[i].filter.length; j++) {
+				console.log(filters[products[i].filter[j]], filtering_criteria);
+				if (filters[products[i].filter[j]] != filtering_criteria){
+					$('#product-block-'+products[i].id).css({'display':'none'})
+				} else {
+					$('#product-block-'+products[i].id).css({'display':'block'})
+				}
+				
+			}
+		}
+
+		
+	}
 
 </script>
 

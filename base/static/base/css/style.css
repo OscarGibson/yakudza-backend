@@ -1463,7 +1463,7 @@ button.liqpay {
     100% { opacity: 1.0; }
 }
 .w3ls_w3l_banner_nav_right_grid1{
-	margin:3em 0 0 0em;
+	margin:7em 0 0 0em;
 }
 .w3ls_w3l_banner_nav_right_grid1 .w3ls_w3l_banner_left {
     padding-right: 0;
@@ -5296,3 +5296,36 @@ body {
 .minicart-showing .agileits_header {
     display: none;
 }
+.filters {
+    float: left;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+.filters-filter{
+    display: inline-block;
+    margin: 0 8px;
+}
+.filters span {
+    color: #fff;
+    display: block;
+    margin: 7px 0;
+}
+.filters i {
+    display: block;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+.filters i.active{
+    color: green;
+}
+.filters img {
+    display: block;
+    width: 20px;
+    margin: auto;
+    cursor: pointer;
+}
+
+
