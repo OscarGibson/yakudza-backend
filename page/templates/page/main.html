@@ -9,6 +9,63 @@
 	{% include 'base/header.html' %}
 <!-- //header -->
 <!-- products-breadcrumb -->
+
+	<style type="text/css">
+				
+		#search_form {
+		    /*text-align: right;*/
+		    /*float: left;*/
+		    margin-top: 12px;
+		}
+		#search_form input{
+		    height: 37px;
+		}
+		#prod-close {
+		    font-size: 28px;
+		    right: 4px;
+		    color: #aaa;
+		}
+
+		.minicart-showing .agileits_header {
+		    display: none;
+		}
+		.filters {
+		    /*float: left;*/
+		    display: inline-block;
+		    border: 1px solid #fff;
+		    border-radius: 5px;
+		    padding: 10px;
+		    text-align: center;
+		}
+		.filters-filter{
+		    display: inline-block;
+		    margin: 0 8px;
+		}
+		.filters span {
+		    color: #fff;
+		    display: block;
+		    margin: 7px 0;
+		}
+		.filters i {
+		    display: block;
+		    color: #fff;
+		    font-size: 24px;
+		    cursor: pointer;
+		}
+		.filters i.active{
+		    color: green;
+		}
+		.filters img {
+		    display: block;
+		    width: 20px;
+		    margin: auto;
+		    cursor: pointer;
+		}		
+
+
+
+	</style>
+
 	<div class="products-breadcrumb top-menu">
 		<div class="container">
 			<ul>
@@ -316,18 +373,38 @@
 
 		for (var i = 0; i < products.length; i++) {
 
-			for (var j = 0; j < products[i].filter.length; j++) {
-				// console.log(filters[products[i].filter[j]], filtering_criteria);
-				if (filters[products[i].filter[j]] != filtering_criteria){
-					$('#product-block-'+products[i].id).css({'display':'none'})
-				} else {
-					$('#product-block-'+products[i].id).css({'display':'block'})
-				}
-				
+			if (findIn(products[i].filter, filtering_criteria)){
+				$('#product-block-'+products[i].id).css({'display':'block'});
+				// console.log('#product-block-'+products[i].id, ' is shown');
+			} else {
+				$('#product-block-'+products[i].id).css({'display':'none'});
+				// console.log('#product-block-'+products[i].id, ' hidden');
 			}
+
+			// for (var j = 0; j < products[i].filter.length; j++) {
+			// 	// console.log(products[i].filter);
+			// 	if (filters[products[i].filter[j]] != filtering_criteria){
+			// 		$('#product-block-'+products[i].id).css({'display':'none'});
+			// 		console.log('#product-block-'+products[i].id, ' hidden');
+			// 	} else {
+			// 		$('#product-block-'+products[i].id).css({'display':'block'});
+			// 		console.log('#product-block-'+products[i].id, ' is shown');
+			// 	}
+				
+			// }
 		}
+		// console.log(i);
 
 		
+	}
+
+	function findIn(array, value) {
+		for (element of array) {
+			// console.log(element, value);
+			if (filters[element] == value)
+				return true
+			return false;
+		}
 	}
 
 </script>

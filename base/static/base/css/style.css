@@ -5282,8 +5282,8 @@ body {
 }
 
 #search_form {
-    text-align: right;
-    float: left;
+    /*text-align: right;*/
+    /*float: left;*/
     margin-top: 12px;
 }
 #search_form input{
@@ -5299,7 +5299,8 @@ body {
     display: none;
 }
 .filters {
-    float: left;
+    /*float: left;*/
+    display: inline-block;
     border: 1px solid #fff;
     border-radius: 5px;
     padding: 10px;
