@@ -11,7 +11,7 @@
 <!-- products-breadcrumb -->
 
 	<style type="text/css">
-				
+
 		#search_form {
 		    /*text-align: right;*/
 		    /*float: left;*/
@@ -146,7 +146,7 @@
 								<span>{{ filter.name }}</span>
 								<img class="minus-filter" src="{% static 'base/images/X.png' %}">
 							</div>
-							
+
 						{% endfor %}
 					</div>
 
@@ -295,7 +295,7 @@
 				'labels'      : [],
 				'filter'      : []
 			};
-			
+
 			{% for filter in product.tags.all %}
 				product.filter.push('{{ filter.slug }}');
 			{% endfor %}
@@ -413,7 +413,7 @@
 
 		for (var i = 0; i < products.length; i++) {
 
-			if (findIn(products[i].filter, filtering_criteria)){
+			if (findIn(products[i].filter, filtering_criteria) && !findIn(products[i].filter, -1)){
 				$('#product-block-'+products[i].id).css({'display':'block'});
 				// console.log('#product-block-'+products[i].id, ' is shown');
 			} else {
@@ -421,21 +421,10 @@
 				// console.log('#product-block-'+products[i].id, ' hidden');
 			}
 
-			// for (var j = 0; j < products[i].filter.length; j++) {
-			// 	// console.log(products[i].filter);
-			// 	if (filters[products[i].filter[j]] != filtering_criteria){
-			// 		$('#product-block-'+products[i].id).css({'display':'none'});
-			// 		console.log('#product-block-'+products[i].id, ' hidden');
-			// 	} else {
-			// 		$('#product-block-'+products[i].id).css({'display':'block'});
-			// 		console.log('#product-block-'+products[i].id, ' is shown');
-			// 	}
-				
-			// }
 		}
 		// console.log(i);
 
-		
+
 	}
 
 	function findIn(array, value) {
@@ -443,8 +432,8 @@
 			// console.log(element, value);
 			if (filters[element] == value)
 				return true
-			return false;
 		}
+		return false;
 	}
 
 </script>
