@@ -60,7 +60,24 @@
 		    width: 20px;
 		    margin: auto;
 		    cursor: pointer;
-		}		
+		}	
+
+		.product-form-arrows {
+		    position: absolute;
+		    top: calc(62% - 87px);
+		    width: 100%;
+		    font-size: 61px;
+		    height: 87px;
+		    color: #aaa;
+		}
+		.product-form-arrows .product-left-arrow {
+		    float: left;
+		    cursor: pointer;
+		}
+		.product-form-arrows .product-right-arrow {
+		    float: right;
+		    cursor: pointer;
+		}	
 
 
 
@@ -153,7 +170,7 @@
 												<img src="{{ label.icon.url }}">
 												{% endfor %}
 											</div>
-											<div class="snipcart-thumb" id="product-{{ product.id }}">
+											<div class="snipcart-thumb" id="{{ forloop.counter0 }}">
 												<a><img src="{{ product.image.url }}" alt=" " class="img-responsive" /></a>
 												<h4>{{ product.title }}<small>{{ product.weight }}г</small></h4>
 												<p>{{ product.description }}</p>
@@ -199,6 +216,12 @@
 	<div style="display: none;" class="product-form col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2" id="prod-block">
 		<div class="product-form-image">
 			<button class="product-closer" id="prod-close" type="button">×</button>
+			<div class="product-form-arrows">
+			<i class="fa fa-chevron-left product-left-arrow product-arrow"
+			 aria-hidden="true"></i>
+			<i class="fa fa-chevron-right product-right-arrow product-arrow"
+			" aria-hidden="true"></i>
+			</div>
 			<h4 id="prod-title">Title</h4>
 			<img id="prod-image" src="/media/6._%D1%82%D0%B5%D0%BA%D0%BA%D0%B0_%D0%BC%D0%B0%D0%BA%D0%B8_%D1%81%D0%BF%D0%B0%D0%B9%D1%81_A1eKLM8.jpg">
 			<h4 id="prod-weight"><small>200г</small></h4>
@@ -298,10 +321,23 @@
 		}, 500);
 
 	$('.snipcart-thumb').on('click', function() {
+		showProduct(+ $(this).attr('id'));
+	});
 
-		var product_data = products[products_names[$(this).attr('id')]];
+	$('#prod-close').on('click', function() {
+		$('#prod-block').css({"display" : "none"});
+	});
 
-		console.log(product_data);
+	$('.product-arrow').on('click', function() {
+		showProduct(+ $(this).attr('id'));
+	});
+
+	function showProduct(id) {
+
+		console.log(id);
+
+		// var product_data = products[products_names[id]];
+		var product_data = products[id];
 
 		$('#prod-form-id').val(product_data.id);
 		$('#prod-title').text(product_data.title);
@@ -316,11 +352,15 @@
 		$('#prod-form-price').val(product_data.price);
 
 		$('#prod-block').css({"display" : "block"});
-	});
 
-	$('#prod-close').on('click', function() {
-		$('#prod-block').css({"display" : "none"});
-	});
+		var leftId = id < 1 ? products.length - 1: id - 1;
+		var rightId = id >= products.length - 1? 0 : id + 1;
+
+		console.log(leftId, rightId);
+
+		$('.product-left-arrow').attr({'id' : leftId});
+		$('.product-right-arrow').attr({'id' : rightId});
+	}
 
 </script>
 

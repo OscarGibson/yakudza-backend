@@ -5179,6 +5179,9 @@ body {
     float: left;
     margin-left: 107px;
 }
+.product-form-image {
+    position: relative;
+}
 
 .product-form-image img {
     max-height: 300px;
@@ -5190,6 +5193,22 @@ body {
     width: 250px;
     float: right;
     margin: 0;
+}
+.product-form-arrows {
+    position: absolute;
+    top: calc(62% - 87px);
+    width: 100%;
+    font-size: 61px;
+    height: 87px;
+    color: #aaa;
+}
+.product-form-arrows .product-left-arrow {
+    float: left;
+    cursor: pointer;
+}
+.product-form-arrows .product-right-arrow {
+    float: right;
+    cursor: pointer;
 }
     
 
