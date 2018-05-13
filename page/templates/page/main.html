@@ -77,9 +77,10 @@
 		.product-form-arrows .product-right-arrow {
 		    float: right;
 		    cursor: pointer;
-		}	
-
-
+		}
+		.hidden-by-search {
+		    display: none;
+		}
 
 	</style>
 
@@ -150,7 +151,7 @@
 						{% endfor %}
 					</div>
 
-					<form id="search_form" action="/" method="get">
+					<form id="search_form">
 						<input type="text" name="search" placeholder="">
 						<button type="submit" class="submit">Пошук</button>
 					</form>
@@ -436,6 +437,25 @@
 		return false;
 	}
 
+</script>
+
+<script type="text/javascript">
+	$('#search_form').on('submit', function(e) {
+		e.preventDefault();
+		console.log($(this).serializeArray()[0]["value"]);
+
+		var searchKey = $(this).serializeArray()[0]["value"];
+
+		$('.w3ls_w3l_banner_left').each(function(index) {
+			var element = $(this).find('h4');
+			// console.log(element.text().includes(searchKey));
+			if (element.text().includes(searchKey))
+				$(this).removeClass('hidden-by-search')
+			else
+				$(this).addClass('hidden-by-search');
+			
+		});
+	});
 </script>
 
 

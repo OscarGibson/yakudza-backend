@@ -5351,3 +5351,8 @@ body {
 }
 
 
+.hidden-by-search {
+    display: none;
+}
+
+
