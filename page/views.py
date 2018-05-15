@@ -31,7 +31,7 @@ LIQPAY_PRIVATE_KEY = getattr(settings, 'LIQPAY_PRIVATE_KEY')
 
 def main_page(request):
 
-	categoires = Category.objects.all()
+	categories = Category.objects.all()
 	tags = Tag.objects.all()
 
 	socials = SocialSection.objects.all()
@@ -45,15 +45,19 @@ def main_page(request):
 		Q(description__contains= search_key)
 	)
 
-	for category in categoires:
+	index = 0
+
+	for category in categories:
 		products = Product.objects.filter(Q(categories= category) & args)
 		output.append({
 					'name' : category.name,
 					'slug' : category.slug,
 					'is_show' : category.is_show,
-					'products' : products,
+					'products' : list(zip(products, list(range(index,index + len(products))))),
+					# 'test' : products
 					}
 		)
+		index += len(products)
 
 	shares = SharesSection.objects.all()
 
@@ -64,7 +68,7 @@ def main_page(request):
 		'filters' : tags, 
 	}
 
-	print(tags)
+	# print(output)
 
 	template = 'page/main.html'
 

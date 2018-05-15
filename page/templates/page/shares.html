@@ -28,7 +28,7 @@
 			{% for share in shares %}
 			{% if share.show_at_shares %}
 			<div class="col-md-12">
-				<p>{{ share.content }}</p>
+				<p id="{{ forloop.counter }}" >{{ share.content }}</p>
 				<img src="{{ share.image.url }}">
 			</div>
 			{% endif %}

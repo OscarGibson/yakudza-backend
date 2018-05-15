@@ -119,7 +119,7 @@
 				<div class="col-md-4 w3l_banner_nav_right_banner3_btml">
 
 					<div class="view view-tenth">
-						<img src="{{ share.image.url }}" alt=" " class="img-responsive" />
+						<a href="/shares#{{ forloop.counter }}"><img src="{{ share.image.url }}" alt=" " class="img-responsive" /></a>
 					</div>
 
 				</div>
@@ -160,22 +160,22 @@
 					<div class="w3ls_w3l_banner_nav_right_grid1" id="{{ category.slug }}">
 						<h6>{{ category.name }}</h6>
 						{% for product in category.products %}
-						<div class="col-md-4 сol-sm-6 col-xs-12 w3ls_w3l_banner_left" id="product-block-{{ product.id }}">
+						<div class="col-md-4 сol-sm-6 col-xs-12 w3ls_w3l_banner_left" id="product-block-{{ product.0.id }}">
 							<div class="hover14 column">
 							<div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
 								<div class="agile_top_brand_left_grid1">
 									<figure>
 										<div class="snipcart-item block">
 											<div class="product-labels">
-												{% for label in product.label.all %}
+												{% for label in product.0.label.all %}
 												<img src="{{ label.icon.url }}">
 												{% endfor %}
 											</div>
-											<div class="snipcart-thumb" id="{{ forloop.counter0 }}">
-												<a><img src="{{ product.image.url }}" alt=" " class="img-responsive" /></a>
-												<h4>{{ product.title }}<small>{{ product.weight }}г</small></h4>
-												<p>{{ product.description }}</p>
-												<h4>{{ product.price }}грн</h4>
+											<div class="snipcart-thumb" id="{{ product.1 }}">
+												<a><img src="{{ product.0.image.url }}" alt=" " class="img-responsive" /></a>
+												<h4>{{ product.0.title }}<small>{{ product.0.weight }}г</small></h4>
+												<p>{{ product.0.description }}</p>
+												<h4>{{ product.0.price }}грн</h4>
 											</div>
 											<div class="snipcart-details">
 												<form action="#" method="post">
@@ -184,11 +184,11 @@
 														<input type="hidden" name="cmd" value="_cart" />
 														<input type="hidden" name="add" value="1" />
 														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_id" value="{{ product.id }}" />
+														<input type="hidden" name="item_id" value="{{ product.0.id }}" />
 														<!-- <input type="hidden" name="item_id" value="{{ product.image.url }}" /> -->
-														<input type="hidden" name="item_name" value="{{ product.title }}" />
-														<input type="hidden" name="amount" value="{{ product.price }}" />
-														<input type="hidden" name="item_image" value="{{ product.image.url }}" />
+														<input type="hidden" name="item_name" value="{{ product.0.title }}" />
+														<input type="hidden" name="amount" value="{{ product.0.price }}" />
+														<input type="hidden" name="item_image" value="{{ product.0.image.url }}" />
 														<input type="hidden" name="currency_code" value="UAH" />
 														<input type="hidden" name="return" value=" " />
 														<input type="hidden" name="cancel_return" value=" " />
@@ -282,26 +282,28 @@
 	var products = [];
 	var products_names = {};
 	{% for category in output %}
+		console.log("{{ category.test }}");
 		{% for product in category.products %}
-			products_names["product-{{ product.id }}"] = products.length;
+			console.log("product: {{ product.1 }}");
+			products_names["product-{{ product.0.id }}"] = products.length;
 
 			var product = {
-				'id'          : "{{ product.id }}",
-				'title'       : "{{ product.title }}",
-				'price'       : "{{ product.price }}",
-				'image'       : "{{ product.image.url }}",
-				'weight'      : "{{ product.weight }}",
-				'description' : "{{ product.description }}",
+				'id'          : "{{ product.0.id }}",
+				'title'       : "{{ product.0.title }}",
+				'price'       : "{{ product.0.price }}",
+				'image'       : "{{ product.0.image.url }}",
+				'weight'      : "{{ product.0.weight }}",
+				'description' : "{{ product.0.description }}",
 				'category'    : "{{ category.name }}",
 				'labels'      : [],
 				'filter'      : []
 			};
 
-			{% for filter in product.tags.all %}
+			{% for filter in product.0.tags.all %}
 				product.filter.push('{{ filter.slug }}');
 			{% endfor %}
 
-			{% for label in product.label.all %}
+			{% for label in product.0.label.all %}
 				product.labels.push('{{ label.icon.url }}');
 			{% endfor %}
 
@@ -449,7 +451,7 @@
 		$('.w3ls_w3l_banner_left').each(function(index) {
 			var element = $(this).find('h4');
 			// console.log(element.text().includes(searchKey));
-			if (element.text().includes(searchKey))
+			if (element.text().toLowerCase().includes(searchKey.toLowerCase()))
 				$(this).removeClass('hidden-by-search')
 			else
 				$(this).addClass('hidden-by-search');
