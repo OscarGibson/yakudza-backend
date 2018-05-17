@@ -24,7 +24,7 @@ class Product(models.Model):
 
 class ProductManager(models.Model):
 	""" Model for adding many products """
-	product = models.ForeignKey('Product', on_delete= models.PROTECT)
+	product = models.ForeignKey('Product', on_delete= models.CASCADE)
 	count = models.IntegerField()
 
 	@property
