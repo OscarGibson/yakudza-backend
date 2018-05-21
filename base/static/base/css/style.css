@@ -647,6 +647,9 @@ ul.dropdown-menu.drp-mnu li a i {
     overflow-y: scroll;
     max-height: 200px;
 }
+#PPMiniCart ul li{
+    width: 253px !important;
+}
 #PPMiniCart .minicart-item a {
     color: #fefefe !important;
     font-size: 1em;
@@ -1463,7 +1466,7 @@ button.liqpay {
     100% { opacity: 1.0; }
 }
 .w3ls_w3l_banner_nav_right_grid1{
-	margin:11em 0 0 0em;
+	margin:3em 0 0 0em;
 }
 .w3ls_w3l_banner_nav_right_grid1 .w3ls_w3l_banner_left {
     padding-right: 0;
@@ -5317,6 +5320,7 @@ body {
 .minicart-showing .agileits_header {
     display: none;
 }
+
 .filters {
     /*float: left;*/
     display: inline-block;
