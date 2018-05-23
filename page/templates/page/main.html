@@ -45,11 +45,12 @@
 		    color: #fff;
 		    display: block;
 		    margin: 7px 0;
+		    font-size: 14px;
 		}
 		.filters i {
 		    display: block;
 		    color: #fff;
-		    font-size: 24px;
+		    font-size: 20px;
 		    cursor: pointer;
 		}
 		.filters i.active{
@@ -57,7 +58,7 @@
 		}
 		.filters img {
 		    display: block;
-		    width: 20px;
+		    width: 16px;
 		    margin: auto;
 		    cursor: pointer;
 		}	
@@ -82,6 +83,63 @@
 		    display: none;
 		}
 
+
+		/* new styles for cart and search */
+		.search_form *{
+			display: block;
+			width: 100%;
+			line-height: 29px;
+			color: #000;
+		}
+		.search_form button{
+			margin-top: 5px;
+		}
+		@media (max-width: 480px) {
+			#PPMiniCart form.search_form {
+				width: 358px !important;
+			}
+		}
+		@media (max-width: 384px) {
+			#PPMiniCart form.search_form {
+				width: 278px !important;
+				padding: 0 !important;
+                margin-left: 20px;
+			}
+		}
+		@media (max-width: 320px) {
+			#PPMiniCart form.search_form {
+				width: 263px !important;
+				padding: 0 !important;
+                margin-left: 20px;
+			}
+		}
+		.product_list_header .cart_form {
+			float: left;
+		}
+		.product_list_header input.button {
+			margin-top: 0;
+		}
+		.product_list_header .search_form {
+			float: right;
+		}
+		.product_list_header .search_form *{
+			display: inline-block;
+			width: initial;
+		}
+		.product_list_header .search_form button {
+			margin-top: 0;
+		}
+		.product_list_header .search_form input {
+			margin-top: 0;
+		}
+
+		@media (max-width:768px) {
+			#PPMiniCart form.search_form {
+			    display: none;
+			}
+		}
+		
+
 	</style>
 
 	<div class="products-breadcrumb top-menu">
@@ -97,7 +155,7 @@
 	</div>
 	<div class="agileits_header">
 		<div class="product_list_header">
-			<form action="#" method="post" class="last">
+			<form action="#" method="post" class="last cart_form">
                 <fieldset>
                 	{% csrf_token %}
                     <input type="hidden" name="cmd" value="_cart" />
@@ -105,6 +163,11 @@
                     <input type="submit" name="submit" value="Корзина" class="button" />
                 </fieldset>
             </form>
+
+            <form class="search_form">
+				<input class="search_form_input" type="text" name="search" placeholder="Пошук...">
+				<button type="submit" class="submit">Пошук</button>
+			</form>
 		</div>
 		<div class="clearfix"> </div>
 	</div>
@@ -138,7 +201,7 @@
 				<div class="clearfix"> </div>
 			</div>
 			<div class="row main-row">
-				<div class="w3ls_w3l_banner_nav_right_grid col-md-9 col-md-offset-3">
+				<div class="w3ls_w3l_banner_nav_right_grid col-md-8 col-md-offset-4 col-lg-9 col-lg-offset-3">
 
 					<div class="filters">
 						{% for filter in filters %}
@@ -151,10 +214,6 @@
 						{% endfor %}
 					</div>
 
-					<form id="search_form">
-						<input type="text" name="search" placeholder="">
-						<button type="submit" class="submit">Пошук</button>
-					</form>
 					{% for category in output %}
 					{% if category.is_show %}
 					<div class="w3ls_w3l_banner_nav_right_grid1" id="{{ category.slug }}">
@@ -282,9 +341,9 @@
 	var products = [];
 	var products_names = {};
 	{% for category in output %}
-		console.log("{{ category.test }}");
+		// console.log("{{ category.test }}");
 		{% for product in category.products %}
-			console.log("product: {{ product.1 }}");
+			// console.log("product: {{ product.1 }}");
 			products_names["product-{{ product.0.id }}"] = products.length;
 
 			var product = {
@@ -337,7 +396,7 @@
 
 	function showProduct(id) {
 
-		console.log(id);
+		// console.log(id);
 
 		// var product_data = products[products_names[id]];
 		var product_data = products[id];
@@ -359,7 +418,7 @@
 		var leftId = id < 1 ? products.length - 1: id - 1;
 		var rightId = id >= products.length - 1? 0 : id + 1;
 
-		console.log(leftId, rightId);
+		// console.log(leftId, rightId);
 
 		$('.product-left-arrow').attr({'id' : leftId});
 		$('.product-right-arrow').attr({'id' : rightId});
@@ -442,7 +501,7 @@
 </script>
 
 <script type="text/javascript">
-	$('#search_form').on('submit', function(e) {
+	$('.search_form').on('submit', function(e) {
 		e.preventDefault();
 		console.log($(this).serializeArray()[0]["value"]);
 
@@ -458,6 +517,27 @@
 			
 		});
 	});
+
+	$('.search_form_input').on('input', function(e) {
+		searchForm(this);
+	});
+
+	function searchForm(obj) {
+
+		// console.log(obj.value);
+
+		var searchKey = obj.value;
+
+		$('.w3ls_w3l_banner_left').each(function(index) {
+			var element = $(this).find('h4');
+
+			if (element.text().toLowerCase().includes(searchKey.toLowerCase()))
+				$(this).removeClass('hidden-by-search')
+			else
+				$(this).addClass('hidden-by-search');
+			
+		});
+	}
 </script>
 
 
