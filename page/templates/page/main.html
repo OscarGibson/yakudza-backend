@@ -82,6 +82,9 @@
 		.hidden-by-search {
 		    display: none;
 		}
+		.hidden-by-filter {
+		    display: none;
+		}
 
 
 		/* new styles for cart and search */
@@ -124,7 +127,11 @@
 		}
 		.product_list_header .search_form *{
 			display: inline-block;
-			width: initial;
+			width: 109px;
+			transition: width .1s;
+		}
+		.product_list_header .search_form input:focus{
+			width: 200px;
 		}
 		.product_list_header .search_form button {
 			margin-top: 0;
@@ -137,6 +144,18 @@
 			#PPMiniCart form.search_form {
 			    display: none;
 			}
+		}
+
+		.banner {
+			margin-top: -36px;
+			transition: opacity .2s;
+		}
+
+		.w3l_banner_nav_right {
+			transition: opacity .2s;
+		}
+		.invisible {
+			opacity: 0;
 		}
 		
 
@@ -166,7 +185,7 @@
 
             <form class="search_form">
 				<input class="search_form_input" type="text" name="search" placeholder="Пошук...">
-				<button type="submit" class="submit">Пошук</button>
+				<!-- <button type="submit" class="submit">Пошук</button> -->
 			</form>
 		</div>
 		<div class="clearfix"> </div>
@@ -476,10 +495,12 @@
 		for (var i = 0; i < products.length; i++) {
 
 			if (findIn(products[i].filter, filtering_criteria) && !findIn(products[i].filter, -1)){
-				$('#product-block-'+products[i].id).css({'display':'block'});
+				// $('#product-block-'+products[i].id).css({'display':'block'});
+				$('#product-block-'+products[i].id).removeClass('hidden-by-filter');
 				// console.log('#product-block-'+products[i].id, ' is shown');
 			} else {
-				$('#product-block-'+products[i].id).css({'display':'none'});
+				// $('#product-block-'+products[i].id).css({'display':'none'});
+				$('#product-block-'+products[i].id).addClass('hidden-by-filter');
 				// console.log('#product-block-'+products[i].id, ' hidden');
 			}
 
@@ -537,6 +558,10 @@
 				$(this).addClass('hidden-by-search');
 			
 		});
+	}
+
+	function pass(e) {
+		e.preventDefault();
 	}
 </script>
 
