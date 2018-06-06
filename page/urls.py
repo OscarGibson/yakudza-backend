@@ -11,4 +11,5 @@ urlpatterns = [
     path('success', views.success, name= 'Success'),
     path('success-callback', views.success_callback, name= 'Success callback'),
     path('callback', views.callback, name= 'Callback'),
+    path('subscriber', views.subscriber, name= 'Subscriber'),
 ]

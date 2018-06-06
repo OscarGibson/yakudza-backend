@@ -6,10 +6,10 @@
 				<h3>Підпишись на e-mail розсилку</h3>
 			</div>
 			<div class="w3agile_newsletter_right">
-				
-				<form action="#" method="post">
+
+				<form action="/subscriber" method="post" id="subscriber-form">
 					{% csrf_token %}
-					<input type="email" name="Email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+					<input type="email" name="email" value="email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
 					<input type="submit" value="Пдписатись">
 				</form>
 			</div>
@@ -26,7 +26,7 @@
 			</div>
 			<div class="clearfix"> </div>
 			<div class="agile_footer_grids">
-				
+
 				<div class="clearfix"> </div>
 			</div>
 			<div class="wthree_footer_copy">
@@ -34,7 +34,7 @@
 					<h6>Суші та піца у Львові</h6>
 					<h1>Yakuza</h1>
 				</div>
-				<div class="w3_footer_grid agile_footer_grids_w3_footer"">
+				<div class="w3_footer_grid agile_footer_grids_w3_footer">
 					<div class="w3_footer_grid_bottom">
 						<h4>Приймаємо до оплати</h4>
 						<img src="{% static 'base/images/visa.jpg' %}" alt=" " class="img-responsive" />
@@ -55,3 +55,17 @@
 			</div>
 		</div>
 	</div>
+
+	<script>
+	    $('#subscriber-form').on('submit', function(e) {
+        	e.preventDefault();
+
+        	$.post( "/subscriber", {
+        		'data' : $('#subscriber-form').serialize()
+        	} , function(response) {
+        		console.log(response);
+        		if (response.message == 'success')
+        			window.location = '/subscriber';
+        	});
+        });
+	</script>

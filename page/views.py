@@ -23,11 +23,60 @@ from section.models import SocialSection
 from callback.models import CallBack
 from feedback.models import Feedback
 from tag.models import Tag
+from subscribers.models import Subscriber
 
 from django.db.models import Q
 
 LIQPAY_PUBLIC_KEY = getattr(settings, 'LIQPAY_PUBLIC_KEY')
 LIQPAY_PRIVATE_KEY = getattr(settings, 'LIQPAY_PRIVATE_KEY')
+
+
+def subscriber(request):
+
+    if request.method == 'POST':
+
+        print('in subscriber')
+        data = parse_qs(request.POST.get('data'))
+        print(data)
+
+        email = data['email'][0] if 'email' in data else None
+
+        if not email:
+            return JsonResponse({'message' : 'empty email'}, status= 400)
+
+        subscriber, is_created = Subscriber.objects.get_or_create(email= email)
+        if is_created:
+            subscriber.save()
+
+        return JsonResponse({'message' : 'success'})
+
+    elif request.method == 'GET':
+        socials = SocialSection.objects.all()
+
+        output = []
+
+        categoires = Category.objects.all()
+
+
+        for category in categoires:
+            output.append({
+                        'name' : category.name,
+                        'slug' : category.slug,
+                        'is_show' : category.is_show,
+                        }
+            )
+
+        shares = SharesSection.objects.all()
+
+        content = {
+            'output' : output,
+            'shares' : shares,
+            'socials' : socials,
+        }
+
+        tempalte = 'page/subscriber.html'
+
+        return render(request, tempalte, content)
 
 def main_page(request):
 
@@ -65,7 +114,7 @@ def main_page(request):
 		'output'  : output,
 		'shares'  : shares,
 		'socials' : socials,
-		'filters' : tags, 
+		'filters' : tags,
 	}
 
 	# print(output)
@@ -84,7 +133,6 @@ def success(request):
 
 
 	for category in categoires:
-		products = Product.objects.filter(categories= category)
 		output.append({
 					'name' : category.name,
 					'slug' : category.slug,

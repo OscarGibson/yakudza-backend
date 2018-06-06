@@ -12,12 +12,14 @@ class Product(models.Model):
 	weight = models.IntegerField(default= 0)
 	pieces = models.IntegerField(default= 0)
 	label = models.ManyToManyField('Labels', blank= True)
+	my_order = models.PositiveIntegerField(default= 0, blank= False, null= False)
 	created_at = models.DateTimeField(auto_now_add= True)
 	updated_at = models.DateTimeField(auto_now= True)
 
 	class Meta:
 		verbose_name = "Продукт"
 		verbose_name_plural = "Продукти"
+		ordering = ['my_order']
 
 	def __str__(self):
 		return "%s: %sUAH" % (self.title, self.price)

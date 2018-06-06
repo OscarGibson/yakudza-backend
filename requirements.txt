@@ -1,8 +1,15 @@
+-f /usr/share/pip-wheels
+certifi==2018.1.18
+chardet==3.0.4
 Django==2.0.1
+django-admin-sortable2==0.6.19
 django-cors-headers==2.1.0
 django-facebook==6.0.3
 django-rest-framework==0.1.0
 djangorestframework==3.7.7
+idna==2.6
 Pillow==5.0.0
 pytz==2017.3
+requests==2.18.4
 Unidecode==1.0.22
+urllib3==1.22

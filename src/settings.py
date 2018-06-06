@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # Third party apps
     'rest_framework',
     'corsheaders',
+    'adminsortable2',
     # 'django_facebook',
     # Custom apps
     'base',
@@ -70,7 +71,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'src.urls'
 
 # For "django_facebook" app
-# this app user TEMPLATE_CONTEXT_PROCESSORS, 
+# this app user TEMPLATE_CONTEXT_PROCESSORS,
 # which is deprecated since django 1.8
 TEMPLATE_CONTEXT_PROCESSORS = [
                 'django.template.context_processors.debug',

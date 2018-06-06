@@ -1,7 +1,8 @@
 from django.contrib import admin
 from .models import Product, Add, ProductManager, AddManager, Labels
+from adminsortable2.admin import SortableAdminMixin
 
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(SortableAdminMixin, admin.ModelAdmin):
 	class Meta:
 		model = Product
 
