@@ -4,25 +4,13 @@ from django.shortcuts import get_object_or_404
 from .models import Order
 from product.models import Product, ProductManager, Add, AddManager
 from rest_framework.response import Response
-
-# from rest_framework.renderers import TemplateHTMLRenderer
-
 from django.http import HttpResponse
 from django.views.generic import View
-# from .render_pdf import render_to_pdf
 from django.template.loader import get_template
-
-
-# from open_facebook.api import OpenFacebook
-
 from django.conf import settings
-
 from django.core.mail import send_mail
-
 from django.template.loader import render_to_string
-
 from liqpay.liqpay3 import LiqPay
-
 from subscribers.models import Subscriber
 
 LIQPAY_PUBLIC_KEY = getattr(settings, 'LIQPAY_PUBLIC_KEY')
@@ -109,7 +97,7 @@ class OrderViewSet(ViewSet):
 		msg_html = render_to_string('order/email.html', {'order': order, 'products' : products})
 		msg_plain = render_to_string('order/email.txt', {'order': order, 'products' : products})
 
-		is_sended = send_mail('Нове замовлення', msg_html, 'admin@yakuzalviv.com', ['yakuzalviv@gmail.com', 'oneostap@gmail.com'], html_message=msg_html,)
+		is_sended = send_mail('Нове замовлення', msg_html, 'admin@yakuzalviv.com', ['yakuzalviv@gmail.com',], html_message=msg_html,)
 
 		return Response({'message':'success'}, status= 201)
 
@@ -142,7 +130,7 @@ class OrderViewSet(ViewSet):
 			msg_html = render_to_string('order/email.html', {'order': order, 'products' : products})
 			msg_plain = render_to_string('order/email.txt', {'order': order, 'products' : products})
 
-			is_sended = send_mail('Нове замовлення', msg_html, 'admin@yakuzalviv.com', ['yakuzalviv@gmail.com', 'oneostap@gmail.com'], html_message=msg_html,)
+			is_sended = send_mail('Нове замовлення', msg_html, 'admin@yakuzalviv.com', ['yakuzalviv@gmail.com',], html_message=msg_html,)
 			# send email
 
 			return Response({
