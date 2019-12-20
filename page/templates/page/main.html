@@ -157,9 +157,112 @@
 		.invisible {
 			opacity: 0;
 		}
+		.hours-popup {
+			position: fixed;
+			height: 100%;
+			width: 100%;
+			left: 0;
+			top: 0;
+			z-index:10;
+			background-color: rgba(0,0,0,.8)
+		}
+		.hours-popup .hours-popup-block {
+			position: absolute;
+			top: calc(50% - 250px);
+			left: 0;
+			width: 100%;
+		}
+		.hours-popup .hours-popup-wrapper {
+			position:relative;
+			background-color: #fff;
+			margin: auto;
+			width: 50%;
+			padding: 40px;
+			text-align:center;
+			border-radius: 7px;
+		}
+		.hours-popup .hours-popup-wrapper h1 {
+			margin-bottom: 20px;
+			font-size: 2.5rem;
+		}
+		.hours-popup .hours-popup-wrapper p {
+			margin-bottom: 20px;
+			font-size: 1.5rem;
+		}
+		.hours-popup .hours-popup-wrapper button {
+			font-size: 1.5rem;
+			background-color: #e30016;
+			color: #fff;
+			border-radius:5px;
+			border: 1px solid black;
+		}
+		.hours-popup .hours-popup-wrapper .minicart-closer {
+			position: absolute;
+			right: 15px;
+			top: 5px;
+			font-size: 1.5rem;
+			color: #000;
+			border: none;
+			background:none;
+		}
+		@media (max-width:768px) {
+			.hours-popup {
+				
+			}
+			.hours-popup .hours-popup-block {
+				
+			}
+			.hours-popup .hours-popup-wrapper {
+				width: 70%;
+				padding: 30px;
+			}
+			.hours-popup .hours-popup-wrapper h1 {
+				font-size: 1.5rem;
+			}
+			.hours-popup .hours-popup-wrapper p {
+				font-size: 1rem;
+			}
+			.hours-popup .hours-popup-wrapper button {
+				font-size: 1rem;
+			}
+		}
+		@media (max-width:480px) {
+			.hours-popup {
+				
+			}
+			.hours-popup .hours-popup-block {
+				
+			}
+			.hours-popup .hours-popup-wrapper {
+				width: 90%;
+				padding: 20px;
+			}
+			.hours-popup .hours-popup-wrapper h1 {
+				font-size: 1rem;
+			}
+			.hours-popup .hours-popup-wrapper p {
+				font-size: .75rem;
+			}
+			.hours-popup .hours-popup-wrapper button {
+				font-size: .75rem;
+			}
+		}
 		
 
 	</style>
+
+	{% if work_hours and work_hours.opened %}
+	<div class="hours-popup" id="xCgWg">
+		<div class="hours-popup-block">
+			<div class="hours-popup-wrapper">
+				<button onclick="removePopup('xCgWg')" class="minicart-closer">x</button>
+				<h1>{{work_hours.title}}</h1>
+				<p>{{work_hours.text}}</p>
+				<button onclick="removePopup('xCgWg')">Перейти в меню</button>
+			</div>
+		</div>
+	</div>
+	{% endif %}
 
 	<div class="products-breadcrumb top-menu">
 		<div class="container">
@@ -562,6 +665,10 @@
 
 	function pass(e) {
 		e.preventDefault();
+	}
+
+	function removePopup(idName) {
+		$("#"+idName).hide();
 	}
 </script>
 

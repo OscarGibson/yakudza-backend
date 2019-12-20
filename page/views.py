@@ -1,4 +1,6 @@
+from datetime import datetime, time
 from django.shortcuts import render
+from popup.models import WorkHours
 from category.models import Category
 from product.models import Product
 from section.models import SharesSection
@@ -7,25 +9,19 @@ from urllib.parse import parse_qs
 from order.models import Order
 from django.shortcuts import get_object_or_404
 from product.models import Product, ProductManager
-
 from django.conf import settings
-
 from django.core.mail import send_mail
-
 from django.template.loader import render_to_string
-
 from liqpay.liqpay3 import LiqPay
-
 from subscribers.models import Subscriber
-# from rest_framework.response import Response
 from django.http import HttpResponse, JsonResponse
 from section.models import SocialSection
 from callback.models import CallBack
 from feedback.models import Feedback
 from tag.models import Tag
 from subscribers.models import Subscriber
-
 from django.db.models import Q
+
 
 LIQPAY_PUBLIC_KEY = getattr(settings, 'LIQPAY_PUBLIC_KEY')
 LIQPAY_PRIVATE_KEY = getattr(settings, 'LIQPAY_PRIVATE_KEY')
@@ -82,9 +78,8 @@ def main_page(request):
 
 	categories = Category.objects.all()
 	tags = Tag.objects.all()
-
+	work_hours = WorkHours.objects.all().first()
 	socials = SocialSection.objects.all()
-
 	search_key = request.GET.get('search', '')
 
 	output = []
@@ -103,7 +98,6 @@ def main_page(request):
 					'slug' : category.slug,
 					'is_show' : category.is_show,
 					'products' : list(zip(products, list(range(index,index + len(products))))),
-					# 'test' : products
 					}
 		)
 		index += len(products)
@@ -115,6 +109,7 @@ def main_page(request):
 		'shares'  : shares,
 		'socials' : socials,
 		'filters' : tags,
+		'work_hours' : work_hours,
 	}
 
 	# print(output)
