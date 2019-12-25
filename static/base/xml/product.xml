@@ -1,0 +1,2568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <row>
+    <id>193</id>
+    <title>Чикаго</title>
+    <description>Норі, рис, сир філадельфія, лосось, омлет, авокадо, тобіко.</description>
+    <categories>2,13</categories>
+    <tags>1,6,8</tags>
+    <image>4501.jpg</image>
+    <price>119.0</price>
+    <weight>220</weight>
+    <pieces>220</pieces>
+    <label>2,3</label>
+    <my_order>1</my_order>
+    <created_at>2018-11-10 11:29:09</created_at>
+    <updated_at>2018-11-10 11:29:09</updated_at>
+  </row>
+  <row>
+    <id>191</id>
+    <title>Піраміда</title>
+    <description>Норі,рис, сир філадельфія, огірок, тобіко, макрель, лосось</description>
+    <categories>2,13</categories>
+    <tags>1,7,8</tags>
+    <image>пырамыдаe.png</image>
+    <price>150.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label>2,3</label>
+    <my_order>2</my_order>
+    <created_at>2018-10-05 12:00:29</created_at>
+    <updated_at>2018-10-23 22:45:22</updated_at>
+  </row>
+  <row>
+    <id>179</id>
+    <title>Королівський рол</title>
+    <description>Норі, рис, сир філадельфія, креветка, вугор, авокадо, кунжут.</description>
+    <categories>2,13</categories>
+    <tags>2,3,6,8,9</tags>
+    <image>королівський350.jpg</image>
+    <price>131.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label>2,3</label>
+    <my_order>3</my_order>
+    <created_at>2018-06-15 13:03:36</created_at>
+    <updated_at>2018-10-23 22:43:57</updated_at>
+  </row>
+  <row>
+    <id>177</id>
+    <title>Венеція</title>
+    <description>Норі, рис, сир філадельфія, креветка, авокадо, лосось копчений</description>
+    <categories>2,13</categories>
+    <tags>1,3,6,8</tags>
+    <image>25._нагая_kyk9mhe.jpg</image>
+    <price>139.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label>2</label>
+    <my_order>4</my_order>
+    <created_at>2018-06-11 14:32:25</created_at>
+    <updated_at>2018-10-23 22:44:18</updated_at>
+  </row>
+  <row>
+    <id>20</id>
+    <title>Дует</title>
+    <description>Норі, рис, сир філадельфія,  огірок, авокадо, лосось, вугор.</description>
+    <categories>2</categories>
+    <tags>1,2,6,7,8,9</tags>
+    <image>26._дует_49iOcQP.jpg</image>
+    <price>142.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>5</my_order>
+    <created_at>2018-04-01 16:52:35</created_at>
+    <updated_at>2018-10-23 22:47:47</updated_at>
+  </row>
+  <row>
+    <id>189</id>
+    <title>Екзотика</title>
+    <description>Норі, рис, сир філадельфія, креветка, ананас, вугор, лосось, унагі соус, кунжут.</description>
+    <categories>2,13</categories>
+    <tags>1,2,3,8,9</tags>
+    <image>екзотика.jpg</image>
+    <price>137.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label>2,3</label>
+    <my_order>6</my_order>
+    <created_at>2018-07-23 12:44:03</created_at>
+    <updated_at>2018-10-23 22:44:38</updated_at>
+  </row>
+  <row>
+    <id>21</id>
+    <title>Філадельфія</title>
+    <description>Норі, рис, сир філадельфія, огірок, лосось.</description>
+    <categories>2</categories>
+    <tags>1,7,8</tags>
+    <image>27.филадельфія_1wOGVn4.jpg</image>
+    <price>135.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>7</my_order>
+    <created_at>2018-04-01 16:54:37</created_at>
+    <updated_at>2018-10-23 22:44:51</updated_at>
+  </row>
+  <row>
+    <id>24</id>
+    <title>Канада</title>
+    <description>Норі, рис, сир філадельфія, авокадо, лосось, вугор, кунжут, соус унагі.</description>
+    <categories>2</categories>
+    <tags>1,2,6,8,9</tags>
+    <image>кана350даge.jpg</image>
+    <price>155.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>8</my_order>
+    <created_at>2018-04-01 17:05:41</created_at>
+    <updated_at>2018-10-23 22:45:09</updated_at>
+  </row>
+  <row>
+    <id>26</id>
+    <title>Орігате</title>
+    <description>Норі, рис, сир, огірок, авокадо, тобіко, вугор, кунжут, унагі соус.</description>
+    <categories>2</categories>
+    <tags>2,6,7,8,9</tags>
+    <image>33.орігате.jpg</image>
+    <price>145.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>9</my_order>
+    <created_at>2018-04-01 17:18:13</created_at>
+    <updated_at>2018-10-23 22:45:45</updated_at>
+  </row>
+  <row>
+    <id>68</id>
+    <title>Сирний Дует</title>
+    <description>Норі, рис, сир філадельфія, сир тофу, тобіко, масаго, авокадо, креветка.</description>
+    <categories>2</categories>
+    <tags>3,6,8</tags>
+    <image>сирний_дует4.jpg</image>
+    <price>117.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>10</my_order>
+    <created_at>2018-04-03 11:21:41</created_at>
+    <updated_at>2018-10-23 22:46:34</updated_at>
+  </row>
+  <row>
+    <id>157</id>
+    <title>Філадельфія люкс</title>
+    <description>Норі, рис, сир філадельфія, авокадо, тобіко, масаго, лосось.</description>
+    <categories>2</categories>
+    <tags>1,6,8</tags>
+    <image>выладельфыя_делюкс.jpg</image>
+    <price>139.0</price>
+    <weight>200</weight>
+    <pieces>0</pieces>
+    <label>2</label>
+    <my_order>11</my_order>
+    <created_at>2018-04-21 14:29:13</created_at>
+    <updated_at>2018-10-23 22:46:54</updated_at>
+  </row>
+  <row>
+    <id>192</id>
+    <title>Каліфорнія з макреллю</title>
+    <description>Норі, рис, макрель, сир філадельфія, огірок, тобіко</description>
+    <categories>2,13</categories>
+    <tags>7,8</tags>
+    <image>калыфорныя_з_макркеллю.png</image>
+    <price>100.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label>2,3</label>
+    <my_order>12</my_order>
+    <created_at>2018-10-05 12:10:04</created_at>
+    <updated_at>2018-10-05 12:10:04</updated_at>
+  </row>
+  <row>
+    <id>32</id>
+    <title>Блек рол</title>
+    <description>Норі, рис, сир філадельфія, вугор, огірок, лосось, тобіко.</description>
+    <categories>2</categories>
+    <tags>1,2,7,8</tags>
+    <image>БЛЕК_РОЛ350age.jpg</image>
+    <price>125.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>13</my_order>
+    <created_at>2018-04-01 17:56:40</created_at>
+    <updated_at>2018-10-23 22:48:09</updated_at>
+  </row>
+  <row>
+    <id>180</id>
+    <title>Батакон</title>
+    <description>Норі, рис, сир філадельфія, огірок, лосось копчений, зелена цибуля, бекон.</description>
+    <categories>2,13</categories>
+    <tags>1,7,8</tags>
+    <image>веджытабелс_бекон_рол.jpg</image>
+    <price>109.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label>2</label>
+    <my_order>14</my_order>
+    <created_at>2018-06-26 13:55:27</created_at>
+    <updated_at>2018-06-26 13:55:27</updated_at>
+  </row>
+  <row>
+    <id>31</id>
+    <title>Овара</title>
+    <description>Норі, рис, сир філадельфія, лосось тереякі, огірок,  тобіко, масаго.</description>
+    <categories>2</categories>
+    <tags>1,7,8</tags>
+    <image>39._овара_4ktORor.jpg</image>
+    <price>105.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>15</my_order>
+    <created_at>2018-04-01 17:43:07</created_at>
+    <updated_at>2018-10-23 22:48:30</updated_at>
+  </row>
+  <row>
+    <id>22</id>
+    <title>Філадельфія з вугрем</title>
+    <description>Норі, рис, сир філадельфія, огірок,  вугор,  лосось.</description>
+    <categories>2</categories>
+    <tags>1,2,7,8</tags>
+    <image>viber_imоллage.png</image>
+    <price>145.0</price>
+    <weight>190</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>16</my_order>
+    <created_at>2018-04-01 16:56:49</created_at>
+    <updated_at>2018-11-06 12:44:30</updated_at>
+  </row>
+  <row>
+    <id>17</id>
+    <title>Футо макі</title>
+    <description>Норі, рис, лосось, креветка, огірок, авокадо.</description>
+    <categories>2</categories>
+    <tags>1,3,6,7</tags>
+    <image>13._футо_маки_9tJlzk4.jpg</image>
+    <price>99.0</price>
+    <weight>190</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>17</my_order>
+    <created_at>2018-04-01 16:43:21</created_at>
+    <updated_at>2018-10-23 22:49:32</updated_at>
+  </row>
+  <row>
+    <id>40</id>
+    <title>Боніто макі</title>
+    <description>Норі, рис, лосось, тереякі, огірок, сир філадельфія, стружка тунця.</description>
+    <categories>2</categories>
+    <tags>1,4,7,8</tags>
+    <image>22.боніто_маки.jpg</image>
+    <price>85.0</price>
+    <weight>180</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>18</my_order>
+    <created_at>2018-04-03 09:42:31</created_at>
+    <updated_at>2018-10-23 22:49:55</updated_at>
+  </row>
+  <row>
+    <id>27</id>
+    <title>Каліфорнія ебі</title>
+    <description>Норі, рис, креветка, авокадо, омлет, майонез, тобіко.</description>
+    <categories>2</categories>
+    <tags>3,6</tags>
+    <image>34._каліфорнія_еббі_O77KliJ.jpg</image>
+    <price>115.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>19</my_order>
+    <created_at>2018-04-01 17:27:22</created_at>
+    <updated_at>2018-06-26 14:23:23</updated_at>
+  </row>
+  <row>
+    <id>28</id>
+    <title>Каліфорнія сяке</title>
+    <description>Норі, рис, лосось, омлет, авокадо, майонез, тобіко.</description>
+    <categories>2</categories>
+    <tags>1,6</tags>
+    <image>35.каліфорнія_сяке_k7RrsyX.jpg</image>
+    <price>121.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>20</my_order>
+    <created_at>2018-04-01 17:29:10</created_at>
+    <updated_at>2018-10-23 22:51:10</updated_at>
+  </row>
+  <row>
+    <id>70</id>
+    <title>Зелений Дракон</title>
+    <description>Норі, рис, сир філадельфія, авокадо, вугор, тобіко, кунжут, унагі соус.</description>
+    <categories>2</categories>
+    <tags>2,6,9</tags>
+    <image>400.jpg</image>
+    <price>121.0</price>
+    <weight>180</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>21</my_order>
+    <created_at>2018-04-03 11:26:19</created_at>
+    <updated_at>2018-10-23 22:43:33</updated_at>
+  </row>
+  <row>
+    <id>18</id>
+    <title>Інь Янь</title>
+    <description>Норі, рис, тунець,  лосось.</description>
+    <categories>2</categories>
+    <tags>1,4</tags>
+    <image>14.інь_янь_ByKTnuO.jpg</image>
+    <price>115.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>22</my_order>
+    <created_at>2018-04-01 16:45:03</created_at>
+    <updated_at>2018-10-23 23:29:57</updated_at>
+  </row>
+  <row>
+    <id>23</id>
+    <title>Маямі</title>
+    <description>Норі, рис, сир філадельфія, лосось, ікра лососева.</description>
+    <categories>2</categories>
+    <tags>1,8</tags>
+    <image>29._маямі_evOKe7F.jpg</image>
+    <price>139.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>23</my_order>
+    <created_at>2018-04-01 17:00:50</created_at>
+    <updated_at>2018-10-23 22:52:00</updated_at>
+  </row>
+  <row>
+    <id>44</id>
+    <title>Рору</title>
+    <description>Норі, рис, лосось тереякі, помідор, лист салата, сир філадельфія.</description>
+    <categories>2</categories>
+    <tags>1,8</tags>
+    <image>19._рору.jpg</image>
+    <price>85.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>24</my_order>
+    <created_at>2018-04-03 10:08:39</created_at>
+    <updated_at>2018-10-23 22:56:02</updated_at>
+  </row>
+  <row>
+    <id>183</id>
+    <title>Хаманіші</title>
+    <description>Норі, рис, сир філадельфія, вугор, креветка, авокадо, горіховий соус, темпура.</description>
+    <categories>4,13</categories>
+    <tags>2,3,6,8</tags>
+    <image>хаманышы_450.jpg</image>
+    <price>145.0</price>
+    <weight>220</weight>
+    <pieces>8</pieces>
+    <label>2,3</label>
+    <my_order>25</my_order>
+    <created_at>2018-07-21 09:58:35</created_at>
+    <updated_at>2018-10-23 22:51:35</updated_at>
+  </row>
+  <row>
+    <id>184</id>
+    <title>Гаряча креветка</title>
+    <description>Норі, рис, сир філадельфія, лосось, креветка, авокадо, темпура, сухарі панко.</description>
+    <categories>4,13</categories>
+    <tags>1,3,6,8</tags>
+    <image>450_гаряча_креветка.jpg</image>
+    <price>135.0</price>
+    <weight>220</weight>
+    <pieces>8</pieces>
+    <label>2,3</label>
+    <my_order>26</my_order>
+    <created_at>2018-07-21 10:00:32</created_at>
+    <updated_at>2018-10-23 22:52:23</updated_at>
+  </row>
+  <row>
+    <id>72</id>
+    <title>Кунсей</title>
+    <description>Норі, рис, сир філадельфія, лосось копчений, огірок, кунжут.</description>
+    <categories>2</categories>
+    <tags>9</tags>
+    <image>49._кунсей.jpg</image>
+    <price>87.0</price>
+    <weight>190</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>27</my_order>
+    <created_at>2018-04-03 12:07:46</created_at>
+    <updated_at>2018-10-23 22:53:13</updated_at>
+  </row>
+  <row>
+    <id>73</id>
+    <title>Доміно</title>
+    <description>Норі, рис, сир філадельфія, лосось копчений, огірок, цибуля зелена, кунжут.</description>
+    <categories>2</categories>
+    <tags>1,7,8,9</tags>
+    <image>51._1доміно.jpg</image>
+    <price>85.0</price>
+    <weight>190</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>28</my_order>
+    <created_at>2018-04-03 12:11:18</created_at>
+    <updated_at>2018-10-23 22:55:29</updated_at>
+  </row>
+  <row>
+    <id>45</id>
+    <title>Норвезький</title>
+    <description>Норі, рис, креветка, тобіко, огірок, сир філадельфія.</description>
+    <categories>2</categories>
+    <tags>3,7,8</tags>
+    <image>20._норвезький_рол.jpg</image>
+    <price>85.0</price>
+    <weight>180</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>29</my_order>
+    <created_at>2018-04-03 10:12:48</created_at>
+    <updated_at>2018-10-23 23:03:39</updated_at>
+  </row>
+  <row>
+    <id>181</id>
+    <title>Сендвіч рол</title>
+    <description>Норі, рис, сир філадельфія, курка копчена, огірок, спайс соус, бекон</description>
+    <categories>2,13</categories>
+    <tags>7,8</tags>
+    <image>бекон_рол.jpg</image>
+    <price>73.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label>1,2</label>
+    <my_order>30</my_order>
+    <created_at>2018-06-26 13:57:27</created_at>
+    <updated_at>2018-06-26 13:57:27</updated_at>
+  </row>
+  <row>
+    <id>153</id>
+    <title>Три сири</title>
+    <description>Норі, рис, сир плавлений, сир тофу, сир філадельфія, майонез, кунжут.</description>
+    <categories>2</categories>
+    <tags>8</tags>
+    <image>Три_сири.jpg</image>
+    <price>76.0</price>
+    <weight>180</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>31</my_order>
+    <created_at>2018-04-20 16:02:11</created_at>
+    <updated_at>2018-10-23 22:53:54</updated_at>
+  </row>
+  <row>
+    <id>16</id>
+    <title>Лава макі</title>
+    <description>Норі, рис, огірок, cоус лава</description>
+    <categories>2</categories>
+    <tags>5,7</tags>
+    <image>11.лава_маки_SKhPVNt.jpg</image>
+    <price>75.0</price>
+    <weight>140</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>32</my_order>
+    <created_at>2018-04-01 16:41:08</created_at>
+    <updated_at>2018-06-06 20:38:27</updated_at>
+  </row>
+  <row>
+    <id>152</id>
+    <title>Чіз рол</title>
+    <description>Норі, рис, плавлений сир, сир філадельфія, лист салата, помідор, тостовий сир.</description>
+    <categories>2</categories>
+    <tags>8</tags>
+    <image>чіз_з_помідором1_мал.jpg</image>
+    <price>69.0</price>
+    <weight>200</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>33</my_order>
+    <created_at>2018-04-20 15:59:40</created_at>
+    <updated_at>2018-10-23 22:54:10</updated_at>
+  </row>
+  <row>
+    <id>174</id>
+    <title>Парма</title>
+    <description>Норі, рис, сир філадельфія, огірок, помідор, рукола,  прошутто крудо.</description>
+    <categories>2</categories>
+    <tags>7,8</tags>
+    <image>Рол_парма.jpg</image>
+    <price>73.0</price>
+    <weight>200</weight>
+    <pieces>0</pieces>
+    <label>3</label>
+    <my_order>34</my_order>
+    <created_at>2018-05-14 12:03:59</created_at>
+    <updated_at>2018-10-23 22:56:47</updated_at>
+  </row>
+  <row>
+    <id>19</id>
+    <title>Сяке капа макі</title>
+    <description>Норі, рис, лосось, огірок</description>
+    <categories>2</categories>
+    <tags>1,7</tags>
+    <image>15._сяки_капа_маки_Q3xsGSx.jpg</image>
+    <price>65.0</price>
+    <weight>150</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>35</my_order>
+    <created_at>2018-04-01 16:48:17</created_at>
+    <updated_at>2018-06-26 14:36:25</updated_at>
+  </row>
+  <row>
+    <id>74</id>
+    <title>Вавилон</title>
+    <description>Норі, рис, лосось, авокадо, сир філадельфія, кунжут.</description>
+    <categories>2</categories>
+    <tags>1,6,8,9</tags>
+    <image>52._вавілон.jpg</image>
+    <price>84.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>36</my_order>
+    <created_at>2018-04-03 12:13:51</created_at>
+    <updated_at>2018-06-26 16:00:35</updated_at>
+  </row>
+  <row>
+    <id>154</id>
+    <title>Чікен чіз рол</title>
+    <description>Норі, рис, сир філадельфія, плавлений сир, курка копчена, сир тостовий, огірок, помідор.</description>
+    <categories>2</categories>
+    <tags>8</tags>
+    <image>чікен_чіз_рол.jpg</image>
+    <price>73.0</price>
+    <weight>230</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>37</my_order>
+    <created_at>2018-04-20 16:04:45</created_at>
+    <updated_at>2018-06-26 14:57:37</updated_at>
+  </row>
+  <row>
+    <id>42</id>
+    <title>Ніндзя</title>
+    <description>Норі, рис, тунець, спайс соус, майонез, японський омлет, цибуля зелена, огірок, кунжут.</description>
+    <categories>2</categories>
+    <tags>4,7,9</tags>
+    <image>43._ніндзя.jpg</image>
+    <price>81.0</price>
+    <weight>190</weight>
+    <pieces>8</pieces>
+    <label>1</label>
+    <my_order>38</my_order>
+    <created_at>2018-04-03 09:52:09</created_at>
+    <updated_at>2018-06-26 14:04:34</updated_at>
+  </row>
+  <row>
+    <id>34</id>
+    <title>Шахмати</title>
+    <description>Норі, рис, вугор, креветка, огірок, майонез, тобіко, масаго.</description>
+    <categories>2</categories>
+    <tags>2,3,7</tags>
+    <image>42._1шахмати_2WTWTtI.jpg</image>
+    <price>125.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>39</my_order>
+    <created_at>2018-04-01 18:17:07</created_at>
+    <updated_at>2018-10-23 22:57:48</updated_at>
+  </row>
+  <row>
+    <id>43</id>
+    <title>Софт</title>
+    <description>Норі, рис, сир філадельфія, креветка, японський омлет, огірок.</description>
+    <categories>2</categories>
+    <tags>3,7,8</tags>
+    <image>16.софт_ролл.jpg</image>
+    <price>80.0</price>
+    <weight>180</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>40</my_order>
+    <created_at>2018-04-03 10:02:48</created_at>
+    <updated_at>2018-10-23 22:56:25</updated_at>
+  </row>
+  <row>
+    <id>33</id>
+    <title>Кіото рол</title>
+    <description>Норі, рис, огірок ,курка копчена, сир філадельфія ,тобіко.</description>
+    <categories>2</categories>
+    <tags>7,8</tags>
+    <image>41_кіото_рол_XDt3ueg.jpg</image>
+    <price>79.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>41</my_order>
+    <created_at>2018-04-01 18:14:58</created_at>
+    <updated_at>2018-06-06 20:38:27</updated_at>
+  </row>
+  <row>
+    <id>30</id>
+    <title>Каліфорнія веган</title>
+    <description>Норі, рис, авокадо, помідор, огірок, сир, тобіко.</description>
+    <categories>2</categories>
+    <tags>6,7,8</tags>
+    <image>37._каліфорнія_вега_Jf5FoYi.jpg</image>
+    <price>89.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>42</my_order>
+    <created_at>2018-04-01 17:38:23</created_at>
+    <updated_at>2018-06-06 20:38:27</updated_at>
+  </row>
+  <row>
+    <id>39</id>
+    <title>Кадзумі</title>
+    <description>Норі ,рис, лосось тереякі, помідор, авокадо, майонез, тобіко, масаго, стружка тунця.</description>
+    <categories>2</categories>
+    <tags>1,6</tags>
+    <image>21._кадзумі.jpg</image>
+    <price>95.0</price>
+    <weight>180</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>43</my_order>
+    <created_at>2018-04-03 09:36:06</created_at>
+    <updated_at>2018-10-23 22:57:15</updated_at>
+  </row>
+  <row>
+    <id>29</id>
+    <title>Каліфорнія унагі</title>
+    <description>Норі, рис, вугор, японський омлет, майонез, тобіко, масаго.</description>
+    <categories>2</categories>
+    <tags>2</tags>
+    <image>36.каліфорнія_унагіА.jpg</image>
+    <price>121.0</price>
+    <weight>180</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>45</my_order>
+    <created_at>2018-04-01 17:35:03</created_at>
+    <updated_at>2018-08-22 10:30:05</updated_at>
+  </row>
+  <row>
+    <id>41</id>
+    <title>Боніто мікс</title>
+    <description>Норі, рис, сир філадельфія, вугор, лосось, огірок, япоський омлет, стружка тунця.</description>
+    <categories>2</categories>
+    <tags>1,2,4,7,8</tags>
+    <image>24_боніто_мікс.jpg</image>
+    <price>103.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>46</my_order>
+    <created_at>2018-04-03 09:46:33</created_at>
+    <updated_at>2018-06-26 15:45:18</updated_at>
+  </row>
+  <row>
+    <id>77</id>
+    <title>Рол Ясай</title>
+    <description>Норі, рис, лосось, лист салата, огірок, тобіко, масаго.</description>
+    <categories>2</categories>
+    <tags>1,7</tags>
+    <image>18._біг_рол_88O2Ala.jpg</image>
+    <price>81.0</price>
+    <weight>175</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>47</my_order>
+    <created_at>2018-04-03 12:34:44</created_at>
+    <updated_at>2018-06-26 15:59:56</updated_at>
+  </row>
+  <row>
+    <id>71</id>
+    <title>Хияші</title>
+    <description>Норі, рис, креветка  темпура, огірок, майонез, кунжут.</description>
+    <categories>2</categories>
+    <tags>3,7,9</tags>
+    <image>481._хияші.jpg</image>
+    <price>88.0</price>
+    <weight>190</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>48</my_order>
+    <created_at>2018-04-03 12:05:28</created_at>
+    <updated_at>2018-10-23 22:52:46</updated_at>
+  </row>
+  <row>
+    <id>5</id>
+    <title>Сяке макі</title>
+    <description>Норі, рис. лосось</description>
+    <categories>2</categories>
+    <tags>1</tags>
+    <image>сяке_макі.jpg</image>
+    <price>63.0</price>
+    <weight>105</weight>
+    <pieces>6</pieces>
+    <label></label>
+    <my_order>49</my_order>
+    <created_at>2018-04-01 16:07:36</created_at>
+    <updated_at>2018-10-23 22:55:07</updated_at>
+  </row>
+  <row>
+    <id>6</id>
+    <title>Тека макі</title>
+    <description>Норі, рис, тунець</description>
+    <categories>2</categories>
+    <tags>4</tags>
+    <image>тека_макі.jpg</image>
+    <price>66.0</price>
+    <weight>105</weight>
+    <pieces>6</pieces>
+    <label></label>
+    <my_order>50</my_order>
+    <created_at>2018-04-01 16:10:10</created_at>
+    <updated_at>2018-10-23 22:58:38</updated_at>
+  </row>
+  <row>
+    <id>7</id>
+    <title>Унагі макі</title>
+    <description>Норі. рис, вугор, унагі соус, кунжут</description>
+    <categories>2</categories>
+    <tags>2,9</tags>
+    <image>унагі_макі.jpg</image>
+    <price>70.0</price>
+    <weight>110</weight>
+    <pieces>6</pieces>
+    <label></label>
+    <my_order>51</my_order>
+    <created_at>2018-04-01 16:12:51</created_at>
+    <updated_at>2018-10-23 23:06:28</updated_at>
+  </row>
+  <row>
+    <id>8</id>
+    <title>Тека макі спайс</title>
+    <description>Норі, рис,тунець,спайс соус</description>
+    <categories>2</categories>
+    <tags>4</tags>
+    <image>тека_макі_спайсі.jpg</image>
+    <price>69.0</price>
+    <weight>110</weight>
+    <pieces>6</pieces>
+    <label>1</label>
+    <my_order>52</my_order>
+    <created_at>2018-04-01 16:19:50</created_at>
+    <updated_at>2018-10-23 23:00:08</updated_at>
+  </row>
+  <row>
+    <id>9</id>
+    <title>Тамаго макі</title>
+    <description>Норі, рис, омлет</description>
+    <categories>2</categories>
+    <tags></tags>
+    <image>тамаго_макі.jpg</image>
+    <price>29.0</price>
+    <weight>105</weight>
+    <pieces>6</pieces>
+    <label></label>
+    <my_order>53</my_order>
+    <created_at>2018-04-01 16:21:27</created_at>
+    <updated_at>2018-06-06 20:38:27</updated_at>
+  </row>
+  <row>
+    <id>10</id>
+    <title>Сівід макі</title>
+    <description>Норі, рис,Чука сорадо,горіховий соус</description>
+    <categories>2</categories>
+    <tags></tags>
+    <image>сівід_макі.jpg</image>
+    <price>35.0</price>
+    <weight>110</weight>
+    <pieces>6</pieces>
+    <label></label>
+    <my_order>54</my_order>
+    <created_at>2018-04-01 16:24:48</created_at>
+    <updated_at>2018-06-06 20:38:27</updated_at>
+  </row>
+  <row>
+    <id>13</id>
+    <title>Унагі макі спайс</title>
+    <description>Норі, рис, вугор, спайс соус</description>
+    <categories>2</categories>
+    <tags>2</tags>
+    <image>спайсі_унагі.jpg</image>
+    <price>67.0</price>
+    <weight>115</weight>
+    <pieces>6</pieces>
+    <label>1</label>
+    <my_order>55</my_order>
+    <created_at>2018-04-01 16:35:46</created_at>
+    <updated_at>2018-06-06 20:38:27</updated_at>
+  </row>
+  <row>
+    <id>14</id>
+    <title>Сяке Кунсей</title>
+    <description>Норі, рис, лосось копчений, огірок</description>
+    <categories>2</categories>
+    <tags>1,7</tags>
+    <image>10.Сяке_кунсей_u70wNfL.jpg</image>
+    <price>73.0</price>
+    <weight>165</weight>
+    <pieces>6</pieces>
+    <label></label>
+    <my_order>56</my_order>
+    <created_at>2018-04-01 16:38:09</created_at>
+    <updated_at>2018-10-23 22:54:44</updated_at>
+  </row>
+  <row>
+    <id>4</id>
+    <title>Капа макі</title>
+    <description>Норі, рис, огірок</description>
+    <categories>2</categories>
+    <tags>7</tags>
+    <image>каппа_макі.jpg</image>
+    <price>27.0</price>
+    <weight>105</weight>
+    <pieces>6</pieces>
+    <label></label>
+    <my_order>57</my_order>
+    <created_at>2018-04-01 15:56:22</created_at>
+    <updated_at>2018-06-06 20:38:26</updated_at>
+  </row>
+  <row>
+    <id>15</id>
+    <title>Ікура макі</title>
+    <description>Норі, рис, сир плавлений, огірок, ікра лососева.</description>
+    <categories>2</categories>
+    <tags>7</tags>
+    <image>12.3_ікура_маки_TcCm29p.jpg</image>
+    <price>66.0</price>
+    <weight>120</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>58</my_order>
+    <created_at>2018-04-01 16:39:33</created_at>
+    <updated_at>2018-06-26 14:53:32</updated_at>
+  </row>
+  <row>
+    <id>3</id>
+    <title>Авокадо макі</title>
+    <description>Норі, рис, авокадо</description>
+    <categories>2</categories>
+    <tags>6</tags>
+    <image>авокадо_макі.jpg</image>
+    <price>34.0</price>
+    <weight>105</weight>
+    <pieces>6</pieces>
+    <label></label>
+    <my_order>59</my_order>
+    <created_at>2018-04-01 15:55:03</created_at>
+    <updated_at>2018-06-06 20:38:26</updated_at>
+  </row>
+  <row>
+    <id>25</id>
+    <title>Унагі рору</title>
+    <description>Норі, рис, лосось тереякі, лист салата, огірок, майонез, сир філадельфія, вугор.</description>
+    <categories>2</categories>
+    <tags>1,2,7,8</tags>
+    <image>32._унагі_рору_F9rp6Ex.jpg</image>
+    <price>114.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>60</my_order>
+    <created_at>2018-04-01 17:11:15</created_at>
+    <updated_at>2018-06-06 20:38:27</updated_at>
+  </row>
+  <row>
+    <id>46</id>
+    <title>Унагі нігірі</title>
+    <description>Норі, рис, вугор, унагі соус, кунжут.</description>
+    <categories>3</categories>
+    <tags>2</tags>
+    <image>74._унагі_нігірі.jpg</image>
+    <price>29.0</price>
+    <weight>30</weight>
+    <pieces>1</pieces>
+    <label></label>
+    <my_order>61</my_order>
+    <created_at>2018-04-03 10:17:47</created_at>
+    <updated_at>2018-06-06 20:38:27</updated_at>
+  </row>
+  <row>
+    <id>47</id>
+    <title>Сяке нігірі</title>
+    <description>Рис, лосось</description>
+    <categories>3</categories>
+    <tags>1</tags>
+    <image>76._нігірі_сяке.jpg</image>
+    <price>24.0</price>
+    <weight>30</weight>
+    <pieces>1</pieces>
+    <label></label>
+    <my_order>62</my_order>
+    <created_at>2018-04-03 10:20:41</created_at>
+    <updated_at>2018-06-06 20:38:27</updated_at>
+  </row>
+  <row>
+    <id>48</id>
+    <title>Магуро нігірі</title>
+    <description>Рис,тунець</description>
+    <categories>3</categories>
+    <tags>4</tags>
+    <image>78._магуро_нігірі.jpg</image>
+    <price>27.0</price>
+    <weight>30</weight>
+    <pieces>1</pieces>
+    <label></label>
+    <my_order>63</my_order>
+    <created_at>2018-04-03 10:22:12</created_at>
+    <updated_at>2018-06-06 20:38:27</updated_at>
+  </row>
+  <row>
+    <id>50</id>
+    <title>Нігірі Кунсей</title>
+    <description>Рис, лосось копчений</description>
+    <categories>3</categories>
+    <tags>1</tags>
+    <image>76._нігірі_сяке_TF5YglP.jpg</image>
+    <price>25.0</price>
+    <weight>30</weight>
+    <pieces>1</pieces>
+    <label></label>
+    <my_order>64</my_order>
+    <created_at>2018-04-03 10:25:26</created_at>
+    <updated_at>2018-06-06 20:38:27</updated_at>
+  </row>
+  <row>
+    <id>51</id>
+    <title>Спайс сяке</title>
+    <description>Норі, рис, лосось, спайс соус.</description>
+    <categories>3</categories>
+    <tags>1</tags>
+    <image>66._спайсі_сяке_8SKzMsc.jpg</image>
+    <price>34.0</price>
+    <weight>35</weight>
+    <pieces>1</pieces>
+    <label>1</label>
+    <my_order>65</my_order>
+    <created_at>2018-04-03 10:28:59</created_at>
+    <updated_at>2018-06-06 20:38:27</updated_at>
+  </row>
+  <row>
+    <id>52</id>
+    <title>Спайс магуро</title>
+    <description>Норі, рис, тунець, спайс соус.</description>
+    <categories>3</categories>
+    <tags>4</tags>
+    <image>67._спайсі_магуро.jpg</image>
+    <price>35.0</price>
+    <weight>35</weight>
+    <pieces>1</pieces>
+    <label>1</label>
+    <my_order>66</my_order>
+    <created_at>2018-04-03 10:30:23</created_at>
+    <updated_at>2018-06-06 20:38:27</updated_at>
+  </row>
+  <row>
+    <id>53</id>
+    <title>Спайс ебі</title>
+    <description>Норі,рис, креветка, спайс ебі</description>
+    <categories>3</categories>
+    <tags>3</tags>
+    <image>68._спайсі_ебі.jpg</image>
+    <price>34.0</price>
+    <weight>35</weight>
+    <pieces>1</pieces>
+    <label>1</label>
+    <my_order>67</my_order>
+    <created_at>2018-04-03 10:32:36</created_at>
+    <updated_at>2018-06-06 20:38:27</updated_at>
+  </row>
+  <row>
+    <id>54</id>
+    <title>Спайс хотате</title>
+    <description>Норі, рис, гребінець, спайс соус.</description>
+    <categories>3</categories>
+    <tags>5</tags>
+    <image>69._спайсігрибынець.jpg</image>
+    <price>40.0</price>
+    <weight>35</weight>
+    <pieces>1</pieces>
+    <label>1</label>
+    <my_order>68</my_order>
+    <created_at>2018-04-03 10:34:23</created_at>
+    <updated_at>2018-06-06 20:38:28</updated_at>
+  </row>
+  <row>
+    <id>55</id>
+    <title>Гункан Сівід</title>
+    <description>Норі, рис, чука сорадо, горіховий соус.</description>
+    <categories>3</categories>
+    <tags></tags>
+    <image>70.1_гункан_чука.jpg</image>
+    <price>22.0</price>
+    <weight>35</weight>
+    <pieces>1</pieces>
+    <label></label>
+    <my_order>69</my_order>
+    <created_at>2018-04-03 10:35:57</created_at>
+    <updated_at>2018-06-06 20:38:28</updated_at>
+  </row>
+  <row>
+    <id>56</id>
+    <title>Гункан Тобіко блек</title>
+    <description>Норі, рис, тобіко, масаго.</description>
+    <categories>3</categories>
+    <tags></tags>
+    <image>71._гункан_тобіко_блек.jpg</image>
+    <price>27.0</price>
+    <weight>35</weight>
+    <pieces>1</pieces>
+    <label></label>
+    <my_order>70</my_order>
+    <created_at>2018-04-03 10:37:14</created_at>
+    <updated_at>2018-06-06 20:38:28</updated_at>
+  </row>
+  <row>
+    <id>57</id>
+    <title>Гункан Тобіко оранж</title>
+    <description>Норі, рис, тобіко.</description>
+    <categories>3</categories>
+    <tags></tags>
+    <image>72._гункан_тобіко_оранж.jpg</image>
+    <price>27.0</price>
+    <weight>35</weight>
+    <pieces>1</pieces>
+    <label></label>
+    <my_order>71</my_order>
+    <created_at>2018-04-03 10:38:57</created_at>
+    <updated_at>2018-06-06 20:38:28</updated_at>
+  </row>
+  <row>
+    <id>58</id>
+    <title>Гункан Ікура</title>
+    <description>Норі, рис, ікра лососева.</description>
+    <categories>3</categories>
+    <tags></tags>
+    <image>73._1гункан_ікура.jpg</image>
+    <price>35.0</price>
+    <weight>35</weight>
+    <pieces>1</pieces>
+    <label></label>
+    <my_order>72</my_order>
+    <created_at>2018-04-03 10:40:08</created_at>
+    <updated_at>2018-06-06 20:38:28</updated_at>
+  </row>
+  <row>
+    <id>59</id>
+    <title>Хот Рол</title>
+    <description>Норі, рис, лосось, вугор, авокадо, сир філадельфія, темпура.</description>
+    <categories>4</categories>
+    <tags>1,2,6,8</tags>
+    <image>53._хот_ролл.jpg</image>
+    <price>123.0</price>
+    <weight>220</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>73</my_order>
+    <created_at>2018-04-03 10:44:08</created_at>
+    <updated_at>2018-10-23 22:53:32</updated_at>
+  </row>
+  <row>
+    <id>60</id>
+    <title>Гаряча філадельфія</title>
+    <description>Норі, рис, сир філадельфія, лосось, темпура, сухарі панко.</description>
+    <categories>4</categories>
+    <tags>1,8</tags>
+    <image>54._1гаряча_філадельфія.jpg</image>
+    <price>89.0</price>
+    <weight>180</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>74</my_order>
+    <created_at>2018-04-03 10:46:25</created_at>
+    <updated_at>2018-10-23 22:59:36</updated_at>
+  </row>
+  <row>
+    <id>61</id>
+    <title>Хот Темпура</title>
+    <description>Норі, рис, сир філадельфія, лосось, креветка, огірок, спайс соус, темпура.</description>
+    <categories>4</categories>
+    <tags>1,3,7,8</tags>
+    <image>55._хот_темпура.jpg</image>
+    <price>105.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label>1</label>
+    <my_order>75</my_order>
+    <created_at>2018-04-03 10:51:55</created_at>
+    <updated_at>2018-10-23 23:25:11</updated_at>
+  </row>
+  <row>
+    <id>62</id>
+    <title>Хот Чікен</title>
+    <description>Норі, рис, курка копчена, лист салата, спайс соус, темпура, сухарі панко.</description>
+    <categories>4</categories>
+    <tags>8</tags>
+    <image>56._хот_чікен.jpg</image>
+    <price>70.0</price>
+    <weight>175</weight>
+    <pieces>8</pieces>
+    <label>1</label>
+    <my_order>76</my_order>
+    <created_at>2018-04-03 10:59:23</created_at>
+    <updated_at>2018-10-23 22:58:59</updated_at>
+  </row>
+  <row>
+    <id>63</id>
+    <title>Осака</title>
+    <description>Норі, рис, лосось, вугор, авокадо, темпура  сухарі панко.</description>
+    <categories>4</categories>
+    <tags>1,2,6</tags>
+    <image>57._осака.jpg</image>
+    <price>114.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>77</my_order>
+    <created_at>2018-04-03 11:08:11</created_at>
+    <updated_at>2018-06-06 20:38:28</updated_at>
+  </row>
+  <row>
+    <id>64</id>
+    <title>Цезар Рол</title>
+    <description>Норі, рис, сир філадельфія, бекон, курка копчена, помідор, сухарі  панко, темпура.</description>
+    <categories>4</categories>
+    <tags>8</tags>
+    <image>58._цезар_рол.jpg</image>
+    <price>73.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>78</my_order>
+    <created_at>2018-04-03 11:10:31</created_at>
+    <updated_at>2018-10-23 23:25:45</updated_at>
+  </row>
+  <row>
+    <id>65</id>
+    <title>Лава темпура</title>
+    <description>Норі, рис, сир філадельфія, лосось, авокадо, соус лава, темпура, сухарі панко.</description>
+    <categories>4</categories>
+    <tags>1,5,6,8</tags>
+    <image>59.1_Лава-Темпура.jpg</image>
+    <price>139.0</price>
+    <weight>230</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>79</my_order>
+    <created_at>2018-04-03 11:13:18</created_at>
+    <updated_at>2018-06-06 20:38:28</updated_at>
+  </row>
+  <row>
+    <id>66</id>
+    <title>Нагасаки</title>
+    <description>Норі, рис, помідор, сир філадельфія, лосось копчений, цибуля зелена, темпура, сухарі панко.</description>
+    <categories>4</categories>
+    <tags>1,8</tags>
+    <image>60._нагасакі.jpg</image>
+    <price>79.0</price>
+    <weight>200</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>80</my_order>
+    <created_at>2018-04-03 11:15:08</created_at>
+    <updated_at>2018-06-06 20:38:28</updated_at>
+  </row>
+  <row>
+    <id>67</id>
+    <title>Ікура Сяке</title>
+    <description>Норі, рис, сир філадельфія, лосось, ікра лососева.</description>
+    <categories>2</categories>
+    <tags>1,8</tags>
+    <image>61._ікура_сяке.jpg</image>
+    <price>110.0</price>
+    <weight>175</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>81</my_order>
+    <created_at>2018-04-03 11:19:23</created_at>
+    <updated_at>2018-10-23 23:33:40</updated_at>
+  </row>
+  <row>
+    <id>185</id>
+    <title>М&apos;ясна 32 см</title>
+    <description>Тісто, соус, моцарелла, салямі, шинка, баварські ковбаски, трави, пармезан.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>450.jpg</image>
+    <price>135.0</price>
+    <weight>550</weight>
+    <pieces>8</pieces>
+    <label>2</label>
+    <my_order>82</my_order>
+    <created_at>2018-07-21 11:12:00</created_at>
+    <updated_at>2018-10-23 22:33:12</updated_at>
+  </row>
+  <row>
+    <id>171</id>
+    <title>Руколона 32 см</title>
+    <description>Тісто, соус, моцарелла, шинка, бекон, ананас, помідор, рукола.</description>
+    <categories>7</categories>
+    <tags>8</tags>
+    <image>РУКОЛОНА.jpg</image>
+    <price>125.0</price>
+    <weight>500</weight>
+    <pieces>0</pieces>
+    <label>2</label>
+    <my_order>85</my_order>
+    <created_at>2018-05-14 11:19:08</created_at>
+    <updated_at>2018-10-23 22:41:02</updated_at>
+  </row>
+  <row>
+    <id>78</id>
+    <title>Вітелія 32 см</title>
+    <description>Тісто, моцарелла, вершки, шинка, чорнослив, ананас, трави, пармезан.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>вітелія.jpg</image>
+    <price>115.0</price>
+    <weight>500</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>86</my_order>
+    <created_at>2018-04-03 19:40:27</created_at>
+    <updated_at>2018-10-23 22:40:11</updated_at>
+  </row>
+  <row>
+    <id>79</id>
+    <title>Вегетаріанська 32 см</title>
+    <description>Тісто, соус, моцарелла, оливки, помідор, початки кукурудзи, шампіньйони, трави.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>вегеріанська_MM2EwcZ.jpg</image>
+    <price>115.0</price>
+    <weight>550</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>87</my_order>
+    <created_at>2018-04-03 19:45:56</created_at>
+    <updated_at>2018-10-23 22:34:06</updated_at>
+  </row>
+  <row>
+    <id>80</id>
+    <title>Чотири м&apos;яса 32 см</title>
+    <description>Тісто, соус, моцарелла, салямі, бекон, шинка, курка, корнішони, зелена цибуля, трави.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>чотири_м_яса.jpg</image>
+    <price>135.0</price>
+    <weight>550</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>88</my_order>
+    <created_at>2018-04-03 19:52:17</created_at>
+    <updated_at>2018-10-23 22:38:54</updated_at>
+  </row>
+  <row>
+    <id>81</id>
+    <title>Мілано 32 см</title>
+    <description>Тісто, соус, моцарелла, бекон, салямі, корнішони, шампіньйони, трави.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>мілано.jpg</image>
+    <price>125.0</price>
+    <weight>550</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>89</my_order>
+    <created_at>2018-04-03 19:58:14</created_at>
+    <updated_at>2018-10-23 22:35:16</updated_at>
+  </row>
+  <row>
+    <id>82</id>
+    <title>Кватро формаджі 32 см</title>
+    <description>Тісто, соус, моцарелла, вершки, сир рікотта, дор блю, пармезан, трави.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>4_сири.jpg</image>
+    <price>155.0</price>
+    <weight>550</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>90</my_order>
+    <created_at>2018-04-03 20:00:39</created_at>
+    <updated_at>2018-10-23 22:39:40</updated_at>
+  </row>
+  <row>
+    <id>83</id>
+    <title>Гавайська 32 см</title>
+    <description>Тісто, соус, моцарелла, вершки, курка, ананас, трави, пармезан.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>гавайська.jpg</image>
+    <price>119.0</price>
+    <weight>550</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>91</my_order>
+    <created_at>2018-04-03 20:03:42</created_at>
+    <updated_at>2018-10-23 22:33:33</updated_at>
+  </row>
+  <row>
+    <id>175</id>
+    <title>Прошутто 32 см</title>
+    <description>Тісто, соус, моцарелла, прошутто крудо, помідорки чері, рукола, пармезан.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>прошуто_рукола_черы.jpg</image>
+    <price>145.0</price>
+    <weight>550</weight>
+    <pieces>8</pieces>
+    <label>2</label>
+    <my_order>93</my_order>
+    <created_at>2018-05-26 13:15:26</created_at>
+    <updated_at>2018-10-23 22:39:17</updated_at>
+  </row>
+  <row>
+    <id>187</id>
+    <title>Карбонара 32 см</title>
+    <description>Тісто, вершково-яєчний соус, бекон, шампіньйони, пармезан.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>450-01.jpg</image>
+    <price>119.0</price>
+    <weight>500</weight>
+    <pieces>8</pieces>
+    <label>2</label>
+    <my_order>94</my_order>
+    <created_at>2018-07-21 11:22:14</created_at>
+    <updated_at>2018-10-23 22:38:30</updated_at>
+  </row>
+  <row>
+    <id>86</id>
+    <title>Грибна 32 см</title>
+    <description>Тісто, соус, моцарелла, шампіньйони, опеньки, оливки, маслини, цибуля кримська,  трави.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>грибна.jpg</image>
+    <price>115.0</price>
+    <weight>550</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>95</my_order>
+    <created_at>2018-04-09 06:52:31</created_at>
+    <updated_at>2018-10-23 22:37:16</updated_at>
+  </row>
+  <row>
+    <id>88</id>
+    <title>Італьяні 32 см</title>
+    <description>Тісто, соус, моцарелла, помідор, шинка, курка, бекон, салямі, перець болгарський, шампіньйони, трави.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>італьяні.jpg</image>
+    <price>135.0</price>
+    <weight>600</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>96</my_order>
+    <created_at>2018-04-09 07:12:29</created_at>
+    <updated_at>2018-10-23 22:37:36</updated_at>
+  </row>
+  <row>
+    <id>89</id>
+    <title>Селянська 32 см</title>
+    <description>Тісто, соус, моцарелла, сялямі, картопля фрі, помідорки черрі, цибуля зелена, трави.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>селянська.jpg</image>
+    <price>119.0</price>
+    <weight>500</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>97</my_order>
+    <created_at>2018-04-09 07:31:01</created_at>
+    <updated_at>2018-08-16 15:03:11</updated_at>
+  </row>
+  <row>
+    <id>90</id>
+    <title>Салямі 32 см</title>
+    <description>Тісто, соус, моцарелла, салямі, цибуля зелена, трави.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>салямі.jpg</image>
+    <price>125.0</price>
+    <weight>500</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>98</my_order>
+    <created_at>2018-04-09 07:35:49</created_at>
+    <updated_at>2018-10-23 22:36:03</updated_at>
+  </row>
+  <row>
+    <id>91</id>
+    <title>Капрічоза 32 см</title>
+    <description>Тісто, соус, моцарелла, шинка, помідор, шампіньйони, трави.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>капричоза.jpg</image>
+    <price>119.0</price>
+    <weight>550</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>99</my_order>
+    <created_at>2018-04-09 07:38:32</created_at>
+    <updated_at>2018-10-23 22:37:54</updated_at>
+  </row>
+  <row>
+    <id>93</id>
+    <title>Мисо суп з лососем</title>
+    <description>Лосось , сир тофу, водорослі вакаме.</description>
+    <categories>5</categories>
+    <tags>1</tags>
+    <image>Мисо_суп_з_лососем.jpg</image>
+    <price>80.0</price>
+    <weight>300</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>100</my_order>
+    <created_at>2018-04-09 08:19:30</created_at>
+    <updated_at>2018-06-06 20:38:28</updated_at>
+  </row>
+  <row>
+    <id>94</id>
+    <title>Мисо суп</title>
+    <description>Сир тофу, водорослі вакаме, цибуля порей</description>
+    <categories>5</categories>
+    <tags>8</tags>
+    <image>Мисо_суп.jpg</image>
+    <price>65.0</price>
+    <weight>300</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>101</my_order>
+    <created_at>2018-04-09 18:48:45</created_at>
+    <updated_at>2018-06-06 20:38:28</updated_at>
+  </row>
+  <row>
+    <id>95</id>
+    <title>Мисо суп з креветками</title>
+    <description>Креветки, сир тофу, водорослі вакаме, цибуля порей.</description>
+    <categories>5</categories>
+    <tags>3</tags>
+    <image>Мисо_суп_з_криветками.jpg</image>
+    <price>75.0</price>
+    <weight>300</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>102</my_order>
+    <created_at>2018-04-09 18:50:53</created_at>
+    <updated_at>2018-06-06 20:38:28</updated_at>
+  </row>
+  <row>
+    <id>96</id>
+    <title>Мисо суп з вугрем</title>
+    <description>Вугор, кунжут, водорослі вакаме, сир тофу, цибуля порей.</description>
+    <categories>5</categories>
+    <tags>2</tags>
+    <image>Мисо_суп_з_вугрем.jpg</image>
+    <price>85.0</price>
+    <weight>300</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>103</my_order>
+    <created_at>2018-04-09 18:52:16</created_at>
+    <updated_at>2018-06-06 20:38:28</updated_at>
+  </row>
+  <row>
+    <id>97</id>
+    <title>Боржомі</title>
+    <description>Мінеральна вода вулканічного походження.</description>
+    <categories>10</categories>
+    <tags></tags>
+    <image>боржомі_lwOrgNA.jpg</image>
+    <price>35.0</price>
+    <weight>500</weight>
+    <pieces>1</pieces>
+    <label></label>
+    <my_order>104</my_order>
+    <created_at>2018-04-09 19:02:33</created_at>
+    <updated_at>2018-06-06 20:38:28</updated_at>
+  </row>
+  <row>
+    <id>98</id>
+    <title>Квінта Філона 32 см</title>
+    <description>Тісто, соус, моцарелла, помідор, бекон, курка, оливки, трави.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>квінта_філона.jpg</image>
+    <price>119.0</price>
+    <weight>550</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>105</my_order>
+    <created_at>2018-04-10 19:33:59</created_at>
+    <updated_at>2018-10-23 22:36:58</updated_at>
+  </row>
+  <row>
+    <id>99</id>
+    <title>З лососем 32 см</title>
+    <description>Тісто, моцарелла, вершки, лосось копчений, маслини, лимон, трави.</description>
+    <categories>7</categories>
+    <tags>1</tags>
+    <image>аль_сальмоне-01.jpg</image>
+    <price>179.0</price>
+    <weight>500</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>106</my_order>
+    <created_at>2018-04-10 19:40:40</created_at>
+    <updated_at>2018-08-16 15:04:38</updated_at>
+  </row>
+  <row>
+    <id>100</id>
+    <title>Фруті Де  Маре 32 см</title>
+    <description>Тісто, соус, моцарелла, морський коктейль, помідорки черрі, лимон, трави.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>фруті_де_маре.jpg</image>
+    <price>139.0</price>
+    <weight>550</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>107</my_order>
+    <created_at>2018-04-10 19:43:04</created_at>
+    <updated_at>2018-08-16 15:04:04</updated_at>
+  </row>
+  <row>
+    <id>101</id>
+    <title>Марінара 32 см</title>
+    <description>Тісто, соус, моцарелла, шампіньйони, курка, помідор, пармезан, трави.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>марінара.jpg</image>
+    <price>119.0</price>
+    <weight>550</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>108</my_order>
+    <created_at>2018-04-10 19:45:05</created_at>
+    <updated_at>2018-10-23 23:36:59</updated_at>
+  </row>
+  <row>
+    <id>102</id>
+    <title>З Шинкою та беконом 32 см</title>
+    <description>Тісто, соус, моцарелла, бекон, шинка, цибуля кримська, трави.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>з_шинкою_та_беконом.jpg</image>
+    <price>119.0</price>
+    <weight>500</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>109</my_order>
+    <created_at>2018-04-10 19:49:14</created_at>
+    <updated_at>2018-10-23 23:38:36</updated_at>
+  </row>
+  <row>
+    <id>103</id>
+    <title>З   тунцем 32 см</title>
+    <description>Тісто, моцарелла, тунець, корнішони, вершки, цибуля кримська, лимон, трави.</description>
+    <categories>7</categories>
+    <tags>4</tags>
+    <image>з_тунцем.jpg</image>
+    <price>179.0</price>
+    <weight>520</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>110</my_order>
+    <created_at>2018-04-10 19:51:43</created_at>
+    <updated_at>2018-06-10 13:23:46</updated_at>
+  </row>
+  <row>
+    <id>104</id>
+    <title>Неаполітана 32 см</title>
+    <description>Тісто, соус, моцарелла, ковбаски баварські, салямі, помідор, оливки, трави.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>неаполітана.jpg</image>
+    <price>119.0</price>
+    <weight>550</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>111</my_order>
+    <created_at>2018-04-10 19:58:33</created_at>
+    <updated_at>2018-08-16 15:08:39</updated_at>
+  </row>
+  <row>
+    <id>105</id>
+    <title>Дитяча 32 см</title>
+    <description>Тісто, соус, моцарелла, кукурудза, курка, помідор.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>дитяча.jpg</image>
+    <price>115.0</price>
+    <weight>550</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>112</my_order>
+    <created_at>2018-04-10 20:03:05</created_at>
+    <updated_at>2018-10-23 23:32:43</updated_at>
+  </row>
+  <row>
+    <id>106</id>
+    <title>Диявола 32 см</title>
+    <description>Тісто, соус, моцарелла, чорізо, перець чілі, трави.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>диявола.jpg</image>
+    <price>119.0</price>
+    <weight>500</weight>
+    <pieces>8</pieces>
+    <label>1</label>
+    <my_order>113</my_order>
+    <created_at>2018-04-10 20:05:24</created_at>
+    <updated_at>2018-08-16 15:12:16</updated_at>
+  </row>
+  <row>
+    <id>107</id>
+    <title>Монтанара 32 см</title>
+    <description>Тісто, соус, моцарелла, шинка, помідор, маслини, кукурудза, трави.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>монтанара.jpg</image>
+    <price>119.0</price>
+    <weight>550</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>114</my_order>
+    <created_at>2018-04-10 20:09:33</created_at>
+    <updated_at>2018-10-23 23:38:05</updated_at>
+  </row>
+  <row>
+    <id>186</id>
+    <title>М&apos;ясна  50 см</title>
+    <description>Тісто, соус, моцарелла, салямі, шинка, баварські ковбаски, трави, пармезан.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>450_50_см1.jpg</image>
+    <price>230.0</price>
+    <weight>1000</weight>
+    <pieces>8</pieces>
+    <label>2</label>
+    <my_order>115</my_order>
+    <created_at>2018-07-21 11:16:22</created_at>
+    <updated_at>2018-10-23 22:09:58</updated_at>
+  </row>
+  <row>
+    <id>108</id>
+    <title>Чотири м&apos;яса 50 см</title>
+    <description>Тісто, соус, моцарелла, салямі, бекон, шинка, курка, корнішони, зелена цибуля, трави</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>4_мяса_nB5olBu.jpg</image>
+    <price>235.0</price>
+    <weight>1000</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>116</my_order>
+    <created_at>2018-04-10 20:14:38</created_at>
+    <updated_at>2018-10-23 22:19:26</updated_at>
+  </row>
+  <row>
+    <id>109</id>
+    <title>Кватро формаджі 50 см</title>
+    <description>Тісто, соус, моцарелла, вершки, сир рікотта, сир дор блю, пармезан, трави.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>4_сири_NiQPhJv.jpg</image>
+    <price>260.0</price>
+    <weight>1000</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>117</my_order>
+    <created_at>2018-04-10 20:16:32</created_at>
+    <updated_at>2018-06-10 13:39:59</updated_at>
+  </row>
+  <row>
+    <id>110</id>
+    <title>Вегетаріанська 50 см</title>
+    <description>Тісто, соус, моцарелла, оливки, помідор, початки кукурудзи, шампіньйони, трави.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>вегеріанська_fv9lw59.jpg</image>
+    <price>210.0</price>
+    <weight>1100</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>118</my_order>
+    <created_at>2018-04-10 20:19:31</created_at>
+    <updated_at>2018-10-23 22:21:02</updated_at>
+  </row>
+  <row>
+    <id>111</id>
+    <title>З лососем 50 см</title>
+    <description>Тісто, моцарелла, вершки, лосось копчений, маслини, лимон, трави.</description>
+    <categories>8</categories>
+    <tags>1</tags>
+    <image>аль_сальмоне_SamNppW.jpg</image>
+    <price>309.0</price>
+    <weight>870</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>119</my_order>
+    <created_at>2018-04-10 20:25:17</created_at>
+    <updated_at>2018-07-17 15:55:09</updated_at>
+  </row>
+  <row>
+    <id>112</id>
+    <title>Вітелія 50 см</title>
+    <description>Тісто, моцарелла, вершки, шинка, чорнослив, ананас, трави.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>вітелія_EPiJqHs.jpg</image>
+    <price>210.0</price>
+    <weight>950</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>120</my_order>
+    <created_at>2018-04-10 20:29:26</created_at>
+    <updated_at>2018-10-23 22:21:40</updated_at>
+  </row>
+  <row>
+    <id>113</id>
+    <title>Грибна 50 см</title>
+    <description>Тісто, соус, моцарелла, шампіньйони, опеньки, оливки, маслини, трави.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>грибна_249LE9N.jpg</image>
+    <price>210.0</price>
+    <weight>1000</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>121</my_order>
+    <created_at>2018-04-10 20:34:31</created_at>
+    <updated_at>2018-10-23 22:18:19</updated_at>
+  </row>
+  <row>
+    <id>114</id>
+    <title>Дитяча 50 см</title>
+    <description>Тісто, соус, моцарелла, кукурудза, курка, помідор.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>дитяча_jEZtxOv.jpg</image>
+    <price>210.0</price>
+    <weight>1000</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>122</my_order>
+    <created_at>2018-04-10 20:35:40</created_at>
+    <updated_at>2018-10-23 22:17:29</updated_at>
+  </row>
+  <row>
+    <id>115</id>
+    <title>Диявола 50 см</title>
+    <description>Тісто, соус, моцарелла, чорізо, перець чілі, трави.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>диявола_cXE8EaB.jpg</image>
+    <price>220.0</price>
+    <weight>950</weight>
+    <pieces>8</pieces>
+    <label>1</label>
+    <my_order>123</my_order>
+    <created_at>2018-04-10 20:36:59</created_at>
+    <updated_at>2018-10-23 22:29:41</updated_at>
+  </row>
+  <row>
+    <id>116</id>
+    <title>Гавайська 50 см</title>
+    <description>Тісто, соус, моцарелла, вершки, курка, ананас.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>гавайська_78LBv5B.jpg</image>
+    <price>210.0</price>
+    <weight>1000</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>124</my_order>
+    <created_at>2018-04-10 20:58:17</created_at>
+    <updated_at>2018-10-23 22:22:16</updated_at>
+  </row>
+  <row>
+    <id>118</id>
+    <title>Італьяні 50 см</title>
+    <description>Тісто, соус, моцарелла, помідор, шинка, курка, бекон, салямі, перець болгарський, шампіньйони, трави.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>італьяні_9JEsNTC.jpg</image>
+    <price>235.0</price>
+    <weight>1100</weight>
+    <pieces>8</pieces>
+    <label>3</label>
+    <my_order>125</my_order>
+    <created_at>2018-04-10 21:01:20</created_at>
+    <updated_at>2018-10-23 22:31:11</updated_at>
+  </row>
+  <row>
+    <id>119</id>
+    <title>Капрічоза 50 см</title>
+    <description>Тісто, соус. моцарелла, шинка, помідор, шампіньйони, трави.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>капричоза_1Sj1Q5q.jpg</image>
+    <price>210.0</price>
+    <weight>1000</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>126</my_order>
+    <created_at>2018-04-10 21:02:57</created_at>
+    <updated_at>2018-10-23 22:16:44</updated_at>
+  </row>
+  <row>
+    <id>120</id>
+    <title>Квінта філона 50 см</title>
+    <description>Тісто, соус, моцарелла, помідор, бекон,  курка,  оливки, трави.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>квінта_філона_tahzbkP.jpg</image>
+    <price>215.0</price>
+    <weight>1000</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>127</my_order>
+    <created_at>2018-04-10 21:04:29</created_at>
+    <updated_at>2018-10-23 22:23:00</updated_at>
+  </row>
+  <row>
+    <id>121</id>
+    <title>Фруті де маре 50 см</title>
+    <description>Тісто, соус, моцарелла, морський коктейль,  помідорки чері, лимон, трави.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>фруті_де_маре_EkuceKq.jpg</image>
+    <price>245.0</price>
+    <weight>1000</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>128</my_order>
+    <created_at>2018-04-10 21:05:54</created_at>
+    <updated_at>2018-10-23 23:32:08</updated_at>
+  </row>
+  <row>
+    <id>122</id>
+    <title>Ріва коста 50 см</title>
+    <description>Тісто, моцарелла, вершки, вугор, креветки, цибуля порей, лимон, трави</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>ріва_коста_DiHfU2W.jpg</image>
+    <price>399.0</price>
+    <weight>960</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>129</my_order>
+    <created_at>2018-04-10 21:07:16</created_at>
+    <updated_at>2018-06-10 14:12:48</updated_at>
+  </row>
+  <row>
+    <id>123</id>
+    <title>Селянська 50 см</title>
+    <description>Тісто, соус, моцарелла, салямі, картопля фрі, помідорки чері, цибуля зелена, трави.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>селянська_SZUB00T.jpg</image>
+    <price>220.0</price>
+    <weight>900</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>130</my_order>
+    <created_at>2018-04-10 21:12:43</created_at>
+    <updated_at>2018-10-23 22:28:02</updated_at>
+  </row>
+  <row>
+    <id>124</id>
+    <title>Марінара 50 см</title>
+    <description>Тісто, соус, моцарелла, шампіньйони, курка, помідор, пармезан, трави.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>марінара_O7udY6p.jpg</image>
+    <price>210.0</price>
+    <weight>1000</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>131</my_order>
+    <created_at>2018-04-10 21:14:29</created_at>
+    <updated_at>2018-10-23 22:11:18</updated_at>
+  </row>
+  <row>
+    <id>125</id>
+    <title>Мілано 50 см</title>
+    <description>Тісто, соус, моцарелла, бекон, салямі, шампіньйони, корнішони, трави.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>з_салямі_та_беконом.jpg</image>
+    <price>220.0</price>
+    <weight>1000</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>132</my_order>
+    <created_at>2018-04-10 22:05:03</created_at>
+    <updated_at>2018-10-23 22:24:56</updated_at>
+  </row>
+  <row>
+    <id>126</id>
+    <title>З  тунцем 50 см</title>
+    <description>Тісто, моцарелла, вершки, корнішони, тунець, цибуля кримська, лимон, трави.</description>
+    <categories>8</categories>
+    <tags>4</tags>
+    <image>з_тунцем_arv11pl.jpg</image>
+    <price>309.0</price>
+    <weight>900</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>133</my_order>
+    <created_at>2018-04-10 22:06:42</created_at>
+    <updated_at>2018-06-10 14:18:17</updated_at>
+  </row>
+  <row>
+    <id>127</id>
+    <title>З шинкою та беконом 50 см</title>
+    <description>Тісто, соус, моцарелла, бекон, шинка, цибуля кримська, трави.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>з_шинкою_та_беконом_OwbhBPy.jpg</image>
+    <price>210.0</price>
+    <weight>1000</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>134</my_order>
+    <created_at>2018-04-10 22:08:21</created_at>
+    <updated_at>2018-10-23 22:12:00</updated_at>
+  </row>
+  <row>
+    <id>128</id>
+    <title>Неаполітана 50 см</title>
+    <description>Тісто, соус, моцарелла, ковбаски баварські, салямі, помідор, оливки, трави.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>неаполітана_U3lKrKI.jpg</image>
+    <price>225.0</price>
+    <weight>1000</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>135</my_order>
+    <created_at>2018-04-10 22:09:50</created_at>
+    <updated_at>2018-10-23 22:20:25</updated_at>
+  </row>
+  <row>
+    <id>129</id>
+    <title>Маргарита 50 см</title>
+    <description>Тісто, соус, моцарелла, помідор, трави, пармезан.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>маргарита.jpg</image>
+    <price>169.0</price>
+    <weight>1000</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>136</my_order>
+    <created_at>2018-04-10 22:10:58</created_at>
+    <updated_at>2018-06-10 14:21:22</updated_at>
+  </row>
+  <row>
+    <id>130</id>
+    <title>Салямі 50 см</title>
+    <description>Тісто, соус,моцарелла, салямі, цибуля зелена, трави.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>салямі_vLnHtQW.jpg</image>
+    <price>220.0</price>
+    <weight>950</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>137</my_order>
+    <created_at>2018-04-10 22:12:03</created_at>
+    <updated_at>2018-10-23 22:26:33</updated_at>
+  </row>
+  <row>
+    <id>131</id>
+    <title>Монтанара 50 см</title>
+    <description>Тісто, соус, моцарелла, шинка, помідор, маслини, кукурудза, трави.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>монтанара_lVWZbdk.jpg</image>
+    <price>210.0</price>
+    <weight>1000</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>138</my_order>
+    <created_at>2018-04-10 22:14:44</created_at>
+    <updated_at>2018-10-23 22:15:45</updated_at>
+  </row>
+  <row>
+    <id>132</id>
+    <title>Якудза 50 см</title>
+    <description>Тісто, соус,  моцарелла,  чорізо,  перець болгарський, перець чілі, цибуля кримська, трави.</description>
+    <categories>8,11</categories>
+    <tags></tags>
+    <image>якудза.jpg</image>
+    <price>220.0</price>
+    <weight>1000</weight>
+    <pieces>8</pieces>
+    <label>1</label>
+    <my_order>139</my_order>
+    <created_at>2018-04-10 22:16:35</created_at>
+    <updated_at>2018-10-23 22:27:19</updated_at>
+  </row>
+  <row>
+    <id>133</id>
+    <title>Ріва коста 32 см</title>
+    <description>Тісто, моцарелла, вершки, вугор, креветки, цибуля порей, лимон , трави.</description>
+    <categories>7</categories>
+    <tags>2</tags>
+    <image>ріва_коста_rzeBOIp.jpg</image>
+    <price>239.0</price>
+    <weight>550</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>140</my_order>
+    <created_at>2018-04-10 22:22:20</created_at>
+    <updated_at>2018-06-10 13:57:07</updated_at>
+  </row>
+  <row>
+    <id>134</id>
+    <title>Маргарита 32 см</title>
+    <description>Тісто, соус,  моцарелла, помідор,  трави, пармезан.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>маргарита_bFICtBv.jpg</image>
+    <price>99.0</price>
+    <weight>600</weight>
+    <pieces>8</pieces>
+    <label></label>
+    <my_order>141</my_order>
+    <created_at>2018-04-10 22:24:24</created_at>
+    <updated_at>2018-06-10 13:43:56</updated_at>
+  </row>
+  <row>
+    <id>135</id>
+    <title>Якудза 32 см</title>
+    <description>Тісто, соус, моцарелла, чорізо, перець болгарський, перець чілі, цибуля кримська, трави.</description>
+    <categories>7</categories>
+    <tags></tags>
+    <image>якудза_mU3dhvg.jpg</image>
+    <price>119.0</price>
+    <weight>600</weight>
+    <pieces>8</pieces>
+    <label>1</label>
+    <my_order>142</my_order>
+    <created_at>2018-04-10 22:26:08</created_at>
+    <updated_at>2018-06-10 13:51:30</updated_at>
+  </row>
+  <row>
+    <id>136</id>
+    <title>Кока кола</title>
+    <description>Coca Cola 0,5</description>
+    <categories>10</categories>
+    <tags></tags>
+    <image>кока_кола.jpg</image>
+    <price>18.0</price>
+    <weight>500</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>143</my_order>
+    <created_at>2018-04-11 21:39:16</created_at>
+    <updated_at>2018-06-06 20:38:29</updated_at>
+  </row>
+  <row>
+    <id>137</id>
+    <title>Фанта</title>
+    <description>Fanta 0,5</description>
+    <categories>10</categories>
+    <tags></tags>
+    <image>фанта.jpg</image>
+    <price>18.0</price>
+    <weight>500</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>144</my_order>
+    <created_at>2018-04-11 21:40:30</created_at>
+    <updated_at>2018-06-06 20:38:29</updated_at>
+  </row>
+  <row>
+    <id>138</id>
+    <title>Спрайт</title>
+    <description>Sprite 0,5</description>
+    <categories>10</categories>
+    <tags></tags>
+    <image>спрайт.jpg</image>
+    <price>18.0</price>
+    <weight>500</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>145</my_order>
+    <created_at>2018-04-11 21:42:09</created_at>
+    <updated_at>2018-06-06 20:38:29</updated_at>
+  </row>
+  <row>
+    <id>139</id>
+    <title>Rich мультифрукт</title>
+    <description>Сік Rich мультифрукт 1 л.</description>
+    <categories>10</categories>
+    <tags></tags>
+    <image>сік_річ_мультифрукт.jpg</image>
+    <price>35.0</price>
+    <weight>1000</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>146</my_order>
+    <created_at>2018-04-11 21:45:40</created_at>
+    <updated_at>2018-10-23 23:34:09</updated_at>
+  </row>
+  <row>
+    <id>140</id>
+    <title>Rich Яблуко</title>
+    <description>Сік Rich яблуко 1 л.</description>
+    <categories>10</categories>
+    <tags></tags>
+    <image>сік_річ_яблучний.jpg</image>
+    <price>35.0</price>
+    <weight>1000</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>147</my_order>
+    <created_at>2018-04-11 21:46:52</created_at>
+    <updated_at>2018-10-23 23:35:24</updated_at>
+  </row>
+  <row>
+    <id>141</id>
+    <title>Rich Апельсин</title>
+    <description>Сік Rich апельсин 1л.</description>
+    <categories>10</categories>
+    <tags></tags>
+    <image>сік_річ_апельсин.jpg</image>
+    <price>35.0</price>
+    <weight>1000</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>148</my_order>
+    <created_at>2018-04-11 21:47:51</created_at>
+    <updated_at>2018-10-23 23:36:09</updated_at>
+  </row>
+  <row>
+    <id>146</id>
+    <title>Ебі макі</title>
+    <description>Норі, рис, криветка.</description>
+    <categories>2</categories>
+    <tags>3</tags>
+    <image>ебі_макі.jpg</image>
+    <price>64.0</price>
+    <weight>105</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>153</my_order>
+    <created_at>2018-04-16 17:50:07</created_at>
+    <updated_at>2018-06-06 20:38:29</updated_at>
+  </row>
+  <row>
+    <id>190</id>
+    <title>Токіо</title>
+    <description>Хаманіші, хот чікен, гаряча креветка, гаряча філадельфія.</description>
+    <categories>12,13</categories>
+    <tags>1,2,3,6,8</tags>
+    <image>400_роз-01.jpg</image>
+    <price>385.0</price>
+    <weight>800</weight>
+    <pieces>24</pieces>
+    <label>2,3</label>
+    <my_order>154</my_order>
+    <created_at>2018-08-06 13:47:22</created_at>
+    <updated_at>2018-10-23 23:08:50</updated_at>
+  </row>
+  <row>
+    <id>178</id>
+    <title>Тріо</title>
+    <description>Дует, венеція, сирний дует.</description>
+    <categories>12</categories>
+    <tags>1,2,3,8</tags>
+    <image>дует_сирний_дует_нагая.jpg</image>
+    <price>350.0</price>
+    <weight>600</weight>
+    <pieces>24</pieces>
+    <label>3</label>
+    <my_order>155</my_order>
+    <created_at>2018-06-11 14:40:44</created_at>
+    <updated_at>2018-10-23 23:05:06</updated_at>
+  </row>
+  <row>
+    <id>150</id>
+    <title>Унагі набір</title>
+    <description>Орігате, зелений дракон, унагі макі, унагі нігірі 2 шт.</description>
+    <categories>12</categories>
+    <tags></tags>
+    <image>СЕТ_УНАГІ.jpg</image>
+    <price>345.0</price>
+    <weight>550</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>156</my_order>
+    <created_at>2018-04-17 13:08:49</created_at>
+    <updated_at>2018-10-23 23:07:35</updated_at>
+  </row>
+  <row>
+    <id>149</id>
+    <title>Сяке набір</title>
+    <description>Філадельфія, чикаго, сяке макі, нігірі сяке 2шт.</description>
+    <categories>12</categories>
+    <tags></tags>
+    <image>сяке_новий.jpg</image>
+    <price>315.0</price>
+    <weight>550</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>157</my_order>
+    <created_at>2018-04-17 13:07:15</created_at>
+    <updated_at>2018-12-08 10:02:26</updated_at>
+  </row>
+  <row>
+    <id>182</id>
+    <title>Десятка</title>
+    <description>Філадельфія люкс, королівський рол, кунсей, каліфорнія сяке, орігате, рору, авокадо макі, сяке макі, тека макі, боніто маки.</description>
+    <categories>12</categories>
+    <tags>1,2,3,8</tags>
+    <image>біг__сет_1.jpg</image>
+    <price>770.0</price>
+    <weight>1600</weight>
+    <pieces>40</pieces>
+    <label>3</label>
+    <my_order>158</my_order>
+    <created_at>2018-06-26 15:55:07</created_at>
+    <updated_at>2018-10-28 21:40:06</updated_at>
+  </row>
+  <row>
+    <id>158</id>
+    <title>Сирний набір</title>
+    <description>Чікен чіз рол, чіз рол, три сири, ікура маки.</description>
+    <categories>12</categories>
+    <tags>8</tags>
+    <image>сирний.jpg</image>
+    <price>249.0</price>
+    <weight>700</weight>
+    <pieces>0</pieces>
+    <label>2</label>
+    <my_order>159</my_order>
+    <created_at>2018-04-23 10:13:38</created_at>
+    <updated_at>2018-10-23 23:22:23</updated_at>
+  </row>
+  <row>
+    <id>148</id>
+    <title>Самурай</title>
+    <description>Каліфорнія сяке, овара, шахмати, блек рол.</description>
+    <categories>12</categories>
+    <tags></tags>
+    <image>САМУРАЙ.jpg</image>
+    <price>425.0</price>
+    <weight>760</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>160</my_order>
+    <created_at>2018-04-17 13:05:05</created_at>
+    <updated_at>2018-10-23 23:11:25</updated_at>
+  </row>
+  <row>
+    <id>147</id>
+    <title>Класика</title>
+    <description>Тека макі, сяке макі, ебі макі, унагі макі.</description>
+    <categories>12</categories>
+    <tags>1,2,3,4</tags>
+    <image>КЛАСИКА.jpg</image>
+    <price>245.0</price>
+    <weight>420</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>161</my_order>
+    <created_at>2018-04-17 13:02:04</created_at>
+    <updated_at>2018-10-23 23:28:09</updated_at>
+  </row>
+  <row>
+    <id>159</id>
+    <title>Мега набір</title>
+    <description>Канада, маямі, чіз рол, каліфорнія ебі, сяке кунсей, інь янь, кадзумі, овара.</description>
+    <categories>12</categories>
+    <tags></tags>
+    <image>мега_набір.jpg</image>
+    <price>740.0</price>
+    <weight>1500</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>163</my_order>
+    <created_at>2018-04-23 12:58:00</created_at>
+    <updated_at>2018-10-23 23:21:14</updated_at>
+  </row>
+  <row>
+    <id>156</id>
+    <title>Набір гурмана</title>
+    <description>Піца Аль сальмоне 32 см, рол сяке кунсей, рол доміно.</description>
+    <categories>12</categories>
+    <tags>1</tags>
+    <image>копченого__лосося.jpg</image>
+    <price>289.0</price>
+    <weight>850</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>164</my_order>
+    <created_at>2018-04-21 09:40:16</created_at>
+    <updated_at>2018-06-06 20:38:30</updated_at>
+  </row>
+  <row>
+    <id>155</id>
+    <title>Набір для чотирьох</title>
+    <description>Неаполітана 32 см, капрічоза 32 см, coca cola 4 шт</description>
+    <categories>12</categories>
+    <tags></tags>
+    <image>піца_сет__4_особи.jpg</image>
+    <price>280.0</price>
+    <weight>1200</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>165</my_order>
+    <created_at>2018-04-21 09:20:38</created_at>
+    <updated_at>2018-10-23 23:29:22</updated_at>
+  </row>
+  <row>
+    <id>160</id>
+    <title>Імбир</title>
+    <description>Імбир маринований.</description>
+    <categories>14</categories>
+    <tags></tags>
+    <image>імбир.jpg</image>
+    <price>6.0</price>
+    <weight>30</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>166</my_order>
+    <created_at>2018-04-26 14:05:49</created_at>
+    <updated_at>2018-06-06 20:38:30</updated_at>
+  </row>
+  <row>
+    <id>161</id>
+    <title>Васабі</title>
+    <description>Японський хрін</description>
+    <categories>14</categories>
+    <tags></tags>
+    <image>васабі.jpg</image>
+    <price>5.0</price>
+    <weight>20</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>167</my_order>
+    <created_at>2018-04-26 14:09:10</created_at>
+    <updated_at>2018-06-06 20:38:30</updated_at>
+  </row>
+  <row>
+    <id>162</id>
+    <title>Спайс соус</title>
+    <description>Гострий японський соус.</description>
+    <categories>14</categories>
+    <tags></tags>
+    <image>спайс_соус.jpg</image>
+    <price>15.0</price>
+    <weight>35</weight>
+    <pieces>0</pieces>
+    <label>1</label>
+    <my_order>168</my_order>
+    <created_at>2018-04-26 14:19:10</created_at>
+    <updated_at>2018-06-06 20:38:30</updated_at>
+  </row>
+  <row>
+    <id>163</id>
+    <title>Соєвий соус</title>
+    <description>Соєвий соус.</description>
+    <categories>14</categories>
+    <tags></tags>
+    <image>соєвий_соус.jpg</image>
+    <price>15.0</price>
+    <weight>100</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>169</my_order>
+    <created_at>2018-04-26 14:39:27</created_at>
+    <updated_at>2018-06-06 20:38:30</updated_at>
+  </row>
+  <row>
+    <id>164</id>
+    <title>Горіховий соус</title>
+    <description>Ніжна кремова паста зі смаком кунжуту.</description>
+    <categories>14</categories>
+    <tags></tags>
+    <image>горіховий_соус.jpg</image>
+    <price>25.0</price>
+    <weight>40</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>170</my_order>
+    <created_at>2018-04-27 13:00:38</created_at>
+    <updated_at>2018-06-06 20:38:30</updated_at>
+  </row>
+  <row>
+    <id>165</id>
+    <title>Чука сорадо</title>
+    <description>Водорості хіяші вакаме, кунжут, горіховий соус.</description>
+    <categories>5</categories>
+    <tags></tags>
+    <image>салат_чука.jpg</image>
+    <price>60.0</price>
+    <weight>120</weight>
+    <pieces>0</pieces>
+    <label></label>
+    <my_order>171</my_order>
+    <created_at>2018-04-30 18:36:50</created_at>
+    <updated_at>2018-06-06 20:38:30</updated_at>
+  </row>
+  <row>
+    <id>166</id>
+    <title>Салат грецький</title>
+    <description>Помідор, огірок, перець болгарський,  маслини, сир фета, цибуля кримська солодка, орегано, оливкова олія.</description>
+    <categories>5</categories>
+    <tags></tags>
+    <image>грецький.jpg</image>
+    <price>70.0</price>
+    <weight>200</weight>
+    <pieces>0</pieces>
+    <label>2</label>
+    <my_order>172</my_order>
+    <created_at>2018-04-30 18:49:42</created_at>
+    <updated_at>2018-10-23 23:33:08</updated_at>
+  </row>
+  <row>
+    <id>167</id>
+    <title>Рол з фетою</title>
+    <description>Норі, рис, огірок, помідор, перець болгарський, сир фета, лист салата, кунжут.</description>
+    <categories>2</categories>
+    <tags>8</tags>
+    <image>Грецький_рол.jpg</image>
+    <price>67.0</price>
+    <weight>190</weight>
+    <pieces>0</pieces>
+    <label>2</label>
+    <my_order>173</my_order>
+    <created_at>2018-05-02 14:40:26</created_at>
+    <updated_at>2018-10-23 23:34:44</updated_at>
+  </row>
+  <row>
+    <id>168</id>
+    <title>Вегетаріанський рол</title>
+    <description>Норі, рис, сир тофу, помідор, авокадо,  огірок, лист салата.</description>
+    <categories>2</categories>
+    <tags>6,7,8</tags>
+    <image>Вегетаріанський.jpg</image>
+    <price>62.0</price>
+    <weight>200</weight>
+    <pieces>0</pieces>
+    <label>2</label>
+    <my_order>174</my_order>
+    <created_at>2018-05-02 14:42:39</created_at>
+    <updated_at>2018-07-21 10:38:25</updated_at>
+  </row>
+  <row>
+    <id>169</id>
+    <title>Рол зі смаженим лососем</title>
+    <description>Норі, рис, сир філадельфія, лосось тереякі, лист салата, кунжут.</description>
+    <categories>2</categories>
+    <tags>1</tags>
+    <image>2_рол.jpg</image>
+    <price>77.0</price>
+    <weight>180</weight>
+    <pieces>0</pieces>
+    <label>2</label>
+    <my_order>175</my_order>
+    <created_at>2018-05-02 14:56:00</created_at>
+    <updated_at>2018-07-23 12:47:42</updated_at>
+  </row>
+  <row>
+    <id>170</id>
+    <title>Грецька 32 см</title>
+    <description>Тісто, соус, моцарелла, перець болгарський, помідорки чері, сир фета, рукола, цибуля кримська.</description>
+    <categories>7</categories>
+    <tags>8</tags>
+    <image>ГРЕЦЬКА.jpg</image>
+    <price>116.0</price>
+    <weight>500</weight>
+    <pieces>0</pieces>
+    <label>2</label>
+    <my_order>176</my_order>
+    <created_at>2018-05-14 11:16:28</created_at>
+    <updated_at>2018-10-23 22:35:45</updated_at>
+  </row>
+  <row>
+    <id>172</id>
+    <title>Руколона 50 см</title>
+    <description>Тісто, соус, моцарелла, шинка, бекон, ананас, помідор, рукола.</description>
+    <categories>8</categories>
+    <tags>8</tags>
+    <image>РУКОЛОНА_50.jpg</image>
+    <price>220.0</price>
+    <weight>1000</weight>
+    <pieces>0</pieces>
+    <label>3</label>
+    <my_order>177</my_order>
+    <created_at>2018-05-14 11:20:07</created_at>
+    <updated_at>2018-10-23 22:25:39</updated_at>
+  </row>
+  <row>
+    <id>173</id>
+    <title>Грецька 50 см</title>
+    <description>Тісто, соус, моцарелла, перець болгарський, помідорки чері, сир фета, рукола, цибуля кримська.</description>
+    <categories>8</categories>
+    <tags>8</tags>
+    <image>ГРЕЦЬКА_50.jpg</image>
+    <price>210.0</price>
+    <weight>1000</weight>
+    <pieces>0</pieces>
+    <label>3</label>
+    <my_order>178</my_order>
+    <created_at>2018-05-14 11:21:09</created_at>
+    <updated_at>2018-10-23 22:14:46</updated_at>
+  </row>
+  <row>
+    <id>176</id>
+    <title>Прошутто 50 см</title>
+    <description>Тісто, соус, моцарелла, прошутто крудо, помідорки чері, рукола, пармезан.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>прошуто_рукола_черы_50_1.jpg</image>
+    <price>259.0</price>
+    <weight>1000</weight>
+    <pieces>8</pieces>
+    <label>3</label>
+    <my_order>179</my_order>
+    <created_at>2018-05-26 13:17:35</created_at>
+    <updated_at>2018-10-23 22:14:04</updated_at>
+  </row>
+  <row>
+    <id>188</id>
+    <title>Карбонара 50 см</title>
+    <description>Тісто, вершково-яєчний соус, бекон, шампіньйони, пармезан.</description>
+    <categories>8</categories>
+    <tags></tags>
+    <image>450_50_савм1.jpg</image>
+    <price>210.0</price>
+    <weight>950</weight>
+    <pieces>8</pieces>
+    <label>2</label>
+    <my_order>180</my_order>
+    <created_at>2018-07-21 11:23:36</created_at>
+    <updated_at>2018-10-23 22:13:23</updated_at>
+  </row>
+</root>
