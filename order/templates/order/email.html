@@ -6,58 +6,7 @@
 </head>
 <body>
 
-<!-- 	<div style="width: 70%;margin: auto;">
-		<h1 style="text-align: center;">НОВЕ ЗАМОВЛЕННЯ</h1>
-	    <h2 style="text-align: center;">ЗАМОВЛЕННЯ №{{ order.id }}</h2>
-	    <hr>
-	    <div>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: left;margin: 0;">ДАТА</h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: right;margin: 0;">{{ order.created_at|date:"d/m/Y H:i" }}</h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: left;margin: 0;">ІМ'Я</h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: right;margin: 0;">{{ order.name }}</h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: left;margin: 0;">НОМЕР ТЕЛЕФОНУ</h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: right;margin: 0;">{{ order.phone }}</h3> 
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: left;margin: 0;">АДРЕСА ДОСТАВКИ</h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: right;margin: 0;">{{ order.address }}</h3> 
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: left;margin: 0;">КІЛЬКІСТЬ ОСІБ</h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: right;margin: 0;">{{ order.count }}</h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: left;margin: 0;">КОМЕНТАР</h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: right;margin: 0;min-height: 17px;">{{ order.comment }}</h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: left;margin: 0;">ТИП ОПЛАТИ</h3>
-	        {% if order.type_of_payment == '1' %}
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: right;margin: 0;">банківська карта</h3>
-	        {% else %}
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 50%;float: right;margin: 0;">готівка</h3>
-	        {% endif %}
-	    </div>
-
-	    <div>
-	        <h2 style="text-align: center;width: 100%;float: left;">ЗАМОВЛЕННЯ</h2>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 5%;float: left;margin: 0;height: 17px;"> </h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 25%;float: left;margin: 0;">НАЗВА</h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 25%;float: left;margin: 0;">ЦІНА</h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 20%;float: left;margin: 0;">КІЛЬКІСТЬ</h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 25%;float: left;margin: 0;">СУМА</h3>
-	        {% for item in order.product.all %}
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 5%;float: left;margin: 0;">{{ forloop.counter }}</h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 25%;float: left;margin: 0;">{{ item.product.title }}</h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 25%;float: left;margin: 0;">{{ item.product.price }}</h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 20%;float: left;margin: 0;">{{ item.count }}</h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 25%;float: left;margin: 0;">{{ item.total }}</h3>
-	        {% endfor %}
-
-
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 75%;float: left;margin: 0;text-align: right;">Загальна сума:</h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 25%;float: left;margin: 0;">{{ order.total }}</h3>
-
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 75%;float: left;margin: 0;text-align: right;">До оплати:</h3>
-	        <h3 style="padding: 10px 0;outline: 1px solid black;width: 25%;float: left;margin: 0;">{{ order.total_discount }}</h3>
-	    </div> 
-	</div>
-    
-    <br> -->
-
-    <h1 style="text-align: center;">НОВЕ ЗАМОВЛЕННЯ</h1>
+  <h1 style="text-align: center;">НОВЕ ЗАМОВЛЕННЯ</h1>
 	<h2 style="text-align: center;">ЗАМОВЛЕННЯ №{{ order.simple_id }}</h2>
 	<h2 style="text-align: center;"><b>Yakuza</b> доставка суші та піци</h2>
 
@@ -68,7 +17,6 @@
 	      <th scope="col" style="border-bottom: 1px solid #888;">номер телефону</th>
 	      <th scope="col" style="border-bottom: 1px solid #888;">Адреса доставки</th>
 	      <th scope="col" style="border-bottom: 1px solid #888;">Кількість осіб</th>
-	      <!-- <th scope="col" style="border-bottom: 1px solid #888;">Коментар</th> -->
 	      <th scope="col" style="border-bottom: 1px solid #888;">Тип оплати</th>
 	    </tr>
 	  </thead>
@@ -79,7 +27,6 @@
 	      <td style="border-bottom: 1px solid #888; text-align: center;">{{ order.phone }}</td>
 	      <td style="border-bottom: 1px solid #888; text-align: center;">{{ order.address }}</td>
 	      <th style="border-bottom: 1px solid #888; text-align: center;">{{ order.count }}</th>
-	      <!-- <td style="border-bottom: 1px solid #888; text-align: center;">{{ order.comment }}</td> -->
 	      {% if order.type_of_payment == '1' %}
 	      <td style="border-bottom: 1px solid #888; text-align: center;">Банківська карта</td>
 	      {% else %}
@@ -136,7 +83,85 @@
 	    </tr>
 	  </tbody>
 	</table>
-                               
+
+	<!--Second part-->
+  <h1 style="text-align: center;">НОВЕ ЗАМОВЛЕННЯ</h1>
+	<h2 style="text-align: center;">ЗАМОВЛЕННЯ №{{ order.simple_id }}</h2>
+	<h2 style="text-align: center;"><b>Yakuza</b> доставка суші та піци</h2>
+
+    <table class="table" style="border: 1px solid #555; border-collapse: collapse; width: 100%;">
+	  <thead>
+	    <tr style="border-bottom: 1px solid #888;">
+	      <th scope="col" style="border-bottom: 1px solid #888;">Дата</th><th scope="col" style="border-bottom: 1px solid #888;">Ім'я</th>
+	      <th scope="col" style="border-bottom: 1px solid #888;">номер телефону</th>
+	      <th scope="col" style="border-bottom: 1px solid #888;">Адреса доставки</th>
+	      <th scope="col" style="border-bottom: 1px solid #888;">Кількість осіб</th>
+	      <th scope="col" style="border-bottom: 1px solid #888;">Тип оплати</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <th scope="row" style="border-bottom: 1px solid #888;">{{ order.created_at|date:"d/m/Y H:i" }}</th>
+	      <td style="border-bottom: 1px solid #888; text-align: center;">{{ order.name }}</td>
+	      <td style="border-bottom: 1px solid #888; text-align: center;">{{ order.phone }}</td>
+	      <td style="border-bottom: 1px solid #888; text-align: center;">{{ order.address }}</td>
+	      <th style="border-bottom: 1px solid #888; text-align: center;">{{ order.count }}</th>
+	      {% if order.type_of_payment == '1' %}
+	      <td style="border-bottom: 1px solid #888; text-align: center;">Банківська карта</td>
+	      {% else %}
+	      <td style="border-bottom: 1px solid #888; text-align: center;">Готівка</td>
+	      {% endif %}
+	    </tr>
+	  </tbody>
+	</table>
+
+	<h3>Коментарій</h3>
+	<p>{{ order.comment }}</p>
+
+	<h5 style="text-align: center;">Замовлення</h5>
+
+	<table class="table" style="border: 1px solid #555; border-collapse: collapse; width: 100%;">
+	  <thead>
+	    <tr>
+	      <th scope="col" style="border-bottom: 1px solid #888;">#</th>
+	      <th scope="col" style="border-bottom: 1px solid #888;">Назва</th>
+	      <th scope="col" style="border-bottom: 1px solid #888;">Ціна</th>
+	      <th scope="col" style="border-bottom: 1px solid #888;">Кількість</th>
+	      <th scope="col" style="border-bottom: 1px solid #888;">Сума</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	{% for item in order.product.all %}
+	    <tr>
+	      <th scope="row" style="border-bottom: 1px solid #888;">{{ forloop.counter }}</th>
+	      <td style="border-bottom: 1px solid #888; text-align: center;">{{ item.product.title }}</td>
+	      <td style="border-bottom: 1px solid #888; text-align: center;">{{ item.product.price }}</td>
+	      <td style="border-bottom: 1px solid #888; text-align: center;">{{ item.count }}</td>
+	      <td style="border-bottom: 1px solid #888; text-align: center;">{{ item.total }}</td>
+	    </tr>
+	    {% endfor %}
+	  </tbody>
+
+	  <thead>
+	    <tr>
+	     <th scope="col" style="border-bottom: 1px solid #888;"> </th>
+	      <th scope="col" style="border-bottom: 1px solid #888;"> </th>
+	      <th scope="col" style="border-bottom: 1px solid #888;"> </th>
+	      <th scope="col" style="border-bottom: 1px solid #888;"> </th>
+	      <th scope="col" style="border-bottom: 1px solid #888; font-size: 22px;">Загальна сума:</th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <tr>
+	      <td> </td>
+	      <td> </td>
+	      <td> </td>
+	      <td> </td>
+	      <th style="font-size: 22px;" scope="row">{{ order.total }}</th>
+	    </tr>
+	  </tbody>
+	</table>              
 
 </body>
 </html>
