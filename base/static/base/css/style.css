@@ -1284,7 +1284,7 @@ button.liqpay {
 	bottom: 20px;
 	right: 2%;
 	overflow: hidden;
-	z-index: 999; 
+	z-index: 999;
 	width: 32px;
 	height: 32px;
 	border: none;
@@ -1315,10 +1315,11 @@ button.liqpay {
 	display:inline-block;
     margin: 3px auto;
     height: 48px;
-    width: 100px;
+    width: 90px;
     padding-top: 13px;
 	color:#212121;
 	font-family:'Ubuntu', sans-serif !important;
+	font-size: 12px;
 }
 .products-breadcrumb ul li.active{
     background: #ff5200;
@@ -1436,31 +1437,31 @@ button.liqpay {
     -webkit-animation-duration: 2s;
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
-    
+
     -moz-animation-name: blinker;
     -moz-animation-duration: 2s;
     -moz-animation-timing-function: linear;
     -moz-animation-iteration-count: infinite;
-    
+
     animation-name: blinker;
     animation-duration: 2s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
 
-@-moz-keyframes blinker {  
+@-moz-keyframes blinker {
     0% { opacity: 1.0; }
     50% { opacity: 0.0; }
     100% { opacity: 1.0; }
 }
 
-@-webkit-keyframes blinker {  
+@-webkit-keyframes blinker {
     0% { opacity: 1.0; }
     50% { opacity: 0.0; }
     100% { opacity: 1.0; }
 }
 
-@keyframes blinker {  
+@keyframes blinker {
     0% { opacity: 1.0; }
     50% { opacity: 0.0; }
     100% { opacity: 1.0; }
@@ -1720,7 +1721,7 @@ li.list-group-item1 {
 .label {
 	font-weight: 300 !important;
 	border-radius:4px;
-}  
+}
 .grid_5{
 	background:none;
 	padding:2em 0;
@@ -1830,8 +1831,8 @@ h2.typoh2{
 		margin-bottom: 0em;
 	}
     .products-breadcrumb ul li {
-        font-size: .7em;
-        width: 80px;
+        font-size: .6em;
+        width: 70px;
     }
 }
 @media (max-width:640px){
@@ -1883,8 +1884,8 @@ h2.typoh2{
 		margin: 20px 0 0px;
 	}
     .products-breadcrumb ul li {
-        font-size: .6em;
-        width: 45px;
+        font-size: .4em;
+        width: 40px;
         vertical-align: top;
     }
 
@@ -2331,7 +2332,7 @@ ul.wmuSliderPagination {
 	font-size: 1.1em;
     color: #212121;
     text-transform: uppercase;
-}	
+}
 .w3agile_event_grid_right p{
 	font-size:14px;
 	color:#999;
@@ -2632,12 +2633,12 @@ td.invert-image a img {
 }
 .quantity-select .entry.value-minus:before,
 .quantity-select .entry.value-plus:before{
-	content: ""; 
+	content: "";
 	width: 13px;
-	height: 2px; 
+	height: 2px;
 	background: #000;
 	left: 50%;
-	margin-left: -7px; 
+	margin-left: -7px;
 	top: 50%;
 	margin-top: -0.5px;
 	position: absolute;
@@ -2645,9 +2646,9 @@ td.invert-image a img {
 .quantity-select .entry.value-plus:after{
 	content: "";
 	height: 13px;
-	width: 2px; 
+	width: 2px;
 	background: #000;
-	left: 50%; 
+	left: 50%;
 	margin-left: -1.4px;
     top: 50%;
     margin-top: -6.2px;
@@ -2699,7 +2700,7 @@ td.invert-image a img {
 }
 .checkout-right-basket{
 	float: right;
-margin: 3em 0 0 0em;    
+margin: 3em 0 0 0em;
 }
 .checkout-left-basket ul li span {
     float: right;
@@ -2768,16 +2769,16 @@ input.checkbox:before {
 	cursor: pointer;
 }
 input.checkbox:after {
-	content: ""; 
+	content: "";
 	position: absolute;
 	top: 0px;
 	left: 0;
 	z-index: 1;
 	width: 1.2em;
 	height: 1.2em;
-	border: 1px solid #fff; 
+	border: 1px solid #fff;
 	-webkit-transition: .4s ease-in-out;
-	-moz-transition: .4s ease-in-out; 
+	-moz-transition: .4s ease-in-out;
 	transition: .4s ease-in-out;
 }
 input.checkbox:checked:after {
@@ -2811,10 +2812,10 @@ input.checkbox:checked:after {
 		border-bottom-color: #fff;
 		border-left-color: #fff;
 	}
-} 
+}
 .vertical_post.check_box_agile {
     padding-bottom: 1em;
-}  
+}
 .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
     margin-left: -29px;
 }
@@ -4408,7 +4409,7 @@ input.checkbox:checked:after {
 	.w3ls_logo_products_left1:nth-child(3) {
 		/*margin: 0.5em 0 1em;*/
 	}
-	
+
 	.more a {
 		font-size: 13px;
 	}
@@ -4572,7 +4573,7 @@ input.checkbox:checked:after {
 	}
 	.modal-dialog {
 		width: 290px;
-	}	
+	}
 	.table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
 		padding: 3px !important;
 	}
@@ -4976,6 +4977,10 @@ input.checkbox:checked:after {
         margin: auto;
         margin-bottom: 17px;
     }
+    .dostavka,
+    .w3ls_logo_products_left1 ul.phone_email li.get-callback {
+        text-align: center;
+    }
 }
 
 /* Custom classes */
@@ -5213,7 +5218,7 @@ body {
     float: right;
     cursor: pointer;
 }
-    
+
 
 .feedback-row {
     /*text-align: center;*/
@@ -5357,6 +5362,10 @@ body {
 
 .hidden-by-search {
     display: none;
+}
+
+.nav_1 li {
+    font-size: 18px;
 }
 
 

@@ -2,7 +2,6 @@ from datetime import datetime, time
 from django.shortcuts import render
 from popup.models import WorkHours
 from category.models import Category
-from product.models import Product
 from section.models import SharesSection
 import json
 from urllib.parse import parse_qs
@@ -112,8 +111,6 @@ def main_page(request):
 		'work_hours' : work_hours,
 	}
 
-	# print(output)
-
 	template = 'page/main.html'
 
 	return render(request, template, content)
@@ -157,7 +154,7 @@ def success_callback(request):
 
 
 	for category in categoires:
-		products = Product.objects.filter(categories= category)
+# 		products = Product.objects.filter(categories= category)
 		output.append({
 					'name' : category.name,
 					'slug' : category.slug,
@@ -189,7 +186,7 @@ def shares(request):
 
 
 	for category in categoires:
-		products = Product.objects.filter(categories= category)
+		#products = Product.objects.filter(categories= category)
 		output.append({
 					'name' : category.name,
 					'slug' : category.slug,
@@ -295,7 +292,6 @@ def contacts(request):
 
 
 	for category in categoires:
-		products = Product.objects.filter(categories= category)
 		output.append({
 					'name' : category.name,
 					'slug' : category.slug,
@@ -313,124 +309,107 @@ def contacts(request):
 
 def checkout(request, post_data= None):
 
-	if request.method == "POST":
+    if request.method == "POST":
+        json_data = request.POST.get('data')
+        data = json.loads(json_data)
+        products = data['items']
+        form = parse_qs(data['form'])
+        total = 0
+        total_discount = 0
+        product_managers = []
+        try:
+            order = Order.objects.create(
+    			simple_id= Order.objects.all().count(),
+    			address= form['address'][0],
+    			phone= form['number'][0],
+    			name= form['name'][0],
+    			count= form['count'][0],
+    			comment= form['comment'][0] if 'comment' in form else "",
+    			total= total,
+    			total_discount= total_discount,
+    			is_payed= False,
+    			type_of_payment= 0
+    			)
+        except Exception as e:
+            return JsonResponse({'message': str(e)}, status= 400)
+        try:
+            for product_data in products:
+            	product = get_object_or_404(Product, pk= product_data['item_id'])
+            	product_manager = ProductManager(
+            		product= product,
+            		count= product_data['quantity']
+            		)
+            	product_managers.append(product_manager)
+            	product_manager.save()
+            	order.product.add(product_manager)
+            	total += product.price*product_data['quantity']
 
-		json_data = request.POST.get('data')
-		data = json.loads(json_data)
+            order.total = total
+            order.total_discount = total
 
-		products = data['items']
-		form = parse_qs(data['form'])
-		# type_of_payment = data['type']
+            order.save()
+        except Exception as e:
+        	return JsonResponse({'message': str(e), 'order': order.id}, status= 400)
 
-		total = 0
-		total_discount = 0
+        if data.get('type', 0) == 1:
+            liqpay = LiqPay(LIQPAY_PUBLIC_KEY, LIQPAY_PRIVATE_KEY)
+            params = {
+                'action': 'pay',
+                'amount': total,
+                'currency': 'UAH',
+                'description': 'Yakuza food delivery',
+                'order_id': str(order.id),
+                'version': '3',
+                'sandbox' : 0,
+                'server_url': 'http://www.yakuzalviv.com/backend/api/v1/order/order-callback/',
+            }
 
-		try:
-			order = Order.objects.create(
-				simple_id= len(Order.objects.all()),
-				address= form['address'][0],
-				phone= form['number'][0],
-				name= form['name'][0],
-				count= form['count'][0],
-				comment= form['comment'][0] if 'comment' in form else "",
-				total= total,
-				total_discount= total_discount,
-				is_payed= False,
-				type_of_payment= 0
-				)
-		except Exception as e:
-			print(e)
-			# raise e
-			return JsonResponse({'message':'Invalid data'}, status= 400)
+            signature = liqpay.cnb_signature(params)
+            hash_data = liqpay.cnb_data(params)
 
-		product_managers = []
+            return JsonResponse({
+            	'message' : 'redirect',
+            	'order_id' : str(order.id),
+            	'signature' : signature,
+            	'hash_data' : hash_data,
+            }, status= 200)
 
-		for product_data in products:
-			product = get_object_or_404(Product, pk= product_data['item_id'])
-			product_manager = ProductManager(
-				product= product,
-				count= product_data['quantity']
-				)
-			product_managers.append(product_manager)
-			product_manager.save()
-			order.product.add(product_manager)
-			total += product.price*product_data['quantity']
+        msg_html = render_to_string('order/email.html', {'order': order, 'products' : product_managers})
 
-		order.total = total
-		order.total_discount = total
+        send_mail('Нове замовлення', msg_html, 'admin@yakuzalviv.com', ['yakuzalviv@gmail.com', 'oneostap@gmail.com'], html_message=msg_html,)
 
-		if 'email' in data and data['email']:
-			subscribers = Subscriber.objects.filter(email= data['email'])
-			if len(subscribers) > 0 and subscribers[0].used_promotion == False:
-				total_discount = total * 0.9
-				order.total_discount = total_discount
-				subscribers[0].used_promotion = True
-				subscribers[0].save()
+        template = 'page/success.html'
 
-		order.save()
+        return JsonResponse({'message':'Success'}, status= 200)
 
-		if 'type' in data and data['type'] == 1:
-			print('Payment by card', order.id)
-			liqpay = LiqPay(LIQPAY_PUBLIC_KEY, LIQPAY_PRIVATE_KEY)
-			params = {
-			    'action': 'pay',
-			    'amount': total,
-			    'currency': 'UAH',
-			    'description': 'Yakuza food delivery',
-			    'order_id': str(order.id),
-			    'version': '3',
-			    'sandbox' : 0,
-			    'server_url': 'http://www.yakuzalviv.com/backend/api/v1/order/order-callback/',
-			}
+    elif request.method == "GET":
 
-			signature = liqpay.cnb_signature(params)
-			hash_data = liqpay.cnb_data(params)
+        socials = SocialSection.objects.all()
 
-			return JsonResponse({
-				'message' : 'redirect',
-				'order_id' : str(order.id),
-				'signature' : signature,
-				'hash_data' : hash_data,
-			}, status= 200)
+        categoires = Category.objects.all()
 
-		msg_html = render_to_string('order/email.html', {'order': order, 'products' : product_managers})
-		msg_plain = render_to_string('order/email.txt', {'order': order, 'products' : products})
+        output = []
 
-		is_sended = send_mail('Нове замовлення', msg_html, 'admin@yakuzalviv.com', ['yakuzalviv@gmail.com', 'oneostap@gmail.com'], html_message=msg_html,)
+        for category in categoires:
+            products = Product.objects.filter(categories= category)
+            output.append({
+    					'name' : category.name,
+    					'slug' : category.slug,
+    					'products' : products
+    					}
+    		)
 
+        shares = SharesSection.objects.all()
 
-		template = 'page/success.html'
-
-		return JsonResponse({'message':'Success'}, status= 200)
-
-	elif request.method == "GET":
-
-		socials = SocialSection.objects.all()
-
-		categoires = Category.objects.all()
-
-		output = []
-
-		for category in categoires:
-			products = Product.objects.filter(categories= category)
-			output.append({
-						'name' : category.name,
-						'slug' : category.slug,
-						'products' : products
-						}
-			)
-
-		shares = SharesSection.objects.all()
-
-		content = {
+        content = {
 			'output' : output,
 			'shares' : shares,
 			'socials' : socials
 		}
 
-		template = 'page/checkout.html'
+        template = 'page/checkout.html'
 
-		return render(request, template, content)
+        return render(request, template, content)
 
 def callback(request):
 
@@ -442,8 +421,6 @@ def callback(request):
 
 		name = data['name'][0] if 'name' in data else " "
 		phone = data['number'][0] if 'number' in data else None
-
-		print(name, phone)
 
 		if not phone:
 			return JsonResponse({'message':'Invalid data'}, status= 400)

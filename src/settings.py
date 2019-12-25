@@ -102,9 +102,17 @@ WSGI_APPLICATION = 'src.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'yakuzalviv$default',
+        'USER': 'yakuzalviv',
+        'PASSWORD': 'olga1993',
+        'HOST': 'yakuzalviv.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
+    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
 }
 
 
@@ -179,7 +187,7 @@ CORS_ORIGIN_WHITELIST = (
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'gruwka69@gmail.com'
-EMAIL_HOST_PASSWORD = 'grushka1993'
+EMAIL_HOST_PASSWORD = 'olga1414'
 EMAIL_USE_TLS = True
 
 

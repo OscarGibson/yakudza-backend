@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+Дякуємо
+{% endblock %}
+
+{% block content %}
+	{% include 'base/header.html' %}
+<!-- //header -->
+<!-- products-breadcrumb -->
+	<div class="products-breadcrumb top-menu">
+		<div class="container">
+			<ul>
+				{% for category in output %}
+				<li><a href="/#{{ category.slug }}">{{ category.name }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+<!-- //products-breadcrumb -->
+<!-- banner -->
+<div class="banner">
+
+	<div class="w3l_banner_nav_right">
+		<div class="row checkout-row">
+			<h1 style="text-align: center;">Дякуємо за підписку</h1>
+			<a href="/"><h4 style="text-align: center;">На головну</h4></a>
+		</div>
+
+	</div>
+	<div class="clearfix"></div>
+</div>
+<!-- //banner -->
+{% include 'base/footer.html' %}
+<!-- //footer -->
+{% endblock %}

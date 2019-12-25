@@ -1,7 +1,10 @@
 from django.db import models
-from django.dispatch import receiver
-from django.db.models.signals import post_save
+# from django.dispatch import receiver
+# from django.db.models.signals import post_save
 import uuid
+
+def uuid_str():
+    return str(uuid.uuid4())
 
 class Order(models.Model):
 	""" Model for order """
@@ -11,13 +14,13 @@ class Order(models.Model):
 		('1', 'Картка')
 		)
 
-	id = models.CharField(primary_key= True, default= uuid.uuid4, editable= False, max_length= 64)
+	id = models.CharField(primary_key= True, default= uuid_str, editable= False, max_length= 64)
 	simple_id = models.IntegerField(default= 0)
 	product = models.ManyToManyField('product.ProductManager', blank= True)
 	name = models.CharField(("Ім'я"), max_length= 256)
 	count = models.IntegerField(("Кількість"),)
 	address = models.CharField(("Адреса"), max_length= 256)
-	phone = models.IntegerField(("Номер телефону"),)
+	phone = models.CharField(("Номер телефону"), max_length= 64)
 	comment = models.TextField(("Коментарій"), blank= True)
 	adds = models.ManyToManyField('product.AddManager', blank= True)
 	type_of_payment = models.CharField(("Тип платежу"), max_length= 32,
