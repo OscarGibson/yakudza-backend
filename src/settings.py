@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     # 'django_facebook',
     # Custom apps
     'base',
+    'popup',
     'category',
     'tag',
     'product',

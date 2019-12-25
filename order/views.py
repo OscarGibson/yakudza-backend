@@ -1,28 +1,12 @@
-#from django.shortcuts import render
 from rest_framework.viewsets import ViewSet
 from django.shortcuts import get_object_or_404
 from .models import Order
 from product.models import Product, ProductManager
 from rest_framework.response import Response
-
-# from rest_framework.renderers import TemplateHTMLRenderer
-
-#from django.http import HttpResponse
-#from django.views.generic import View
-# from .render_pdf import render_to_pdf
-#from django.template.loader import get_template
-
-
-# from open_facebook.api import OpenFacebook
-
 from django.conf import settings
-
 from django.core.mail import send_mail
-
 from django.template.loader import render_to_string
-
 from liqpay.liqpay3 import LiqPay
-
 from subscribers.models import Subscriber
 
 LIQPAY_PUBLIC_KEY = getattr(settings, 'LIQPAY_PUBLIC_KEY')
@@ -83,7 +67,6 @@ class OrderViewSet(ViewSet):
 		order.save()
 
 		if 'type' in data and data['type'] == 1:
-			print('Payment by card', order.id)
 			liqpay = LiqPay(LIQPAY_PUBLIC_KEY, LIQPAY_PRIVATE_KEY)
 			params = {
 			    'action': 'pay',
@@ -109,14 +92,12 @@ class OrderViewSet(ViewSet):
 		msg_html = render_to_string('order/email.html', {'order': order, 'products' : products})
 		msg_plain = render_to_string('order/email.txt', {'order': order, 'products' : products})
 
-		is_sended = send_mail('Нове замовлення', msg_html, 'admin@yakuzalviv.com', ['yakuzalviv@gmail.com', 'oneostap@gmail.com'], html_message=msg_html,)
+		is_sended = send_mail('Нове замовлення', msg_html, 'admin@yakuzalviv.com', ['yakuzalviv@gmail.com',], html_message=msg_html,)
 
 		return Response({'message':'success'}, status= 201)
 
 
 	def callback(self, request):
-
-		print('CALL_BACK ', request.data)
 
 		liqpay = LiqPay(LIQPAY_PUBLIC_KEY, LIQPAY_PRIVATE_KEY)
 		signature = request.data['signature']
@@ -129,7 +110,6 @@ class OrderViewSet(ViewSet):
 				}, status= 403)
 
 		response = liqpay.decode_data_from_str(data)
-		# print('callback data', response)
 
 		try:
 			order = Order.objects.get(id= response['order_id'])
@@ -142,7 +122,7 @@ class OrderViewSet(ViewSet):
 			msg_html = render_to_string('order/email.html', {'order': order, 'products' : products})
 			msg_plain = render_to_string('order/email.txt', {'order': order, 'products' : products})
 
-			is_sended = send_mail('Нове замовлення', msg_html, 'admin@yakuzalviv.com', ['yakuzalviv@gmail.com', 'oneostap@gmail.com'], html_message=msg_html,)
+			is_sended = send_mail('Нове замовлення', msg_html, 'admin@yakuzalviv.com', ['yakuzalviv@gmail.com',], html_message=msg_html,)
 			# send email
 
 			return Response({
@@ -151,11 +131,6 @@ class OrderViewSet(ViewSet):
 				})
 		except Exception as e:
 			raise e
-			# return Response({
-			# 		'message':'order not found',
-			# 		'content' : {}
-			# 		}, status= 204)
-
 
 	def get(self, request):
 
@@ -169,72 +144,3 @@ class OrderViewSet(ViewSet):
 			'message':'success',
 			'content' : d
 			})
-
-# class OrderTemplateViewSet(View):
-
-# 	def get(self, request, order_id):
-
-# 		order = get_object_or_404(Order, pk= order_id)
-
-# 		products = order.product.all()
-
-# 		template = get_template('order/new_order.html')
-
-# 		type_of_payment = 'Картка' if order.type_of_payment == 1 else 'Готівка'
-
-# 		context = {
-# 			'order' : order,
-# 			'products':products,
-# 			'type_of_payment':type_of_payment
-# 			}
-
-# 		# html = template.render(context)
-# 		# pdf = render_to_pdf('order/new_order.html', context)
-# 		# if pdf:
-# 		# 	response = HttpResponse(pdf, content_type='application/pdf')
-# 		# 	filename = "Invoice_%s.pdf" %("12341231")
-# 		# 	content = "inline; filename='%s'" %(filename)
-# 		# 	download = request.GET.get("download")
-# 		# 	if download:
-# 		# 		content = "attachment; filename='%s'" %(filename)
-# 		# 	response['Content-Disposition'] = content
-# 		# 	return response
-# 		# return HttpResponse("Not found")
-
-# 		pdf = render_to_pdf('order/new_order.html', context)
-# 		return HttpResponse(pdf, content_type='application/pdf')
-
-"""
-{
-	"address" : "address",
-	"phone" : 6546754,
-	"comment" : "",
-	"products" : [
-	{"count":2, "pk":1}
-	],
-	"adds": []
-}
-"""
-
-
-
-
-"""
-curl -X POST -H "Content-Type: application/json" -d '{
-  "messaging_type": "RESPONSE",
-  "recipient": {
-    "id": "2125950597692070"
-  },
-  "message": {
-    "text": "hello, world!"
-  }
-}' "https://graph.facebook.com/v2.12/2125950597692070/messages?access_token=EAACEdEose0cBAGZBnlAN2ZBZCNEEDxASIg6bS5wZAh0VNYtictlvZAePcHzej3QZCzBraAqsFOzridx7yVlVpPM7WgaaCZARMjtOu0DYLalXmpHhfZB7P2ON5b09maGQVZACZCl0weyMsBZBEozP1hcfmZCoqcCq6VYqwV0P2saCnslTFRaGNyxltLo7J61CCGtDiKIa41Tu2lGqpQZDZD"
-
-EAACEdEose0cBAGZBnlAN2ZBZCNEEDxASIg6bS5wZAh0VNYtictlvZAePcHzej3QZCzBraAqsFOzridx7yVlVpPM7WgaaCZARMjtOu0DYLalXmpHhfZB7P2ON5b09maGQVZACZCl0weyMsBZBEozP1hcfmZCoqcCq6VYqwV0P2saCnslTFRaGNyxltLo7J61CCGtDiKIa41Tu2lGqpQZDZD
-"""
-
-
-
-
-
-
