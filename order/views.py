@@ -1,16 +1,16 @@
-from django.shortcuts import render
+#from django.shortcuts import render
 from rest_framework.viewsets import ViewSet
 from django.shortcuts import get_object_or_404
 from .models import Order
-from product.models import Product, ProductManager, Add, AddManager
+from product.models import Product, ProductManager
 from rest_framework.response import Response
 
 # from rest_framework.renderers import TemplateHTMLRenderer
 
-from django.http import HttpResponse
-from django.views.generic import View
+#from django.http import HttpResponse
+#from django.views.generic import View
 # from .render_pdf import render_to_pdf
-from django.template.loader import get_template
+#from django.template.loader import get_template
 
 
 # from open_facebook.api import OpenFacebook

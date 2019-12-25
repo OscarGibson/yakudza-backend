@@ -37,8 +37,8 @@
 					<input class="expiration-month-and-year form-control" type="text" name="address" placeholder="">
 
 					<label class="control-label">Номер телефону</label>
-					<input class="number credit-card-number form-control" name="number"
-								  inputmode="numeric" autocomplete="cc-number" autocompletetype="cc-number" x-autocompletetype="cc-number"
+					<input class="number form-control" name="number"
+								  inputmode="numeric"
 								  placeholder="380 (0XX) XXX XX XX">
 
 					<label class="control-label">Кількість осіб</label>
@@ -136,12 +136,12 @@
     $('#order-form').on('submit', function(e) {
     	e.preventDefault();
     	var name = $("button[type=submit][clicked=true]").attr('name');
-    	// console.log(name);
-    	// console.log($('#order-form').serialize());
-    	var items = [];
-    	for (var i = 0; i < data.value.items.length; i++) {
-    		items.push(data.value.items[i]);
-    	}
+
+    	var data = window.localStorage.getItem("PPMiniCart"), today, expires;
+
+        if (data) {
+            data = JSON.parse(decodeURIComponent(data));
+        }
 
     	var type;
 
@@ -156,7 +156,7 @@
     		'type' : type
     	});
 
-    	console.log(request);
+    	console.log(request, data.value.items);
 
     	$.post( "", {
     		'data' : request
@@ -188,8 +188,11 @@
         if (data) {
             data = JSON.parse(decodeURIComponent(data));
 
+            var items = data.value.items;
+            console.log("DATA BEFORE: ", items);
+
             for (var i = 0; i < data.value.items.length; i++) {
-            	console.log($(this).attr("id"), data.value.items[i].item_id);
+            // 	console.log($(this).attr("id"), data.value.items[i].item_id);
             	if ($(this).attr("id") == data.value.items[i].item_id) {
             		spliced = i;
             	} else {
@@ -207,6 +210,9 @@
 	            value: data.value,
 	            expires: expires.toGMTString()
 	        };
+
+            items = data.value.items;
+	        console.log("DATA AFTER: ", items);
 
 	        window.localStorage.setItem("PPMiniCart", encodeURIComponent(JSON.stringify(wrapped)));
 
