@@ -13,4 +13,4 @@ Pillow==5.0.0
 pytz==2017.3
 requests==2.18.4
 Unidecode==1.0.22
-urllib3==1.22
+urllib3==1.26.5
